@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nova M&amp;A Club | Nova SBE Mergers &amp; Acquisitions Student Club</title>
+<meta name="description" content="The student M&amp;A club of Nova School of Business and Economics: deal research, sessions with banks and investors, and 37 members across five departments. Partner with us or get in touch.">
+<meta name="theme-color" content="#061634">
+<meta property="og:title" content="Nova M&amp;A Club | Nova SBE Mergers &amp; Acquisitions Student Club">
+<meta property="og:description" content="The student M&amp;A club of Nova School of Business and Economics: deal research, sessions with banks and investors, and 37 members across five departments.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Nova SBE Mergers & Acquisitions Student Club",
+  "alternateName": "Nova M&A Club",
+  "foundingDate": "2023",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Campus de Carcavelos, Rua da Holanda 1",
+    "postalCode": "2775-405",
+    "addressLocality": "Carcavelos",
+    "addressCountry": "PT"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/nova-mergers-acquisitions-club/",
+    "https://www.instagram.com/novamaclub/"
+  ]
+}
+</script>
+<style>
+/* =====================================================================
+   Nova M&A Club
+   Direction: "The place carries it" (Taste Skill, seed 1120517513), with
+   the club's navy kept and the reference look the club supplied: navy,
+   a bold geometric sans, rounded panels. Type: Albert Sans, the Taste
+   Skill library's geometric for corporate pages that must look clear and
+   dependable. Surfaces are separated by tone steps, never by shadows or
+   hairlines. Motion: Jakub-weighted (design-motion-principles).
+   ===================================================================== */
+@font-face {
+  font-family: "Albert Sans";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(fonts/albert-sans-latin-wght-normal.woff2) format("woff2");
+}
+
+:root {
+  /* colour: the club's navy, one bright blue for detail */
+  --navy-950: #061634;
+  --navy-900: #0A1F44;
+  --navy-700: #00357A;
+  --navy-600: #0B4A9E;
+  --blue-400: #5B9BF0;
+  --blue-200: #C4D9F7;
+  --blue-100: #E7EFFC;
+  --blue-50: #F3F7FD;
+  --paper: #FFFFFF;
+  --ink: #0B1B36;
+  --muted: #3A475F;
+  --line: #D6DFEC;
+  --error: #B42318;
+
+  --font: "Albert Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* five type steps */
+  --t-small: 0.9375rem;
+  --t-body: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --t-lead: clamp(1.25rem, 1.05rem + 0.75vw, 1.75rem);
+  --t-head: clamp(2.25rem, 1.35rem + 3.3vw, 4rem);
+  --t-display: clamp(3.25rem, 1.2rem + 7.4vw, 8rem);
+
+  --r-sm: 12px;
+  --r-md: 20px;
+  --r-lg: 32px;
+  --pill: 999px;
+
+
+  /* motion tokens (Taste Skill motion.md) */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --t-press: 140ms;
+  --t-hover: 180ms;
+  --t-ui: 240ms;
+
+  --wrap: 1240px;
+  --gutter: clamp(20px, 4vw, 48px);
+  --gap: clamp(16px, 2vw, 28px);
+  --section: clamp(72px, 8vw, 112px);
+  --lift: clamp(80px, 9.2vw, 132px);
+  --header: 76px;
+}
+
+/* ---------- base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: calc(var(--header) + 8px); }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 var(--t-body) / 1.55 var(--font);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3, h4, p, ul, ol, figure, dl, dd { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.035em; line-height: 1.04; color: inherit; text-wrap: balance; }
+h2 { font-size: var(--t-head); }
+h3 { font-size: var(--t-lead); font-weight: 650; letter-spacing: -0.02em; line-height: 1.2; }
+h4 { font-size: var(--t-body); font-weight: 650; letter-spacing: -0.01em; line-height: 1.3; }
+a { color: inherit; }
+button, input, select, textarea { font: inherit; color: inherit; }
+a, button, input, select, textarea, label { touch-action: manipulation; }
+svg.i { width: 22px; height: 22px; flex: none; }
+::selection { background: var(--navy-700); color: #fff; }
+
+[hidden] { display: none !important; }
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip-link {
+  position: absolute; left: 16px; top: -80px; z-index: 100;
+  padding: 12px 18px; border-radius: var(--pill);
+  background: #fff; color: var(--navy-900); font-weight: 700; text-decoration: none;
+}
+.skip-link:focus { top: 12px; }
+:focus-visible { outline: 3px solid var(--blue-400); outline-offset: 3px; }
+
+.wrap { width: min(var(--wrap), 100% - 2 * var(--gutter)); margin-inline: auto; }
+.section { padding-block: var(--section); }
+.lead { font-size: var(--t-lead); line-height: 1.45; color: var(--muted); font-weight: 500; letter-spacing: -0.01em; }
+.on-dark { color: #fff; }
+.on-dark .lead { color: rgba(255, 255, 255, 0.8); }
+.section-head > * { max-width: 760px; }
+.section-head .lead { margin-top: 18px; }
+
+.link {
+  font-weight: 600;
+  color: var(--navy-700);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.25em;
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+  transition: text-decoration-color var(--t-hover) var(--ease-out);
+}
+.on-dark .link { color: #fff; }
+@media (hover: hover) { .link:hover { text-decoration-color: currentColor; } }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 0 26px;
+  border: 1.5px solid transparent; border-radius: var(--pill);
+  font-weight: 650; font-size: var(--t-small); letter-spacing: -0.005em;
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+  transition: transform var(--t-press) var(--ease-out), background-color var(--t-hover) var(--ease-out),
+              color var(--t-hover) var(--ease-out), border-color var(--t-hover) var(--ease-out);
+}
+.btn .i { width: 18px; height: 18px; transition: transform var(--t-ui) var(--ease-out); }
+.btn:active { transform: scale(0.97); }
+.btn:disabled { opacity: 0.6; cursor: default; }
+.btn--primary { background: var(--navy-700); color: #fff; }
+.btn--light { background: #fff; color: var(--navy-900); }
+.btn--ghost { border-color: rgba(255, 255, 255, 0.55); color: #fff; }
+.btn--outline { border-color: var(--navy-700); color: var(--navy-700); }
+.btn--sm { min-height: 44px; padding: 0 20px; }
+@media (hover: hover) {
+  .btn--primary:hover { background: var(--navy-900); }
+  .btn--light:hover { background: var(--blue-100); }
+  .btn--ghost:hover { background: rgba(255, 255, 255, 0.12); border-color: #fff; }
+  .btn--outline:hover { background: var(--blue-50); }
+}
+
+.icon-dot {
+  display: grid; place-items: center; flex: none;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--blue-100); color: var(--navy-700);
+}
+.chip {
+  display: inline-flex; align-items: center; gap: 6px; width: fit-content;
+  padding: 6px 12px; border-radius: var(--pill);
+  background: var(--blue-100); color: var(--navy-700);
+  font-size: var(--t-small); font-weight: 600; line-height: 1.3;
+}
+.chip .i { width: 16px; height: 16px; }
+
+/* two icons in one place: the second fades in as the first fades out */
+.swap { display: inline-grid; flex: none; }
+.swap > .i { grid-area: 1 / 1; transition: opacity 180ms var(--ease-out), transform 180ms var(--ease-out), filter 180ms var(--ease-out); }
+.swap > .i--b { opacity: 0; transform: scale(0.7); filter: blur(2px); }
+[aria-expanded="true"] > .swap > .i--a, [aria-pressed="true"] > .swap > .i--a { opacity: 0; transform: scale(0.7); filter: blur(2px); }
+[aria-expanded="true"] > .swap > .i--b, [aria-pressed="true"] > .swap > .i--b { opacity: 1; transform: none; filter: none; }
+.hero__toggle .swap > .i--b, .marquee-toggle .swap > .i--b { translate: 1px 0; } /* a play triangle sits visually left of centre */
+
+/* =====================================================================
+   Header
+   ===================================================================== */
+.header {
+  position: fixed; inset: 0 0 auto 0; z-index: 50;
+  height: var(--header); color: #fff;
+  transition: background-color var(--t-ui) var(--ease-out);
+}
+.header.is-solid, html.menu-open .header {
+  background: var(--navy-950);
+}
+.header__inner { height: 100%; display: flex; align-items: center; gap: 24px; }
+.brand { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; font-weight: 700; font-size: var(--t-body); letter-spacing: -0.015em; white-space: nowrap; }
+.brand__mark { width: 40px; height: 40px; border-radius: 50%; flex: none; background: url(assets/logo.webp) center / cover; }
+
+.menu-btn {
+  margin-left: auto; display: inline-flex; align-items: center; gap: 10px;
+  min-height: 44px; padding: 0 16px 0 18px; border-radius: var(--pill);
+  border: 1.5px solid rgba(255, 255, 255, 0.4); background: transparent; color: #fff;
+  font-weight: 700; font-size: 0.9375rem; cursor: pointer;
+}
+.menu-btn .i { width: 20px; height: 20px; }
+.menu-btn, .hero__toggle, .marquee-toggle, .tab { transition-property: background-color, border-color, color, transform; }
+.menu-btn:active, .hero__toggle:active, .marquee-toggle:active { transform: scale(0.95); }
+.tab:active { transform: scale(0.98); }
+
+
+.nav {
+  position: fixed; inset: var(--header) 0 0 0; z-index: 49;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 32px;
+  padding: 28px var(--gutter) calc(28px + env(safe-area-inset-bottom));
+  background: var(--navy-950);
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity 160ms var(--ease-out), transform 160ms var(--ease-out), visibility 0s linear 160ms;
+}
+.nav.is-open {
+  opacity: 1; visibility: visible; transform: none;
+  transition: opacity var(--t-ui) var(--ease-out), transform var(--t-ui) var(--ease-out), visibility 0s;
+}
+.nav__list { display: grid; gap: 4px; }
+.nav__link {
+  display: block; padding: 8px 0; color: #fff; text-decoration: none;
+  font-size: var(--t-head); font-weight: 700; letter-spacing: -0.035em;
+}
+.nav__link[aria-current="true"] { color: var(--blue-400); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 0.18em; }
+.nav__cta { align-self: stretch; }
+html.menu-open { overflow: hidden; }
+
+@media (min-width: 1100px) {
+  .menu-btn { display: none; }
+  .nav {
+    position: static; inset: auto; z-index: auto; margin-left: auto;
+    flex-direction: row; align-items: center; justify-content: flex-end; gap: 32px;
+    padding: 0; background: none; opacity: 1; visibility: visible; transform: none; transition: none;
+  }
+  .nav__list { display: flex; gap: clamp(20px, 2.2vw, 34px); }
+  .nav__link {
+    position: relative; padding: 8px 0;
+    font-size: 0.9375rem; font-weight: 600; letter-spacing: 0;
+    color: rgba(255, 255, 255, 0.82); transition: color var(--t-hover) var(--ease-out);
+  }
+  .nav__link::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+    height: 2px; border-radius: 2px; background: var(--blue-400);
+    transform: scaleX(0); transform-origin: left; transition: transform var(--t-ui) var(--ease-out);
+  }
+  .nav__link:hover, .nav__link[aria-current="true"] { color: #fff; }
+  .nav__link:hover::after, .nav__link[aria-current="true"]::after { transform: scaleX(1); }
+  .nav__cta { align-self: center; min-height: 44px; padding: 0 22px; }
+}
+
+/* =====================================================================
+   Hero: the staircase photographs carry it
+   ===================================================================== */
+.hero {
+  position: relative; isolation: isolate; overflow: clip;
+  min-height: max(640px, calc(100svh - 40px));
+  display: flex; align-items: flex-end;
+  background: var(--navy-950); color: #fff;
+  view-timeline-name: --hero;
+  view-timeline-inset: 0px;
+}
+.hero__slides { position: absolute; inset: 0; z-index: -2; overflow: clip; }
+.hero__slide {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 32%;
+  opacity: 0; transition: opacity 1600ms var(--ease-in-out);
+}
+.hero__slide.is-on { opacity: 1; }
+.hero__scrim {
+  position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  /* neutral legibility scrim behind the text block (bottom left) and under the bar; the photo stays ungraded */
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.3) 58%, rgba(0, 0, 0, 0) 80%), /* taste-skill-ignore: neutral scrim over a photograph */
+    linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.14) 45%, rgba(0, 0, 0, 0) 66%), /* taste-skill-ignore: neutral scrim over a photograph */
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0) 20%); /* taste-skill-ignore: neutral scrim over a photograph */
+}
+.hero__content { padding-bottom: clamp(160px, 22vh, 220px); padding-top: calc(var(--header) + 40px); }
+.hero__title { font-size: var(--t-display); font-weight: 700; letter-spacing: -0.045em; line-height: 0.95; }
+.hero__title .line { display: block; overflow: clip; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+.hero__title .line > span { display: block; }
+.hero__tagline { margin-top: 18px; max-width: 34ch; font-size: var(--t-lead); font-weight: 500; letter-spacing: -0.015em; line-height: 1.3; }
+.hero__actions { margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; }
+.hero__link {
+  display: inline-flex; align-items: center; min-height: 44px; color: #fff;
+  font-weight: 650; font-size: var(--t-small);
+  text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 0.3em;
+  text-decoration-color: rgba(255, 255, 255, 0.55); transition: text-decoration-color var(--t-hover) var(--ease-out);
+}
+@media (hover: hover) { .hero__link:hover { text-decoration-color: #fff; } }
+.hero__toggle {
+  position: absolute; right: var(--gutter); bottom: clamp(160px, 22vh, 220px); z-index: 1;
+  display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.45); background: rgba(6, 22, 52, 0.35); color: #fff; cursor: pointer;
+  transition: background-color var(--t-hover) var(--ease-out), border-color var(--t-hover) var(--ease-out);
+}
+.hero__toggle .i { width: 18px; height: 18px; }
+
+@media (hover: hover) { .hero__toggle:hover { background: rgba(6, 22, 52, 0.6); border-color: #fff; } }
+
+/* =====================================================================
+   Stats card, lifted over the hero's lower edge
+   ===================================================================== */
+.stats-band { position: relative; z-index: 2; margin-top: calc(-1 * var(--lift)); }
+.stats-band::before { content: ""; position: absolute; inset: var(--lift) 0 0 0; z-index: -1; background: var(--blue-50); }
+.stats {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: #fff; border-radius: var(--r-lg);
+  padding: clamp(18px, 1.7vw, 24px) clamp(8px, 1.4vw, 20px);
+}
+.stat {
+  display: grid; grid-template-columns: auto 1fr; column-gap: 16px; align-items: center;
+  padding: 6px clamp(12px, 1.8vw, 28px);
+}
+.stat .icon-dot { grid-row: span 2; width: 52px; height: 52px; }
+.stat__figure { font-size: var(--t-head); font-weight: 700; letter-spacing: -0.04em; line-height: 1; color: var(--navy-900); font-variant-numeric: tabular-nums; }
+.stat__label { margin-top: 6px; font-size: var(--t-small); font-weight: 600; color: var(--muted); line-height: 1.35; }
+
+/* rolling figures (Taste Skill recipe) */
+.roll__digits { display: inline-flex; font-variant-numeric: tabular-nums; line-height: 1; }
+.roll__col { position: relative; display: inline-block; height: 1em; overflow: clip; }
+.roll__col::before { content: attr(data-digit); visibility: hidden; }
+.roll__strip { position: absolute; left: 50%; top: 0; line-height: 1; text-align: center; transform: translate(-50%, calc(var(--d) * -1em)); }
+.roll__strip::before { content: "0\A 1\A 2\A 3\A 4\A 5\A 6\A 7\A 8\A 9"; display: block; white-space: pre; }
+
+/* =====================================================================
+   About
+   ===================================================================== */
+.about { background: var(--blue-50); }
+.about__top { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: clamp(24px, 6vw, 96px); align-items: end; }
+.about__top .lead { margin-top: 20px; color: var(--ink); }
+.about__body { color: var(--muted); }
+.about__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gap); margin-top: clamp(40px, 5vw, 64px); }
+.about__photo { grid-column: 1 / 8; position: relative; border-radius: var(--r-lg); overflow: clip; background: var(--blue-100); }
+.about__photo img { width: 100%; height: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.about__card {
+  position: absolute; left: 20px; bottom: 20px; right: 20px; max-width: 420px;
+  background: #fff; border-radius: var(--r-md); padding: 22px 24px;
+}
+.about__card h3 { font-size: var(--t-body); font-weight: 700; letter-spacing: -0.01em; display: flex; align-items: center; gap: 10px; color: var(--navy-900); }
+.about__card h3 .i { color: var(--navy-700); }
+.about__card p { margin-top: 8px; color: var(--muted); }
+.about__history { grid-column: 8 / 13; background: var(--navy-900); color: #fff; border-radius: var(--r-lg); padding: clamp(28px, 3vw, 40px); }
+.about__history h3 { margin-bottom: 26px; }
+.timeline { position: relative; display: grid; gap: 22px; }
+.timeline::before { content: ""; position: absolute; left: 7px; top: 10px; bottom: 10px; width: 2px; border-radius: 2px; background: rgba(255, 255, 255, 0.16); }
+.timeline li { position: relative; display: grid; grid-template-columns: 16px 64px 1fr; gap: 14px; align-items: baseline; }
+.timeline li::before { content: ""; width: 12px; height: 12px; margin-left: 2px; border-radius: 50%; background: var(--blue-400); align-self: center; }
+.timeline__year { font-weight: 700; color: var(--blue-400); letter-spacing: -0.01em; }
+.timeline__text { color: rgba(255, 255, 255, 0.86); line-height: 1.5; }
+.about__cards { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
+.info-card { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; background: #fff; border-radius: var(--r-lg); padding: clamp(24px, 2.6vw, 36px); }
+.info-card h3 { font-size: var(--t-body); font-weight: 700; letter-spacing: -0.01em; color: var(--navy-900); }
+.info-card p { margin-top: 6px; color: var(--muted); }
+
+/* =====================================================================
+   Mission: opening window (a picture that opens to the whole screen)
+   ===================================================================== */
+.opening { position: relative; background: var(--blue-50); }
+.opening__stage { position: relative; height: 100svh; min-height: 560px; overflow: clip; background: var(--navy-950); }
+.opening__stage img { width: 100%; height: 100%; object-fit: cover; }
+.opening__stage::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.5) 32%, rgba(0, 0, 0, 0) 62%); /* taste-skill-ignore: neutral scrim over a photograph */
+}
+.opening__caption { position: absolute; inset: auto 0 clamp(40px, 8vh, 88px) 0; z-index: 1; color: #fff; }
+.opening__caption h2 { font-size: var(--t-head); }
+.opening__statement { margin-top: 16px; max-width: 44ch; font-size: var(--t-lead); font-weight: 500; letter-spacing: -0.015em; line-height: 1.35; color: rgba(255, 255, 255, 0.92); }
+
+/* =====================================================================
+   What we do: tabs (reference look), photograph per tab
+   ===================================================================== */
+.work { background: var(--paper); }
+.tabs {
+  margin-top: clamp(36px, 4vw, 56px);
+  display: grid; grid-template-columns: minmax(250px, 330px) minmax(0, 1fr); gap: clamp(12px, 2vw, 24px);
+  background: var(--blue-50); border-radius: var(--r-lg);
+  padding: clamp(10px, 1.4vw, 18px);
+}
+.tabs__list { position: relative; display: grid; align-content: start; gap: 8px; padding: 6px; }
+.tab {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; gap: 14px; min-height: 76px; padding: 12px 16px;
+  border: 0; border-radius: 22px; background: transparent; cursor: pointer; text-align: left;
+  font-weight: 700; font-size: var(--t-body); letter-spacing: -0.01em; color: var(--navy-900);
+  transition: color var(--t-ui) var(--ease-out), background-color var(--t-ui) var(--ease-out);
+}
+.tabs__list.is-instant .tab, .tabs__list.is-instant .tab .icon-dot { transition: none; }
+.tab .icon-dot { width: 44px; height: 44px; background: #fff; transition: background-color var(--t-ui) var(--ease-out), color var(--t-ui) var(--ease-out); }
+.tab[aria-selected="true"] { background: var(--navy-900); color: #fff; }
+.tab[aria-selected="true"] .icon-dot { background: rgba(255, 255, 255, 0.12); color: #fff; }
+@media (hover: hover) { .tab[aria-selected="false"]:hover { background: #fff; } }
+
+.panel { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: clamp(20px, 3vw, 40px); padding: clamp(14px, 2vw, 26px); align-items: start; }
+.panel h3 { font-size: var(--t-lead); color: var(--navy-900); }
+.panel__intro { margin-top: 10px; color: var(--muted); }
+.points { margin-top: 22px; display: grid; gap: 16px; }
+.points p { margin-top: 4px; color: var(--muted); line-height: 1.5; }
+.panel .link { display: inline-block; margin-top: 16px; }
+.panel__media { position: relative; border-radius: var(--r-md); overflow: clip; background: var(--blue-100); align-self: stretch; }
+.panel__media img { height: 100%; }
+.panel__media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.panel__media--doc { background: #fff; align-self: start; }
+.panel__media--doc img { height: auto; }
+.panel__media--doc img { object-fit: contain; padding: 10px; }
+.panel__media figcaption { position: absolute; left: 12px; bottom: 12px; right: 12px; }
+.panel__media figcaption .chip { background: var(--blue-100); }
+html:not(.js) .tabs { grid-template-columns: 1fr; }
+html:not(.js) .tabs__list { display: none; }
+
+/* =====================================================================
+   Live tool: the first test from the briefs
+   ===================================================================== */
+.check { background: var(--navy-900); }
+.check__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
+.check__copy .lead { margin-top: 18px; }
+.check__copy p + p { margin-top: 14px; }
+.check__note { color: rgba(255, 255, 255, 0.7); font-size: var(--t-small); max-width: 52ch; }
+.calc { background: #fff; color: var(--ink); border-radius: var(--r-lg); padding: clamp(24px, 3vw, 40px); }
+.calc__fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.calc__fields label { display: block; font-size: var(--t-small); font-weight: 700; color: var(--navy-900); margin-bottom: 8px; }
+.calc__fields input {
+  width: 100%; min-height: 64px; padding: 8px 18px;
+  border: 1.5px solid var(--line); border-radius: var(--r-sm); background: var(--blue-50);
+  font-size: var(--t-lead); font-weight: 700; letter-spacing: -0.02em; color: var(--navy-900); font-variant-numeric: tabular-nums;
+  transition: border-color var(--t-hover) var(--ease-out), background-color var(--t-hover) var(--ease-out);
+}
+.calc__fields input:hover { border-color: var(--blue-200); }
+.calc__fields input:focus { border-color: var(--navy-700); background: #fff; }
+.calc__out { margin-top: 26px; }
+.verdict { display: inline-flex; align-items: center; gap: 12px; padding: 10px 18px 10px 12px; border-radius: var(--pill); background: var(--blue-100); color: var(--navy-700); font-weight: 700; font-size: var(--t-lead); letter-spacing: -0.02em; }
+.verdict .i { width: 28px; height: 28px; }
+.verdict[data-state="dilutive"] { background: #FDECEA; color: #A3261A; }
+.verdict[data-state="neutral"], .verdict[data-state="invalid"] { background: var(--blue-50); color: var(--muted); }
+.verdict.is-swapping > * { animation: swap-in 280ms var(--ease-out) both; }
+@keyframes swap-in { from { opacity: 0; transform: scale(0.92); filter: blur(3px); } to { opacity: 1; transform: none; filter: blur(0); } }
+.calc__why { margin-top: 14px; color: var(--ink); }
+.bars { margin-top: 22px; display: grid; gap: 14px; }
+.bar__label { display: flex; justify-content: space-between; gap: 12px; font-size: var(--t-small); font-weight: 600; color: var(--muted); margin-bottom: 6px; font-variant-numeric: tabular-nums; }
+.bar__track { height: 12px; border-radius: var(--pill); background: var(--blue-50); overflow: clip; }
+.bar__fill { height: 100%; border-radius: var(--pill); background: var(--navy-700); transform-origin: left; transition: transform 320ms var(--ease-out); }
+.bar__fill--target { background: var(--blue-400); }
+
+/* =====================================================================
+   Sessions with industry
+   ===================================================================== */
+.sessions__grid { margin-top: clamp(36px, 4vw, 56px); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gap); }
+.session { grid-column: span 6; display: flex; flex-direction: column; background: var(--blue-50); border-radius: var(--r-lg); overflow: clip; }
+.session--lead { grid-column: span 8; }
+.session__media { overflow: clip; background: var(--blue-100); }
+.session__media img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.session--lead .session__media img { aspect-ratio: 16 / 9; }
+.session__body { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 20px; padding: 20px clamp(20px, 2.2vw, 28px) 24px; }
+.session__firm { font-size: var(--t-lead); color: var(--navy-900); }
+.session__format { margin-top: 4px; color: var(--muted); }
+.session--online { grid-column: span 4; justify-content: space-between; gap: 32px; background: var(--navy-700); color: #fff; padding: clamp(24px, 2.6vw, 36px); }
+.session__word { font-size: var(--t-head); line-height: 1; }
+.session--online .session__format { margin-top: 0; color: #fff; font-weight: 650; }
+.session__detail { margin-top: 8px; color: rgba(255, 255, 255, 0.86); }
+.session--online .chip { margin-top: 18px; background: rgba(255, 255, 255, 0.14); color: #fff; }
+
+/* =====================================================================
+   Where members have landed: name rows (one marquee, pausable)
+   ===================================================================== */
+.alumni { background: var(--navy-950); overflow: clip; }
+.alumni__head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 24px; }
+.marquee-toggle {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 18px 0 14px;
+  border-radius: var(--pill); border: 1.5px solid rgba(255, 255, 255, 0.35); background: transparent; color: #fff;
+  font-weight: 700; font-size: var(--t-small); cursor: pointer;
+  transition: background-color var(--t-hover) var(--ease-out), border-color var(--t-hover) var(--ease-out);
+}
+.marquee-toggle .i { width: 18px; height: 18px; }
+
+@media (hover: hover) { .marquee-toggle:hover { background: rgba(255, 255, 255, 0.08); border-color: #fff; } }
+.rows { margin-top: clamp(40px, 5vw, 64px); display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(26px, 3vw, 40px); }
+.row__label { font-size: var(--t-small); font-weight: 700; color: var(--blue-400); letter-spacing: 0; margin-bottom: 14px; }
+.row__viewport { overflow: clip; width: min(var(--wrap), 100% - 2 * var(--gutter)); margin-inline: auto; border-radius: var(--pill); }
+.row__track { display: flex; width: max-content; }
+.row__list { display: flex; gap: 12px; padding-right: 12px; }
+.row__list li {
+  display: inline-flex; align-items: center; min-height: 64px; padding: 0 26px;
+  border-radius: var(--pill); background: rgba(255, 255, 255, 0.08);
+  color: #fff; font-size: var(--t-lead); font-weight: 700; letter-spacing: -0.02em; white-space: nowrap;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .js .row__track { animation: rows-move var(--dur, 60s) linear infinite; }
+  .js .row:nth-child(even) .row__track { animation-direction: reverse; }
+  .js .alumni.is-paused .row__track, .js .alumni.is-offscreen .row__track,
+  .js .rows:hover .row__track, .js .rows:focus-within .row__track { animation-play-state: paused; }
+}
+@keyframes rows-move { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .row__track { width: auto; }
+  .row__list { flex-wrap: wrap; padding-right: 0; }
+  .row__list[aria-hidden="true"], .marquee-toggle { display: none; }
+}
+html:not(.js) .row__track { width: auto; }
+html:not(.js) .row__list { flex-wrap: wrap; }
+html:not(.js) .row__list[aria-hidden="true"], html:not(.js) .marquee-toggle { display: none; }
+
+/* =====================================================================
+   Team
+   ===================================================================== */
+.team { background: var(--blue-50); }
+.team__lead { margin-top: clamp(36px, 4vw, 56px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
+.heads { margin-top: var(--gap); display: grid; background: #fff; border-radius: var(--r-lg); padding: clamp(10px, 1.4vw, 18px) clamp(20px, 3vw, 40px); }
+.head { display: grid; grid-template-columns: 56px minmax(0, 0.85fr) minmax(0, 1.6fr); gap: 6px clamp(18px, 2.6vw, 40px); align-items: center; padding-block: clamp(14px, 1.5vw, 20px); }
+.head .person__mono { width: 56px; height: 56px; }
+.head .person__name { margin-top: 0; }
+.head__remit { color: var(--muted); line-height: 1.5; }
+.person { background: #fff; border-radius: var(--r-lg); padding: clamp(22px, 2.2vw, 30px); }
+.person__mono {
+  display: grid; place-items: center; width: 60px; height: 60px; border-radius: 50%;
+  background: var(--navy-700); color: #fff; font-weight: 700; font-size: var(--t-body); letter-spacing: 0.02em;
+}
+.person__name { margin-top: 18px; font-size: var(--t-body); font-weight: 700; letter-spacing: -0.015em; color: var(--navy-900); line-height: 1.25; }
+.person__role { margin-top: 4px; font-size: var(--t-small); font-weight: 700; color: var(--navy-600); }
+.person__remit { margin-top: 12px; color: var(--muted); line-height: 1.5; }
+.person--lead { display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: center; }
+.person--lead .person__mono { width: 76px; height: 76px; background: var(--navy-900); font-size: var(--t-lead); }
+.person--lead .person__name { margin-top: 0; font-size: var(--t-lead); }
+
+/* =====================================================================
+   Partners
+   ===================================================================== */
+.partners__panel {
+  position: relative; overflow: clip;
+  background: var(--navy-700); color: #fff; border-radius: var(--r-lg);
+  padding: clamp(28px, 5.5vw, 80px);
+}
+.partners__top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: end; }
+.partners__top .lead { margin-top: 18px; max-width: 46ch; color: rgba(255, 255, 255, 0.84); }
+.benefits { margin-top: clamp(40px, 5vw, 64px); display: grid; gap: 10px; }
+.benefit { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 12px clamp(24px, 4vw, 64px); align-items: baseline; padding: clamp(18px, 2vw, 26px) clamp(20px, 2.4vw, 32px); border-radius: var(--r-md); background: rgba(255, 255, 255, 0.07); }
+.benefit h3 { font-size: var(--t-lead); }
+.benefit p { color: rgba(255, 255, 255, 0.86); }
+.formats { margin-top: clamp(40px, 5vw, 64px); display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr); gap: var(--gap); align-items: start; }
+.formats h3 { font-size: var(--t-body); font-weight: 700; letter-spacing: -0.01em; padding-top: 10px; }
+.formats ul { display: flex; flex-wrap: wrap; gap: 10px; }
+.formats li { padding: 10px 18px; border-radius: var(--pill); background: rgba(255, 255, 255, 0.12); font-size: var(--t-small); font-weight: 600; }
+.process { margin-top: clamp(40px, 5vw, 64px); }
+.process h3 { font-size: var(--t-body); font-weight: 700; letter-spacing: -0.01em; }
+.steps { margin-top: 22px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap); counter-reset: step; }
+.step { position: relative; counter-increment: step; }
+.step::before {
+  content: counter(step); display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
+  background: var(--blue-400); color: var(--navy-950); font-weight: 700;
+}
+.step:not(:last-child)::after { content: ""; position: absolute; left: 56px; right: 8px; top: 21px; height: 2px; border-radius: 2px; background: rgba(255, 255, 255, 0.18); }
+.step h4 { margin-top: 16px; }
+.step p { margin-top: 6px; color: rgba(255, 255, 255, 0.86); line-height: 1.5; }
+.partners__email { margin-top: 24px; color: rgba(255, 255, 255, 0.86); }
+
+/* =====================================================================
+   Join (split, reference look)
+   ===================================================================== */
+.join__grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
+.join__photo { border-radius: var(--r-lg); overflow: clip; background: var(--blue-100); }
+.join__photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.join__text .lead { margin-top: 18px; color: var(--ink); }
+.join__figures { margin-top: 28px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
+.join__figure { background: var(--blue-50); border-radius: var(--r-md); padding: 20px 22px; }
+.join__figure strong { display: block; font-size: var(--t-head); font-weight: 700; letter-spacing: -0.04em; line-height: 1; color: var(--navy-700); }
+.join__figure span { display: block; margin-top: 8px; font-size: var(--t-small); font-weight: 600; color: var(--muted); }
+.join__actions { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px; }
+.join__note { margin-top: 20px; }
+
+/* =====================================================================
+   Contact: a card on a photograph of the campus
+   ===================================================================== */
+.contact { position: relative; isolation: isolate; color: #fff; padding-block: var(--section) calc(var(--section) + 40px); }
+.contact__bg { position: absolute; inset: 0; z-index: -2; }
+.contact__bg img { width: 100%; height: 100%; object-fit: cover; }
+.contact::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.66) 45%, rgba(0, 0, 0, 0.3) 100%); } /* taste-skill-ignore: neutral scrim over a photograph */
+.contact__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, 540px); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.contact__intro .lead { margin-top: 18px; max-width: 30ch; }
+.channels { margin-top: 36px; display: grid; gap: 14px; }
+.channels li { display: grid; grid-template-columns: 48px 1fr; gap: 16px; align-items: center; }
+.channels .icon-dot { background: rgba(255, 255, 255, 0.12); color: #fff; }
+.channels small { display: block; font-size: var(--t-small); color: rgba(255, 255, 255, 0.72); font-weight: 600; }
+.channels a, .channels address { font-style: normal; font-weight: 700; color: #fff; }
+.channels a { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 0.25em; text-decoration-color: rgba(255, 255, 255, 0.4); transition: text-decoration-color var(--t-hover) var(--ease-out); }
+@media (hover: hover) { .channels a:hover { text-decoration-color: #fff; } }
+
+.form-card { background: #fff; color: var(--ink); border-radius: var(--r-lg); padding: clamp(24px, 3vw, 40px); }
+.form-card__title { font-size: var(--t-lead); color: var(--navy-900); }
+.form { margin-top: 22px; display: grid; gap: 18px; }
+.form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.field__label { display: block; font-size: var(--t-small); font-weight: 700; color: var(--navy-900); margin-bottom: 7px; }
+.field__control {
+  width: 100%; min-height: 52px; padding: 12px 16px;
+  border: 1.5px solid var(--line); border-radius: var(--r-sm); background: #fff;
+  transition: border-color var(--t-hover) var(--ease-out);
+}
+.field__control:hover { border-color: var(--blue-200); }
+.field__control:focus { border-color: var(--navy-700); }
+textarea.field__control { resize: vertical; min-height: 140px; }
+.field__control[aria-invalid="true"] { border-color: var(--error); }
+.field__error { margin-top: 6px; font-size: var(--t-small); font-weight: 600; color: var(--error); }
+.select { position: relative; }
+.select select { appearance: none; padding-right: 46px; cursor: pointer; }
+.select .i { position: absolute; right: 16px; top: 50%; width: 18px; height: 18px; transform: translateY(-50%) rotate(90deg); color: var(--navy-700); pointer-events: none; }
+.form__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+.form__note { font-size: var(--t-small); color: var(--muted); }
+.form-status { font-size: var(--t-small); font-weight: 600; min-height: 1.4em; color: var(--navy-900); }
+.form-status .link { color: var(--navy-700); }
+.form-success { padding: 8px 0; }
+.form-success:focus { outline: none; }
+.form-success .icon-dot { width: 56px; height: 56px; }
+.form-success__text { margin-top: 10px; color: var(--muted); }
+
+/* =====================================================================
+   Footer
+   ===================================================================== */
+.footer {
+  position: relative; z-index: 1; margin-top: -40px;
+  background: var(--navy-950); color: #fff; border-radius: 40px 40px 0 0;
+  padding-block: clamp(56px, 7vw, 88px) 28px;
+}
+.footer__grid { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: clamp(28px, 4vw, 56px); }
+.footer__brand p { margin-top: 18px; font-size: var(--t-small); color: rgba(255, 255, 255, 0.72); max-width: 34ch; line-height: 1.6; }
+.footer__social { margin-top: 22px; display: flex; gap: 10px; }
+.footer__social a {
+  display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08); color: #fff;
+  transition: background-color var(--t-hover) var(--ease-out), transform var(--t-press) var(--ease-out);
+}
+.footer__social a:active { transform: scale(0.94); }
+@media (hover: hover) { .footer__social a:hover { background: var(--blue-400); color: var(--navy-950); } }
+.footer h3 { font-size: var(--t-small); font-weight: 700; letter-spacing: 0; color: var(--blue-400); }
+.footer__links { margin-top: 10px; display: grid; gap: 0; font-size: var(--t-small); }
+.footer__links a { display: inline-flex; align-items: center; min-height: 44px; }
+.footer address.footer__links { margin-top: 16px; }
+.footer__links a, .footer address { color: rgba(255, 255, 255, 0.86); text-decoration: none; font-style: normal; line-height: 1.6; }
+@media (hover: hover) { .footer__links a:hover { color: #fff; text-decoration: underline; text-underline-offset: 0.25em; } }
+.footer__base { margin-top: clamp(48px, 7vw, 88px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: var(--t-small); color: rgba(255, 255, 255, 0.66); }
+.footer__base a { color: rgba(255, 255, 255, 0.86); }
+
+/* =====================================================================
+   Motion layer
+   Signature: the staircase photographs crossfade (direction sheet).
+   Around it: a 1.2 s load sequence, choreographed entrances per section,
+   rolling figures, a receding hero, an opening window, feedback on
+   every control. Every hidden state sits under html.js and no-preference.
+   ===================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  /* load sequence: title line rises, the rest materialises, the photo settles */
+  .js .hero__title .line > span { transform: translateY(105%); animation: line-up 900ms var(--ease-expo) 120ms forwards; }
+  .js .hero [data-load] { opacity: 0; transform: translateY(14px); filter: blur(6px); animation: materialise 640ms var(--ease-out) forwards; animation-delay: var(--d, 420ms); }
+  .js .hero__slide.is-first { transform: scale(1.06); animation: settle 1500ms var(--ease-soft) forwards; }
+
+  /* section entrances: heading, text, then picture or items, once */
+  .js [data-reveal]:not(.is-far) > *, .js .rv:not(.is-far) { opacity: 0; transform: translateY(18px); }
+  .js [data-reveal].is-in > *, .js .rv.is-in {
+    opacity: 1; transform: none;
+    transition: opacity 600ms var(--ease-out), transform 800ms var(--ease-expo);
+    transition-delay: calc(var(--i, 0) * 90ms);
+  }
+  /* pictures open like a shutter instead of fading */
+  .js .shutter:not(.is-far) { clip-path: inset(0 0 100% 0 round var(--r-lg)); }
+  .js .shutter:not(.is-far) img { transform: scale(1.12); }
+  .js .shutter.is-in { clip-path: inset(0 0 0 0 round var(--r-lg)); transition: clip-path 1150ms var(--ease-in-out); }
+  .js .shutter.is-in img { transform: none; transition: transform 1500ms var(--ease-soft); }
+
+  /* headings rise line by line (split by script after fonts load) */
+  [data-lines] .line { display: block; overflow: clip; padding-bottom: 0.1em; margin-bottom: -0.1em; }
+  [data-lines] .line > span { display: block; }
+  .is-split .line > span { transform: translateY(110%); }
+  .is-split.is-in .line > span { transform: none; transition: transform 900ms var(--ease-expo) calc(var(--i) * 90ms); }
+
+  /* rolling figures */
+  .roll:not(.is-in):not(.is-far) .roll__strip { transform: translate(-50%, 0); }
+  .roll.is-in .roll__strip { transition: transform 1100ms var(--ease-expo) calc(var(--i) * 70ms); }
+
+  /* answers to the visitor arrive rather than snap in */
+  .field__error:not([hidden]) { animation: note-in 160ms var(--ease-out) both; }
+  .form-status:not(:empty) { animation: note-in 200ms var(--ease-out) both; }
+  .form-success:not([hidden]) { animation: materialise 320ms var(--ease-out) both; }
+
+  /* the panel that answers a pointer click (keyboard changes are instant) */
+  .panel.is-entering { animation: materialise 280ms var(--ease-out) both; }
+  .panel.is-entering .panel__media img { animation: settle 600ms var(--ease-soft) both; }
+}
+@keyframes line-up { to { transform: none; } }
+@keyframes note-in { from { opacity: 0; transform: translateY(-3px); } to { opacity: 1; transform: none; } }
+@keyframes materialise { from { opacity: 0; transform: translateY(12px); filter: blur(5px); } to { opacity: 1; transform: none; filter: blur(0); } }
+@keyframes settle { from { transform: scale(1.06); } to { transform: none; } }
+
+/* receding hero and opening window: scroll-linked, linear, static where unsupported */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero__slides { animation: hero-sink linear both; animation-timeline: --hero; animation-range: exit 0% exit 100%; }
+    .hero__content { animation: hero-lift linear both; animation-timeline: --hero; animation-range: exit 0% exit 70%; }
+
+    .opening { height: 220svh; view-timeline-name: --opening; view-timeline-inset: 0px; --inset-y: 10%; --inset-x: 15%; }
+    @media (max-width: 639px) { .opening { height: 170svh; --inset-y: 12%; --inset-x: 9%; } }
+    .opening__stage { position: sticky; top: 0; animation: opening-window linear both; animation-timeline: --opening; animation-range: contain 0% contain 65%; }
+    .opening__stage img { animation: opening-settle linear both; animation-timeline: --opening; animation-range: contain 0% contain 65%; }
+    .opening__caption { animation: opening-caption linear both; animation-timeline: --opening; animation-range: contain 35% contain 70%; }
+  }
+}
+@keyframes hero-sink { to { transform: translateY(8%) scale(1.05); } }
+@keyframes hero-lift { to { transform: translateY(-6%); opacity: 0.2; } }
+@keyframes opening-window { from { clip-path: inset(var(--inset-y) var(--inset-x) round 32px); } to { clip-path: inset(0 0 0 0 round 0); } }
+@keyframes opening-settle { from { transform: scale(1.18); } to { transform: none; } }
+@keyframes opening-caption { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero__slide { transition: none; }
+  .hero__toggle { display: none; }
+  .btn, .bar__fill, .nav, .tab, .tab .icon-dot, .link, .hero__link, .swap > .i { transition: none !important; }
+}
+
+/* =====================================================================
+   Responsive
+   ===================================================================== */
+@media (max-width: 1099px) {
+  .session, .session--lead { grid-column: span 6; }
+  .session__body { flex-direction: column; align-items: flex-start; }
+  .session--lead, .session--online { grid-column: 1 / -1; }
+  .session--online { flex-direction: row; align-items: flex-end; }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 899px) {
+  :root { --header: 68px; }
+  .stat { grid-template-columns: minmax(0, 1fr); row-gap: 10px; padding-inline: 12px; }
+  .stat .icon-dot { grid-row: auto; width: 44px; height: 44px; }
+  .about__top, .check__grid, .join__grid, .contact__grid, .partners__top, .formats { grid-template-columns: minmax(0, 1fr); }
+  .about__top { align-items: start; }
+  .about__photo, .about__history, .about__cards { grid-column: 1 / -1; }
+  .about__cards { grid-template-columns: minmax(0, 1fr); }
+  .tabs { grid-template-columns: minmax(0, 1fr); }
+  .tabs__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tab { min-height: 64px; padding: 10px 12px; gap: 10px; font-size: var(--t-small); }
+  .tab .icon-dot { width: 38px; height: 38px; }
+  .panel { grid-template-columns: minmax(0, 1fr); padding: 8px 8px 14px; }
+  .panel__media { order: -1; }
+  .steps { grid-template-columns: minmax(0, 1fr); }
+  .benefit { grid-template-columns: minmax(0, 1fr); }
+  .step:not(:last-child)::after { display: none; }
+  .join__photo { max-width: 440px; }
+  .contact__grid { gap: 40px; }
+}
+@media (max-width: 639px) {
+  .hero__content { padding-bottom: 170px; }
+  .hero__toggle { bottom: auto; top: calc(var(--header) + 16px); right: 16px; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 26px; }
+  .team__lead { grid-template-columns: minmax(0, 1fr); }
+  .person--lead { gap: 16px; }
+  .person--lead .person__mono { width: 60px; height: 60px; font-size: var(--t-body); }
+  .head { grid-template-columns: 48px minmax(0, 1fr); align-items: start; }
+  .head .person__mono { width: 48px; height: 48px; }
+  .head__remit { grid-column: 2; }
+  .session--online { flex-direction: column; align-items: stretch; padding-top: 48px; }
+  .session__body { padding: 16px 16px 18px; }
+  .form__row, .calc__fields, .join__figures { grid-template-columns: minmax(0, 1fr); }
+  .footer__grid { grid-template-columns: minmax(0, 1fr); }
+  .row__list li { min-height: 52px; padding: 0 20px; }
+  .about__card { position: static; max-width: none; border-radius: 0; padding: 18px 20px 22px; }
+  .join__photo img { aspect-ratio: 1 / 1; }
+}
+/* phones on their side: the name, the sentence and the action all fit the first screen */
+@media (max-height: 520px) and (orientation: landscape) {
+  .hero { min-height: 100svh; }
+  .hero__content { padding-top: calc(var(--header) + 8px); padding-bottom: calc(var(--lift) + 20px); }
+  .hero__title { font-size: min(var(--t-display), 15vh); }
+  .hero__tagline { margin-top: 10px; max-width: 46ch; font-size: var(--t-body); }
+  .hero__actions { margin-top: 16px; }
+  .hero__toggle { bottom: auto; top: calc(var(--header) + 12px); }
+}
+</style>
+</head>
+
+<body>
+<!-- Icons: Lucide (ISC licence); LinkedIn and Instagram marks drawn for this page -->
+<!--ICONS-->
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="header">
+  <div class="header__inner wrap">
+    <a class="brand" href="#top" aria-label="Nova M&amp;A Club, back to top">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__name">Nova M&amp;A Club</span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-menu">
+      <span data-menu-label>Menu</span>
+      <span class="swap" aria-hidden="true"><svg class="i i--a"><use href="#i-menu"/></svg><svg class="i i--b"><use href="#i-x"/></svg></span>
+    </button>
+    <nav class="nav" id="site-menu" aria-label="Primary">
+      <ul class="nav__list" role="list">
+        <li><a class="nav__link" href="#about">About</a></li>
+        <li><a class="nav__link" href="#work">What we do</a></li>
+        <li><a class="nav__link" href="#sessions">Sessions</a></li>
+        <li><a class="nav__link" href="#team">Team</a></li>
+        <li><a class="nav__link" href="#partners">Partners</a></li>
+        <li><a class="nav__link" href="#join">Join</a></li>
+      </ul>
+      <a class="btn btn--light nav__cta" href="#contact">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero__slides">
+      <img class="hero__slide is-on is-first" src="assets/hero-club.webp" width="2400" height="1500" alt="Members of the Nova M&amp;A Club in suits on the staircase at Nova SBE" fetchpriority="high">
+      <img class="hero__slide" src="assets/hero-group.webp" width="1600" height="899" alt="A group of club members in suits on the Nova SBE staircase" decoding="async">
+      <img class="hero__slide" src="assets/hero-trio.webp" width="2400" height="1500" alt="Three club members in suits on the Nova SBE staircase" decoding="async">
+    </div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+    <div class="hero__content wrap">
+      <h1 class="hero__title" id="hero-title"><span class="line"><span>Nova M&amp;A Club</span></span></h1>
+      <p class="hero__tagline" data-load style="--d:380ms">The student club at Nova SBE that analyses live M&amp;A deals and runs sessions with banks and investors.</p>
+      <div class="hero__actions" data-load style="--d:500ms">
+        <a class="btn btn--light" href="#partners">Partner with us</a>
+        <a class="hero__link" href="#join">Join the club</a>
+      </div>
+    </div>
+    <button class="hero__toggle" type="button" aria-pressed="false" aria-label="Pause the photo slideshow">
+      <span class="swap" aria-hidden="true"><svg class="i i--a"><use href="#i-pause"/></svg><svg class="i i--b"><use href="#i-play"/></svg></span>
+    </button>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-band" aria-labelledby="stats-title">
+    <div class="wrap">
+      <h2 class="visually-hidden" id="stats-title">The club in numbers</h2>
+      <ul class="stats" role="list">
+        <li class="stat"><span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg></span><p class="stat__figure"><span data-roll>37</span></p><p class="stat__label">Members</p></li>
+        <li class="stat"><span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg></span><p class="stat__figure"><span data-roll>11</span></p><p class="stat__label">Nationalities</p></li>
+        <li class="stat"><span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-user-plus"/></svg></span><p class="stat__figure"><span data-roll>130+</span></p><p class="stat__label">Fall 2026 applicants</p></li>
+        <li class="stat"><span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-percent"/></svg></span><p class="stat__figure"><span data-roll>15%</span></p><p class="stat__label">Admission rate</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section about" id="about" aria-labelledby="about-title">
+    <div class="wrap about__top">
+      <div>
+        <h2 id="about-title" data-lines>Run like a deal team</h2>
+        <p class="lead rv">The Nova M&amp;A Club was founded at Nova SBE in 2023 to give students hands-on exposure to mergers and acquisitions.</p>
+      </div>
+      <p class="about__body rv">Members join as analysts and associates in one of five departments, work in small teams under team leaders and department heads, and learn by analysing real transactions.</p>
+    </div>
+
+    <div class="wrap about__grid">
+      <figure class="about__photo shutter">
+        <img src="assets/about-pair.webp" width="1600" height="1000" alt="Two club members in suits on the Nova SBE staircase" decoding="async">
+        <figcaption class="about__card">
+          <h3><svg class="i" aria-hidden="true"><use href="#i-target"/></svg>Our vision</h3>
+          <p>Nova SBE students who go on to lead in M&amp;A, trained on real deals and connected to the people who make them.</p>
+        </figcaption>
+      </figure>
+      <div class="about__history" data-reveal>
+        <h3>Our history</h3>
+        <ol class="timeline">
+          <li><span class="timeline__year">2023</span><span class="timeline__text">The M&amp;A Club is founded at Nova SBE.</span></li>
+          <li><span class="timeline__year">2024</span><span class="timeline__text">The Nova M&amp;A Club brand is consolidated.</span></li>
+          <li><span class="timeline__year">2025</span><span class="timeline__text">The club is rebranded.</span></li>
+          <li><span class="timeline__year">2026</span><span class="timeline__text">Five departments, 37 members and more than 130 applications in the fall intake.</span></li>
+        </ol>
+      </div>
+      <div class="about__cards" data-reveal>
+        <div class="info-card">
+          <span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-shield-check"/></svg></span>
+          <div><h3>Our values</h3><p>Integrity, analytical rigour and a shared ambition to grow as leaders in finance, driven by collaboration, curiosity and professionalism.</p></div>
+        </div>
+        <div class="info-card">
+          <span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span>
+          <div><h3>Five departments</h3><p>Research, Relations, Operations, Marketing and Legal, each led by its own head.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission: opening window -->
+  <section class="opening" aria-labelledby="mission-title">
+    <div class="opening__stage">
+      <img src="assets/opening-session.webp" width="2048" height="1152" alt="Club members following a presentation during a club session" loading="lazy" decoding="async">
+      <div class="opening__caption wrap">
+        <h2 id="mission-title">Our mission</h2>
+        <p class="opening__statement">To build real deal-making skills through practical analysis, shared knowledge and professional networking.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we do -->
+  <section class="section work" id="work" aria-labelledby="work-title">
+    <div class="wrap section-head">
+      <h2 id="work-title" data-lines>What the club does</h2>
+      <p class="lead rv">Research on live deals, sessions with practitioners, and the legal side of transactions.</p>
+    </div>
+
+    <div class="wrap">
+      <div class="tabs rv" data-tabs>
+        <div class="tabs__list" role="tablist" aria-label="What the club does" aria-orientation="vertical">
+          <button class="tab" role="tab" id="tab-research" aria-controls="panel-research" aria-selected="true" type="button">
+            <span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-search"/></svg></span>Deal research
+          </button>
+          <button class="tab" role="tab" id="tab-sessions" aria-controls="panel-sessions" aria-selected="false" tabindex="-1" type="button">
+            <span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-presentation"/></svg></span>Industry sessions
+          </button>
+          <button class="tab" role="tab" id="tab-legal" aria-controls="panel-legal" aria-selected="false" tabindex="-1" type="button">
+            <span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-scale"/></svg></span>Legal perspective
+          </button>
+          <button class="tab" role="tab" id="tab-community" aria-controls="panel-community" aria-selected="false" tabindex="-1" type="button">
+            <span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-users-round"/></svg></span>Community
+          </button>
+        </div>
+
+        <div class="tabs__panels">
+          <div class="panel" role="tabpanel" id="panel-research" aria-labelledby="tab-research" tabindex="0">
+            <div>
+              <h3>Deal research</h3>
+              <p class="panel__intro">Our Research department works in four teams and turns the week's M&amp;A activity into briefs, posts and papers.</p>
+              <ul class="points" role="list">
+                <li><h4>Sector teams</h4><p>Three teams cover their own sectors in depth.</p></li>
+                <li><h4>Weekly deal coverage</h4><p>One team tracks the week's deals, published as a breakdown on Instagram.</p></li>
+                <li><h4>Research papers</h4><p>Three papers each semester.</p></li>
+                <li><h4>Deal briefs</h4><p>Each brief profiles both companies and tests whether the deal would be accretive to the buyer's earnings.</p></li>
+              </ul>
+              <a class="link" data-href=instagram href="https://www.instagram.com/novamaclub/" target="_blank" rel="noopener">Follow our weekly deal coverage on Instagram<span class="visually-hidden"> (opens in a new tab)</span></a>
+            </div>
+            <figure class="panel__media panel__media--doc">
+              <img src="assets/research-accretion.webp" width="1600" height="878" alt="Slide titled Accretion/Dilution Analysis comparing Pfizer and Exelixis on P/E ratio and earnings yield, concluding the deal would be accretive to Pfizer's earnings per share." loading="lazy" decoding="async">
+              <figcaption><span class="chip"><svg class="i" aria-hidden="true"><use href="#i-file-text"/></svg>From one of our Spring 2026 deal briefs</span></figcaption>
+            </figure>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-sessions" aria-labelledby="tab-sessions" tabindex="0">
+            <div>
+              <h3>Sessions with practitioners</h3>
+              <p class="panel__intro">Workshops, case studies and speaker events with banks, funds and advisors. Before each session our researchers prepare a pre-read; afterwards we write up what we learned.</p>
+              <ul class="points" role="list">
+                <li><h4>Workshops</h4><p>Hands-on sessions with banks, such as our BNP Paribas workshop.</p></li>
+                <li><h4>Case studies</h4><p>Working through a real case with practitioners, like our session with Carlyle.</p></li>
+                <li><h4>Speaker events</h4><p>Talks with live Q&amp;A, like our online event with IMAP.</p></li>
+              </ul>
+            </div>
+            <figure class="panel__media">
+              <img src="assets/tab-sessions.webp" width="1200" height="900" alt="Club members seated around tables during a club session" loading="lazy" decoding="async">
+            </figure>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-legal" aria-labelledby="tab-legal" tabindex="0">
+            <div>
+              <h3>The legal side of deals</h3>
+              <p class="panel__intro">Our Legal department, made up of law and management Master's students, adds the legal angle to the deals we cover.</p>
+              <ul class="points" role="list">
+                <li><h4>Legal angle</h4><p>A legal read of the deals in our coverage.</p></li>
+                <li><h4>Learning sessions</h4><p>Share purchase agreements, due diligence and closing.</p></li>
+                <li><h4>Law-firm contacts</h4><p>Building contacts with law firms for speakers and cases.</p></li>
+              </ul>
+            </div>
+            <figure class="panel__media">
+              <img src="assets/tab-legal.webp" width="1200" height="900" alt="Students in a lecture room during a club learning session" loading="lazy" decoding="async">
+            </figure>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-community" aria-labelledby="tab-community" tabindex="0">
+            <div>
+              <h3>Life in the club</h3>
+              <p class="panel__intro">Beyond the work, there is a club: dinners, a run club, padel, beach days and get-togethers after meetings.</p>
+              <ul class="points" role="list">
+                <li><h4>Onboarding</h4><p>New members start with an onboarding session.</p></li>
+                <li><h4>Alumni roundtables</h4><p>M&amp;A roundtables with club alumni.</p></li>
+                <li><h4>Workshops with former presidents</h4><p>Practical guidance from the people who led the club before.</p></li>
+              </ul>
+            </div>
+            <figure class="panel__media">
+              <img src="assets/tab-community.webp" width="780" height="476" alt="Club members at a long table during a club dinner" loading="lazy" decoding="async">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live tool -->
+  <section class="section check on-dark" id="check" aria-labelledby="check-title">
+    <div class="wrap check__grid">
+      <div class="check__copy">
+        <h2 id="check-title" data-lines>Run the first test from our briefs</h2>
+        <p class="lead rv">In an all-stock deal, the buyer's earnings per share rise when the buyer trades at a higher P/E than the target.</p>
+        <p class="rv">Change the two numbers. They start with Pfizer and Exelixis from our Spring 2026 brief.</p>
+        <p class="check__note rv">The test assumes the deal is paid for entirely in stock, with no acquisition premium, no synergies and no transaction costs.</p>
+      </div>
+      <form class="calc rv" aria-label="Accretion and dilution check" novalidate>
+        <div class="calc__fields">
+          <div><label for="pe-buyer">Buyer P/E</label><input id="pe-buyer" name="buyer" type="number" inputmode="decimal" min="0.01" step="0.01" value="20.54"></div>
+          <div><label for="pe-target">Target P/E</label><input id="pe-target" name="target" type="number" inputmode="decimal" min="0.01" step="0.01" value="15.82"></div>
+        </div>
+        <div class="calc__out" role="status" aria-live="polite" aria-atomic="true">
+          <p class="verdict" data-state="accretive"><svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg><span data-check="verdict">Accretive</span></p>
+          <p class="calc__why" data-check="why">For every $1 of its own earnings, the buyer issues shares worth $20.54. It acquires the target's earnings at only $15.82 per $1.</p>
+          <div class="bars" aria-hidden="true">
+            <div><div class="bar__label"><span>Buyer earnings yield</span><span data-check="yb">4.87%</span></div><div class="bar__track"><div class="bar__fill" data-check="barb" style="transform:scaleX(.77)"></div></div></div>
+            <div><div class="bar__label"><span>Target earnings yield</span><span data-check="yt">6.32%</span></div><div class="bar__track"><div class="bar__fill bar__fill--target" data-check="bart" style="transform:scaleX(1)"></div></div></div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Sessions -->
+  <section class="section sessions" id="sessions" aria-labelledby="sessions-title">
+    <div class="wrap section-head">
+      <h2 id="sessions-title" data-lines>Sessions with industry</h2>
+      <p class="lead rv">A selection of sessions from the last two semesters, with the firms that ran them.</p>
+    </div>
+    <div class="wrap">
+      <div class="sessions__grid" data-reveal="cascade">
+        <article class="session session--lead">
+          <div class="session__media"><img src="assets/card-bnp-workshop.webp" width="1100" height="616" alt="Club members gathered in a meeting room at the BNP Paribas workshop" loading="lazy" decoding="async"></div>
+          <div class="session__body">
+            <div><h3 class="session__firm">BNP Paribas</h3><p class="session__format">Workshop</p></div>
+            <span class="chip"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>Spring 2026</span>
+          </div>
+        </article>
+        <article class="session session--online">
+          <h3 class="session__word">IMAP</h3>
+          <div>
+            <p class="session__format">Online speaker event</p>
+            <p class="session__detail">Two IMAP directors, two Nova alumni and an HR manager, with live Q&amp;A.</p>
+            <span class="chip"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>Fall 2026</span>
+          </div>
+        </article>
+        <article class="session">
+          <div class="session__media"><img src="assets/card-bnp-team.webp" width="977" height="610" alt="Group photo of club members at the BNP Paribas M&amp;A team presentation" loading="lazy" decoding="async"></div>
+          <div class="session__body">
+            <div><h3 class="session__firm">BNP Paribas</h3><p class="session__format">M&amp;A team presentation</p></div>
+            <span class="chip"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>Spring 2026</span>
+          </div>
+        </article>
+        <article class="session">
+          <div class="session__media"><img src="assets/card-carlyle.webp" width="724" height="612" alt="Students in a lecture room during the Carlyle case study session" loading="lazy" decoding="async"></div>
+          <div class="session__body">
+            <div><h3 class="session__firm">Carlyle</h3><p class="session__format">Case study session</p></div>
+            <span class="chip"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>Spring 2026</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Where members have landed -->
+  <section class="section alumni on-dark" id="alumni" aria-labelledby="alumni-title">
+    <div class="wrap alumni__head">
+      <div class="section-head">
+        <h2 id="alumni-title" data-lines>Where our members have landed</h2>
+        <p class="lead rv">A selection of the firms that club members and alumni have joined.</p>
+      </div>
+      <button class="marquee-toggle" type="button" aria-pressed="false">
+        <span class="swap" aria-hidden="true"><svg class="i i--a"><use href="#i-pause"/></svg><svg class="i i--b"><use href="#i-play"/></svg></span>
+        <span data-marquee-label>Pause the lists</span>
+      </button>
+    </div>
+
+    <div class="rows">
+      <div class="row" style="--dur:80s">
+        <h3 class="row__label wrap">M&amp;A and investment banking</h3>
+        <div class="row__viewport"><div class="row__track">
+          <ul class="row__list" role="list"><li>BNP Paribas CIB</li><li>Rothschild &amp; Co</li><li>Morgan Stanley</li><li>Raymond James</li><li>Santander CIB</li><li>Lincoln International</li><li>Clearwater International</li><li>ODDO BHF</li><li>ING</li><li>Raiffeisen Bank International</li><li>KPMG</li><li>BDO</li><li>Rödl</li><li>Parklane Capital</li><li>Cluster Advisory</li><li>Easyfairs</li><li>MTU Aero Engines</li><li>Bufab</li><li>vdp</li></ul>
+        </div></div>
+      </div>
+      <div class="row" style="--dur:64s">
+        <h3 class="row__label wrap">Private equity and venture capital</h3>
+        <div class="row__viewport"><div class="row__track">
+          <ul class="row__list" role="list"><li>One Equity Partners</li><li>Allianz Global Investors</li><li>Sofina</li><li>NORD Holding</li><li>XAnge</li><li>Athos Partners</li><li>Alter Domus</li><li>Caixa Capital</li><li>Quest Capital</li><li>Core Capital</li><li>Simon Capital</li><li>Vibe Capital Partners</li><li>Start Ventures</li></ul>
+        </div></div>
+      </div>
+      <div class="row" style="--dur:72s">
+        <h3 class="row__label wrap">Consulting, markets and beyond</h3>
+        <div class="row__viewport"><div class="row__track">
+          <ul class="row__list" role="list"><li>McKinsey &amp; Company</li><li>Boston Consulting Group</li><li>EY-Parthenon</li><li>Deloitte</li><li>Accenture</li><li>Alvarez &amp; Marsal</li><li>Stern Stewart &amp; Co.</li><li>Efficio</li><li>Société Générale</li><li>Banco BiG</li><li>Banco Carregosa</li><li>BMW Group</li><li>Berkshire Hathaway HomeServices</li><li>Cloudflare</li><li>U.S. Embassy</li></ul>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section team" id="team" aria-labelledby="team-title">
+    <div class="wrap section-head">
+      <h2 id="team-title" data-lines>Who runs the club</h2>
+      <p class="lead rv">A president, a vice president and five heads of department lead the club's 37 members.</p>
+    </div>
+    <div class="wrap">
+      <ul class="team__lead" role="list" data-reveal>
+        <li class="person person--lead"><span class="person__mono" aria-hidden="true">DJ</span><div><h3 class="person__name">Diogo Ji</h3><p class="person__role">President</p></div></li>
+        <li class="person person--lead"><span class="person__mono" aria-hidden="true">VC</span><div><h3 class="person__name">Vasco Coutinho</h3><p class="person__role">Vice President</p></div></li>
+      </ul>
+      <ul class="heads" role="list" data-reveal>
+        <li class="head"><span class="person__mono" aria-hidden="true">AG</span><div><h3 class="person__name">Alberto Gonçalves</h3><p class="person__role">Head of Research</p></div><p class="head__remit">Covers M&amp;A news, deals and trends, prepares pre-reads and post-event insights, and helps choose partners and topics.</p></li>
+        <li class="head"><span class="person__mono" aria-hidden="true">CF</span><div><h3 class="person__name">Carolina Fernandes</h3><p class="person__role">Head of Relations</p></div><p class="head__remit">Builds relationships with partner firms, organises company events, and handles scheduling, registrations and follow-up.</p></li>
+        <li class="head"><span class="person__mono" aria-hidden="true">RS</span><div><h3 class="person__name">Rafael Silva</h3><p class="person__role">Head of Operations</p></div><p class="head__remit">Plans and runs club events end to end, manages the budget, and coordinates logistics and internal processes.</p></li>
+        <li class="head"><span class="person__mono" aria-hidden="true">DA</span><div><h3 class="person__name">Dinis Almeida</h3><p class="person__role">Head of Marketing</p></div><p class="head__remit">Leads club communication, branding and student recruitment.</p></li>
+        <li class="head"><span class="person__mono" aria-hidden="true">LA</span><div><h3 class="person__name">Leonard Ahrens</h3><p class="person__role">Head of Legal</p></div><p class="head__remit">Handles contracts, compliance and data protection, and adds the legal angle to the deals we cover.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <section class="section partners" id="partners" aria-labelledby="partners-title">
+    <div class="wrap">
+      <div class="partners__panel">
+        <div class="partners__top">
+          <div>
+            <h2 id="partners-title" data-lines>Partner with the club</h2>
+            <p class="lead rv">If your firm wants to meet Nova SBE students who are serious about M&amp;A, we would like to hear from you. We work with banks, funds and advisors on sessions built around your team's expertise.</p>
+          </div>
+          <div class="rv">
+            <a class="btn btn--light" href="#contact" data-enquiry="session">Propose a session</a>
+          </div>
+        </div>
+
+        <ul class="benefits" role="list" data-reveal>
+          <li class="benefit"><h3>Visibility and reach</h3><p>Engage directly with Nova SBE students, share your insights with an active student audience and take part in high-visibility events.</p></li>
+          <li class="benefit"><h3>Sessions built together</h3><p>We co-create each session with you, so students learn from real-world insight and your team gets a direct exchange with motivated students.</p></li>
+          <li class="benefit"><h3>An early look at talent</h3><p>Meet motivated, M&amp;A-focused students early, spot promising candidates and build connections that last.</p></li>
+        </ul>
+
+        <div class="formats" data-reveal>
+          <h3>Formats we can run with you</h3>
+          <ul role="list">
+            <li>Speaker events and panels</li>
+            <li>Technical workshops</li>
+            <li>Case studies and case competitions</li>
+            <li>Firm and team presentations</li>
+            <li>Online sessions with live Q&amp;A</li>
+            <li>Legal learning sessions on SPAs, due diligence and closing</li>
+          </ul>
+        </div>
+
+        <div class="process">
+          <h3>How it works</h3>
+          <ol class="steps" data-reveal>
+            <li class="step"><h4>Tell us what you have in mind</h4><p>Send a short note with the topic, format and rough timing. Our Relations team picks it up and stays your point of contact.</p></li>
+            <li class="step"><h4>Shape the session together</h4><p>We agree on the format, date and audience, and our researchers prepare a pre-read where it helps.</p></li>
+            <li class="step"><h4>We run the logistics</h4><p>Scheduling, promotion, registrations and the day itself are handled by our Relations, Marketing and Operations teams.</p></li>
+            <li class="step"><h4>Follow-up</h4><p>Afterwards we write up the key insights, collect feedback and follow up with you.</p></li>
+          </ol>
+          <p class="partners__email" data-requires-email hidden>Prefer email? Write to <a class="link" data-contact-email href="#"></a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join -->
+  <section class="section join" id="join" aria-labelledby="join-title">
+    <div class="wrap join__grid">
+      <figure class="join__photo shutter">
+        <img src="assets/join-portrait.webp" width="1000" height="1250" alt="A club member in a suit on the Nova SBE staircase" decoding="async">
+      </figure>
+      <div class="join__text">
+        <h2 id="join-title" data-lines>Joining the club</h2>
+        <p class="lead rv">We recruit Nova SBE Bachelor's and Master's students through an application round announced on our Instagram and LinkedIn.</p>
+        <div class="join__figures" data-reveal>
+          <p class="join__figure"><strong>130+</strong><span>applicants in our Fall 2026 round</span></p>
+          <p class="join__figure"><strong>15%</strong><span>of applicants admitted</span></p>
+        </div>
+        <div class="join__actions rv">
+          <a class="btn btn--primary" data-href=instagram href="https://www.instagram.com/novamaclub/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-instagram"/></svg>Follow us on Instagram<span class="visually-hidden"> (opens in a new tab)</span></a>
+          <a class="btn btn--outline" data-href=linkedin href="https://www.linkedin.com/company/nova-mergers-acquisitions-club/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg>Follow us on LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a>
+        </div>
+        <p class="join__note rv"><a class="link" href="#contact" data-enquiry="joining">Questions about joining? Send us a message</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact on-dark" id="contact" aria-labelledby="contact-title">
+    <div class="contact__bg"><img src="assets/contact-campus.webp" width="1920" height="1080" alt="The Nova SBE campus in Carcavelos at dusk" loading="lazy" decoding="async"></div>
+    <div class="wrap contact__grid">
+      <div class="contact__intro">
+        <h2 id="contact-title" data-lines>Get in touch</h2>
+        <p class="lead rv">Write to us about partnerships, sessions, recruiting events or anything else.</p>
+        <ul class="channels" role="list" data-reveal>
+          <li data-requires-email hidden><span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg></span><div><small>Email</small><a data-contact-email href="#"></a></div></li>
+          <li><span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg></span><div><small>LinkedIn</small><a data-href=linkedin href="https://www.linkedin.com/company/nova-mergers-acquisitions-club/" target="_blank" rel="noopener">Nova Mergers &amp; Acquisitions Club<span class="visually-hidden"> (opens in a new tab)</span></a></div></li>
+          <li><span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-instagram"/></svg></span><div><small>Instagram</small><a data-href=instagram href="https://www.instagram.com/novamaclub/" target="_blank" rel="noopener">@novamaclub<span class="visually-hidden"> (opens in a new tab)</span></a></div></li>
+          <li><span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-map-pin"/></svg></span><div><small>Campus</small><address>Campus de Carcavelos, Rua da Holanda 1, 2775-405 Carcavelos, Portugal</address></div></li>
+        </ul>
+      </div>
+
+      <div class="form-card rv">
+        <h3 class="form-card__title" id="form-title">Send us a message</h3>
+        <form class="form" novalidate aria-labelledby="form-title">
+          <div class="form__row">
+            <div class="field">
+              <label class="field__label" for="f-name">Your name</label>
+              <input class="field__control" id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-error">
+              <p class="field__error" id="f-name-error" hidden></p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="f-email">Email</label>
+              <input class="field__control" id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-error">
+              <p class="field__error" id="f-email-error" hidden></p>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="f-org">Organisation (optional)</label>
+            <input class="field__control" id="f-org" name="organisation" type="text" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label class="field__label" for="f-topic">What is this about?</label>
+            <div class="select">
+              <select class="field__control" id="f-topic" name="topic" required aria-describedby="f-topic-error">
+                <option value="" disabled selected>Choose a topic</option>
+                <option value="partnership">Partnership or sponsorship</option>
+                <option value="session">Speaker session, workshop or case study</option>
+                <option value="recruiting">Recruiting or firm presentation</option>
+                <option value="joining">Joining the club</option>
+                <option value="other">Press or something else</option>
+              </select>
+              <svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+            </div>
+            <p class="field__error" id="f-topic-error" hidden></p>
+          </div>
+          <div class="field">
+            <label class="field__label" for="f-message">Message</label>
+            <textarea class="field__control" id="f-message" name="message" rows="5" required aria-describedby="f-message-error"></textarea>
+            <p class="field__error" id="f-message-error" hidden></p>
+          </div>
+          <div class="visually-hidden" aria-hidden="true" data-allow-overflow>
+            <label>Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <div class="form__actions">
+            <button class="btn btn--primary" type="submit">Send message</button>
+            <p class="form__note">We only use your details to reply to you.</p>
+          </div>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+        <div class="form-success" tabindex="-1" hidden>
+          <span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span>
+          <h3 class="form-card__title">Message sent</h3>
+          <p class="form-success__text"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer on-dark">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="#top"><span class="brand__mark" aria-hidden="true"></span><span>Nova M&amp;A Club</span></a>
+        <p>Nova SBE Mergers &amp; Acquisitions Student Club. A student club at Nova School of Business and Economics.</p>
+        <div class="footer__social">
+          <a data-href=linkedin href="https://www.linkedin.com/company/nova-mergers-acquisitions-club/" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+          <a data-href=instagram href="https://www.instagram.com/novamaclub/" target="_blank" rel="noopener" aria-label="Instagram (opens in a new tab)"><svg class="i" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+          <a data-requires-email hidden data-contact-email-href href="#" aria-label="Email the club"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg></a>
+        </div>
+      </div>
+      <nav aria-labelledby="footer-explore">
+        <h3 id="footer-explore">Explore</h3>
+        <ul class="footer__links" role="list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">What we do</a></li>
+          <li><a href="#sessions">Sessions</a></li>
+          <li><a href="#team">Team</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="footer-work">
+        <h3 id="footer-work">Work with us</h3>
+        <ul class="footer__links" role="list">
+          <li><a href="#partners">Partner with the club</a></li>
+          <li><a href="#join">Join the club</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h3>Visit</h3>
+        <address class="footer__links">Campus de Carcavelos<br>Rua da Holanda 1<br>2775-405 Carcavelos, Portugal</address>
+      </div>
+    </div>
+    <div class="footer__base">
+      <p>&copy; <span data-year>2026</span> Nova M&amp;A Club</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  "use strict";
+
+  // Edit these four values before publishing.
+  const CONFIG = {
+    contactEmail: "",   // the club inbox, e.g. "club@example.com". Shown on the page and used by the form.
+    formEndpoint: "",   // optional form service URL (e.g. Formspree). When set, the form posts here instead of opening the visitor's email app.
+    instagramUrl: "https://www.instagram.com/novamaclub/",
+    linkedinUrl: "https://www.linkedin.com/company/nova-mergers-acquisitions-club/",
+  };
+  window.__novaConfig = CONFIG; // for testing from the console only
+
+  const $ = (s, scope = document) => scope.querySelector(s);
+  const $$ = (s, scope = document) => Array.from(scope.querySelectorAll(s));
+  const root = document.documentElement;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const canObserve = "IntersectionObserver" in window;
+
+  /* ---------- config ---------- */
+  function applyConfig() {
+    const email = CONFIG.contactEmail.trim();
+    $$("[data-contact-email]").forEach((el) => { el.textContent = email; if (email) el.setAttribute("href", "mailto:" + email); });
+    $$("[data-contact-email-href]").forEach((el) => { if (email) el.setAttribute("href", "mailto:" + email); });
+    $$("[data-requires-email]").forEach((el) => { el.hidden = !email; });
+    const social = { instagram: CONFIG.instagramUrl, linkedin: CONFIG.linkedinUrl };
+    $$("[data-href]").forEach((el) => { const url = social[el.dataset.href]; if (url) el.setAttribute("href", url); });
+  }
+  applyConfig();
+  $$("[data-year]").forEach((el) => { el.textContent = String(new Date().getFullYear()); });
+
+  /* ---------- header: solid once the hero starts to leave ---------- */
+  const header = $(".header");
+  const onScroll = () => header.classList.toggle("is-solid", window.scrollY > 24);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* ---------- mobile menu ---------- */
+  const menuBtn = $(".menu-btn");
+  const menu = $("#site-menu");
+  const menuLabel = $("[data-menu-label]", menuBtn);
+  const pageParts = [$("main"), $(".footer")];
+  const isOpen = () => menuBtn.getAttribute("aria-expanded") === "true";
+  function setMenu(open, restoreFocus) {
+    if (open === isOpen()) return;
+    menuBtn.setAttribute("aria-expanded", String(open));
+    menuLabel.textContent = open ? "Close" : "Menu";
+    menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    menu.classList.toggle("is-open", open);
+    root.classList.toggle("menu-open", open);
+    pageParts.forEach((el) => { el.inert = open; });
+    if (open) { const first = $("a", menu); if (first) first.focus(); }
+    else if (restoreFocus) menuBtn.focus();
+  }
+  menuBtn.setAttribute("aria-label", "Open menu");
+  menuBtn.addEventListener("click", () => setMenu(!isOpen(), true));
+  menu.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false, false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && isOpen()) setMenu(false, true); });
+  window.matchMedia("(min-width: 1100px)").addEventListener("change", (e) => { if (e.matches) setMenu(false, false); });
+
+  /* ---------- active section in the nav ---------- */
+  const navLinks = $$(".nav__link");
+  const navTargets = navLinks.map((a) => document.getElementById(a.getAttribute("href").slice(1))).filter(Boolean);
+  if (canObserve) {
+    const inBand = new Set();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) inBand.add(e.target.id); else inBand.delete(e.target.id); });
+      const current = navTargets.find((s) => inBand.has(s.id));
+      navLinks.forEach((a) => {
+        if (current && a.getAttribute("href") === "#" + current.id) a.setAttribute("aria-current", "true");
+        else a.removeAttribute("aria-current");
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    navTargets.forEach((s) => io.observe(s));
+  }
+
+  /* ---------- hero: the staircase photographs crossfade (signature) ---------- */
+  const slides = $$(".hero__slide");
+  const slideToggle = $(".hero__toggle");
+  const heroEl = $(".hero");
+  let slideIndex = 0, slideTimer = null, slidesWanted = !reduce.matches && slides.length > 1, heroVisible = true, heroFocus = false;
+  const showSlide = (i) => slides.forEach((s, k) => s.classList.toggle("is-on", k === i));
+  const stopSlides = () => { clearInterval(slideTimer); slideTimer = null; };
+  const startSlides = () => {
+    stopSlides();
+    if (!slidesWanted || !heroVisible || heroFocus || document.hidden) return;
+    slideTimer = setInterval(() => { slideIndex = (slideIndex + 1) % slides.length; showSlide(slideIndex); }, 6500);
+  };
+  if (slideToggle) {
+    slideToggle.addEventListener("click", () => {
+      slidesWanted = !slidesWanted;
+      slideToggle.setAttribute("aria-pressed", String(!slidesWanted));
+      slideToggle.setAttribute("aria-label", slidesWanted ? "Pause the photo slideshow" : "Play the photo slideshow");
+      slidesWanted ? startSlides() : stopSlides();
+    });
+  }
+  document.addEventListener("visibilitychange", () => (document.hidden ? stopSlides() : startSlides()));
+  // keyboard focus on the hero's links holds the photograph; the pause button is the visitor's own control
+  heroEl.addEventListener("focusin", (e) => { if (e.target !== slideToggle && e.target.matches(":focus-visible")) { heroFocus = true; stopSlides(); } });
+  heroEl.addEventListener("focusout", (e) => { if (heroFocus && !heroEl.contains(e.relatedTarget)) { heroFocus = false; startSlides(); } });
+  if (canObserve && heroEl) new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; startSlides(); }).observe(heroEl);
+  startSlides();
+
+  /* ---------- rolling figures ---------- */
+  const rolls = $$("[data-roll]");
+  rolls.forEach((el) => {
+    const value = el.textContent.trim();
+    const said = Object.assign(document.createElement("span"), { className: "visually-hidden", textContent: value });
+    const shown = Object.assign(document.createElement("span"), { className: "roll__digits" });
+    shown.setAttribute("aria-hidden", "true");
+    let i = 0;
+    for (const ch of value) {
+      if (!/\d/.test(ch)) { shown.append(ch); continue; }
+      const col = Object.assign(document.createElement("span"), { className: "roll__col" });
+      col.dataset.digit = ch;
+      const strip = Object.assign(document.createElement("span"), { className: "roll__strip" });
+      strip.style.setProperty("--d", ch);
+      strip.style.setProperty("--i", i++);
+      col.append(strip);
+      shown.append(col);
+    }
+    el.classList.add("roll");
+    el.replaceChildren(said, shown);
+  });
+
+  /* ---------- headings rise line by line (Taste Skill recipe) ---------- */
+  const lineEls = $$("[data-lines]");
+  const splitLines = (el) => {
+    const text = el.textContent.trim().replace(/\s+/g, " ");
+    el.dataset.text = text;
+    el.textContent = "";
+    const words = text.split(" ").map((w) => { const s = document.createElement("span"); s.style.display = "inline-block"; s.textContent = w; el.append(s, " "); return s; });
+    const lines = [];
+    for (const w of words) {
+      const last = lines[lines.length - 1];
+      if (last && Math.abs(last.top - w.offsetTop) < 4) last.words.push(w.textContent);
+      else lines.push({ top: w.offsetTop, words: [w.textContent] });
+    }
+    el.textContent = "";
+    lines.forEach((line, i) => {
+      const mask = document.createElement("span"); mask.className = "line";
+      const inner = document.createElement("span"); inner.style.setProperty("--i", i); inner.textContent = line.words.join(" ");
+      mask.append(inner); el.append(mask, " ");
+    });
+    el.classList.add("is-split");
+  };
+  const restoreLines = (el) => { el.textContent = el.dataset.text; el.classList.remove("is-split", "is-in"); };
+
+  /* ---------- entrances: once, as each part enters ----------
+     A part waits hidden only in the screen just below the visitor. Anything further down stays
+     visible, so jumping ahead from the menu, printing or a full-page capture never meets a blank. */
+  $$("[data-reveal=cascade]").forEach((group) => Array.from(group.children).forEach((c, i) => c.style.setProperty("--i", String(i))));
+  const units = new Map(); // the element we watch -> the parts it reveals
+  const addUnit = (watch, part) => { if (!units.has(watch)) units.set(watch, []); units.get(watch).push(part); };
+  $$("[data-reveal], .rv").forEach((el) => addUnit(el, el));
+  $$(".shutter").forEach((el) => addUnit(el.parentElement, el)); // a picture clipped shut has no area to watch
+  rolls.forEach((el) => addUnit(el.closest(".stats") || el, el));
+
+  if (!canObserve || reduce.matches) {
+    units.forEach((parts) => parts.forEach((el) => el.classList.add("is-in")));
+  } else {
+    const done = (parts) => parts.every((el) => el.classList.contains("is-in"));
+    const revealIO = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        units.get(e.target).forEach((el) => { el.classList.remove("is-far"); el.classList.add("is-in"); });
+        revealIO.unobserve(e.target); bandIO.unobserve(e.target);
+      });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.05 });
+    const bandIO = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        const parts = units.get(e.target);
+        if (done(parts)) return;
+        if (!e.isIntersecting) parts.forEach((el) => el.classList.add("is-far"));
+        else if (e.boundingClientRect.top >= window.innerHeight) parts.forEach((el) => el.classList.remove("is-far"));
+      });
+    }, { rootMargin: "0px 0px 100% 0px" });
+    units.forEach((_, watch) => { bandIO.observe(watch); revealIO.observe(watch); });
+
+    // headings rise line by line; a heading is only split while it waits in the screen below
+    const fontsReady = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+    fontsReady.then(() => {
+      const finish = (el) => {
+        el.dataset.done = "1";
+        const last = el.querySelector(".line:last-of-type > span");
+        if (!el.classList.contains("is-split") || !last) { restoreLines(el); return; }
+        el.classList.add("is-in");
+        last.addEventListener("transitionend", () => restoreLines(el), { once: true });
+      };
+      const lineReveal = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting || e.target.dataset.done) return;
+          lineReveal.unobserve(e.target); lineBand.unobserve(e.target);
+          finish(e.target);
+        });
+      }, { rootMargin: "0px 0px -10% 0px" });
+      const lineBand = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          const el = e.target;
+          if (el.dataset.done) return;
+          const below = e.boundingClientRect.top >= window.innerHeight;
+          if (e.isIntersecting && below && !el.classList.contains("is-split")) splitLines(el);
+          else if (!e.isIntersecting && el.classList.contains("is-split")) restoreLines(el);
+        });
+      }, { rootMargin: "0px 0px 100% 0px" });
+      lineEls.forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.9 && r.bottom > 0) splitLines(el); // on screen at load: rise with the page
+        lineBand.observe(el); lineReveal.observe(el);
+      });
+      let width = window.innerWidth;
+      window.addEventListener("resize", () => {
+        if (window.innerWidth === width) return;
+        width = window.innerWidth;
+        lineEls.filter((el) => el.matches(".is-split:not(.is-in)")).forEach((el) => { restoreLines(el); splitLines(el); });
+      });
+    });
+  }
+
+  /* ---------- tabs (WAI-ARIA tabs; pointer changes animate, keyboard changes are instant) ---------- */
+  const tabsRoot = $("[data-tabs]");
+  if (tabsRoot) {
+    const tabs = $$('[role="tab"]', tabsRoot);
+    const panels = tabs.map((t) => document.getElementById(t.getAttribute("aria-controls")));
+    const list = $(".tabs__list", tabsRoot);
+    let current = 0;
+    const select = (i, opts = {}) => {
+      current = i;
+      tabs.forEach((t, k) => {
+        const on = k === i;
+        t.setAttribute("aria-selected", String(on));
+        t.tabIndex = on ? 0 : -1;
+        panels[k].hidden = !on;
+      });
+      const panel = panels[i];
+      panel.classList.remove("is-entering");
+      list.classList.toggle("is-instant", !opts.animate);
+      if (opts.animate && !reduce.matches) { void panel.offsetWidth; panel.classList.add("is-entering"); }
+      if (opts.focus) tabs[i].focus();
+    };
+    tabs.forEach((t, i) => t.addEventListener("click", () => { if (i !== current) select(i, { animate: true }); }));
+    list.addEventListener("keydown", (e) => {
+      const keys = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 };
+      let next = null;
+      if (e.key in keys) next = (current + keys[e.key] + tabs.length) % tabs.length;
+      else if (e.key === "Home") next = 0;
+      else if (e.key === "End") next = tabs.length - 1;
+      if (next === null) return;
+      e.preventDefault();
+      select(next, { focus: true, animate: false });
+    });
+    select(0, { animate: false });
+  }
+
+  /* ---------- the first test from our briefs ---------- */
+  const calc = $(".calc");
+  if (calc) {
+    const buyerIn = $("#pe-buyer"), targetIn = $("#pe-target");
+    const out = (n) => $('[data-check="' + n + '"]', calc);
+    const verdictEl = $(".verdict", calc);
+    const verdictIcon = $("use", verdictEl);
+    const usd = (n) => "$" + n.toFixed(2);
+    const setVerdict = (state, label, icon) => {
+      if (verdictEl.dataset.state !== state) {
+        verdictEl.dataset.state = state;
+        verdictIcon.setAttribute("href", "#i-" + icon);
+        out("verdict").textContent = label;
+        if (!reduce.matches) { verdictEl.classList.remove("is-swapping"); void verdictEl.offsetWidth; verdictEl.classList.add("is-swapping"); }
+      }
+    };
+    const update = () => {
+      const b = parseFloat(buyerIn.value), t = parseFloat(targetIn.value);
+      if (!(b > 0) || !(t > 0)) {
+        setVerdict("invalid", "Enter two P/E ratios", "circle-alert");
+        out("why").textContent = "Enter a P/E above zero for both companies.";
+        return;
+      }
+      const yb = 100 / b, yt = 100 / t, top = Math.max(yb, yt);
+      out("yb").textContent = yb.toFixed(2) + "%";
+      out("yt").textContent = yt.toFixed(2) + "%";
+      out("barb").style.transform = "scaleX(" + (yb / top).toFixed(3) + ")";
+      out("bart").style.transform = "scaleX(" + (yt / top).toFixed(3) + ")";
+      if (Math.abs(b - t) < 0.005) {
+        setVerdict("neutral", "Neutral", "circle-minus");
+        out("why").textContent = "Both companies trade at the same P/E, so the buyer's earnings per share do not change.";
+      } else if (b > t) {
+        setVerdict("accretive", "Accretive", "circle-check");
+        out("why").textContent = "For every $1 of its own earnings, the buyer issues shares worth " + usd(b) + ". It acquires the target's earnings at only " + usd(t) + " per $1.";
+      } else {
+        setVerdict("dilutive", "Dilutive", "trending-down");
+        out("why").textContent = "For every $1 of its own earnings, the buyer issues shares worth only " + usd(b) + ". It pays " + usd(t) + " per $1 of the target's earnings.";
+      }
+    };
+    [buyerIn, targetIn].forEach((el) => el.addEventListener("input", update));
+    calc.addEventListener("submit", (e) => e.preventDefault());
+  }
+
+  /* ---------- name rows: pausable, paused off screen ---------- */
+  const alumni = $(".alumni");
+  if (alumni) {
+    $$(".row__track", alumni).forEach((track) => {
+      const list = $(".row__list", track);
+      const copy = list.cloneNode(true);
+      copy.setAttribute("aria-hidden", "true");
+      copy.removeAttribute("role");
+      track.append(copy);
+    });
+    const btn = $(".marquee-toggle", alumni);
+    const label = $("[data-marquee-label]", btn);
+    btn.addEventListener("click", () => {
+      const paused = alumni.classList.toggle("is-paused");
+      btn.setAttribute("aria-pressed", String(paused));
+      label.textContent = paused ? "Play the lists" : "Pause the lists";
+    });
+    if (canObserve) new IntersectionObserver(([e]) => alumni.classList.toggle("is-offscreen", !e.isIntersecting)).observe(alumni);
+  }
+
+  /* ---------- contact form ---------- */
+  const form = $(".form");
+  const panelTitle = $("#form-title");
+  const success = $(".form-success");
+  const status = $(".form-status");
+  const submitButton = $("button[type=submit]", form);
+  const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const field = (id, validate) => ({ control: $("#f-" + id), error: $("#f-" + id + "-error"), validate, touched: false });
+  const fields = [
+    field("name", (v) => (v.trim() ? "" : "Enter your name.")),
+    field("email", (v) => (!v.trim() ? "Enter your email address." : EMAIL_PATTERN.test(v.trim()) ? "" : "Enter an email address like name@firm.com.")),
+    field("topic", (v) => (v ? "" : "Choose a topic.")),
+    field("message", (v) => (v.trim() ? "" : "Write a short message.")),
+  ];
+  const showError = (f, msg) => {
+    f.error.textContent = msg; f.error.hidden = !msg;
+    if (msg) f.control.setAttribute("aria-invalid", "true"); else f.control.removeAttribute("aria-invalid");
+  };
+  const validateField = (f) => { const msg = f.validate(f.control.value); if (msg) f.touched = true; showError(f, msg); return !msg; };
+  fields.forEach((f) => {
+    const recheck = () => { if (f.touched) validateField(f); };
+    f.control.addEventListener("input", recheck);
+    f.control.addEventListener("change", recheck);
+  });
+  document.addEventListener("click", (e) => {
+    const trigger = e.target.closest("[data-enquiry]");
+    if (!trigger) return;
+    const topic = fields.find((f) => f.control.name === "topic");
+    topic.control.value = trigger.dataset.enquiry; topic.touched = false; showError(topic, "");
+  });
+  const say = (...parts) => status.replaceChildren(...parts.map((p) => (typeof p === "string" ? document.createTextNode(p) : p)));
+  const mailLink = (address) => { const a = document.createElement("a"); a.className = "link"; a.setAttribute("href", "mailto:" + address); a.textContent = address; return a; };
+  const linkedinLink = () => {
+    const a = document.createElement("a"); a.className = "link"; a.setAttribute("href", CONFIG.linkedinUrl);
+    a.target = "_blank"; a.rel = "noopener"; a.setAttribute("aria-label", "LinkedIn (opens in a new tab)"); a.textContent = "LinkedIn"; return a;
+  };
+  const showSuccess = (name, email) => {
+    $(".form-success__text", success).textContent = "Thanks, " + name.trim().split(/\s+/)[0] + ". We'll reply to " + email + ".";
+    panelTitle.hidden = true; form.hidden = true; success.hidden = false; success.focus();
+  };
+  const setSending = (on) => { submitButton.disabled = on; submitButton.textContent = on ? "Sending…" : "Send message"; };
+  const openMailClient = (v, topicLabel) => {
+    const subject = "[" + topicLabel + "] Message from " + v.name + (v.organisation ? ", " + v.organisation : "");
+    const body = v.message + "\n\n" + [v.name, v.organisation, v.email].filter(Boolean).join("\n");
+    const a = document.createElement("a");
+    a.setAttribute("href", "mailto:" + CONFIG.contactEmail.trim() + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body));
+    a.style.display = "none"; document.body.appendChild(a); a.click(); a.remove();
+  };
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); applyConfig(); say();
+    const results = fields.map(validateField);
+    const firstInvalid = fields.find((f, i) => !results[i]);
+    if (firstInvalid) { firstInvalid.control.focus(); return; }
+    const v = {
+      name: form.elements.namedItem("name").value.trim(),
+      email: form.elements.namedItem("email").value.trim(),
+      organisation: form.elements.namedItem("organisation").value.trim(),
+      topic: form.elements.namedItem("topic").value,
+      message: form.elements.namedItem("message").value.trim(),
+    };
+    if (form.elements.namedItem("_gotcha").value) { showSuccess(v.name, v.email); return; }
+    const email = CONFIG.contactEmail.trim(), endpoint = CONFIG.formEndpoint.trim();
+    if (endpoint) {
+      setSending(true);
+      try {
+        const res = await fetch(endpoint, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        showSuccess(v.name, v.email);
+      } catch (err) {
+        const retry = "Your message didn't send. Check your connection and try again";
+        if (email) say(retry + ", or email us at ", mailLink(email), "."); else say(retry + ".");
+        setSending(false);
+      }
+      return;
+    }
+    if (email) {
+      const select = form.elements.namedItem("topic");
+      openMailClient(v, select.options[select.selectedIndex].text);
+      say("Your email app should open with the message ready to send. If it doesn't, email us at ", mailLink(email), ".");
+      return;
+    }
+    say("The contact form isn't connected yet. Message us on ", linkedinLink(), " instead.");
+    console.warn("Nova M&A Club: the contact form is not connected. Set CONFIG.contactEmail or CONFIG.formEndpoint in the script at the bottom of index.html.");
+  });
+})();
+</script>
+</body>
+</html>
