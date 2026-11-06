@@ -1,0 +1,116 @@
+# Pages CMS configuration (https://pagescms.org)
+# Everything the club posts is saved as a small JSON file in this repo.
+# The website reads it through data/events.json and data/news.json,
+# which scripts/build_content.py rebuilds on every deploy.
+
+media:
+  input: assets/uploads
+  output: assets/uploads
+  extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: events
+    label: Events
+    type: collection
+    path: content/events
+    format: json
+    filename: "{primary}.json"
+    view:
+      fields: [title, date, category]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: category
+        label: Type of event
+        type: select
+        required: true
+        default: Event
+        options:
+          values: [Event, Information fair, Speaker/Panel, Workshop, Case study, Networking, Social]
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: start_time
+        label: Starts at
+        type: string
+        description: "24-hour time, for example 18:30"
+      - name: end_time
+        label: Ends at
+        type: string
+        description: "24-hour time, for example 20:00 (optional)"
+      - name: location
+        label: Location
+        type: string
+        description: "For example: Carlota A Auditorium, Nova SBE"
+      - name: image
+        label: Event photo
+        type: image
+        description: "Wide photos work best (around 1600 x 800). Optional."
+      - name: speakers
+        label: Speakers
+        type: string
+        description: "For example: Professionals from J.P. Morgan, Goldman Sachs and Citi (optional)"
+      - name: description
+        label: About the event
+        type: text
+        description: "Plain text. Leave a blank line between paragraphs."
+      - name: draft
+        label: Hide from the website
+        type: boolean
+        default: false
+        description: "Switch on to keep this event off the site while you are still writing it."
+
+  - name: news
+    label: News
+    type: collection
+    path: content/news
+    format: json
+    filename: "{primary}.json"
+    view:
+      fields: [title, date, category]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Headline
+        type: string
+        required: true
+      - name: category
+        label: Topic
+        type: select
+        required: true
+        default: Club news
+        options:
+          values: [Club news, Announcement, Research, Partners, Members]
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: image
+        label: Photo
+        type: image
+        description: "Optional."
+      - name: summary
+        label: Short summary
+        type: text
+        description: "One or two sentences shown on the news card."
+      - name: body
+        label: Article
+        type: text
+        description: "Plain text. Leave a blank line between paragraphs."
+      - name: draft
+        label: Hide from the website
+        type: boolean
+        default: false
+        description: "Switch on to keep this post off the site while you are still writing it."

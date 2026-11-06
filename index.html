@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="assets/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<script>document.documentElement.classList.add('js')</script>
+<script>document.documentElement.classList.add('js');if(/^#(event|news)\/[A-Za-z0-9-]+$/.test(location.hash))document.documentElement.classList.add('is-detail')</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -483,6 +483,77 @@ html:not(.js) .tabs__list { display: none; }
 .session--online .chip { margin-top: 18px; background: rgba(255, 255, 255, 0.14); color: #fff; }
 
 /* =====================================================================
+   Events and news: card lists, and the page for one event or post.
+   Same surfaces as Sessions: rounded tone-step panels, navy and one blue.
+   ===================================================================== */
+.events { background: var(--paper); }
+.news { background: var(--blue-50); }
+.listing__head { margin-top: clamp(36px, 4vw, 56px); }
+.listing__head h3 { display: flex; align-items: center; gap: 12px; color: var(--navy-900); }
+.count { display: inline-grid; place-items: center; min-width: 36px; height: 36px; padding: 0 10px; border-radius: var(--pill); background: var(--blue-100); color: var(--navy-700); font-size: var(--t-small); font-weight: 700; letter-spacing: 0; }
+.listing { margin-top: clamp(20px, 2.4vw, 32px); display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: var(--gap); }
+.news .listing { margin-top: clamp(36px, 4vw, 56px); }
+.listing--past { margin-top: var(--gap); }
+.listing__note { grid-column: 1 / -1; padding: clamp(24px, 3vw, 40px); border-radius: var(--r-lg); background: var(--blue-50); color: var(--muted); font-weight: 500; }
+.news .listing__note { background: #fff; }
+.listing__more { margin-top: clamp(24px, 3vw, 36px); }
+.listing__more[hidden] { display: none; }
+
+.card { position: relative; display: flex; flex-direction: column; background: var(--blue-50); border-radius: var(--r-lg); overflow: clip; }
+.news .card { background: #fff; }
+.card__media { position: relative; overflow: clip; aspect-ratio: 16 / 10; background: var(--navy-700); }
+.card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 700ms var(--ease-soft); }
+.card__media--empty { display: grid; place-items: center; background: var(--navy-900); }
+.card__media--empty::before { content: ""; width: 25%; aspect-ratio: 1; border-radius: 50%; background: url(assets/logo.webp) center / cover; opacity: 0.9; }
+.card__tag {
+  position: absolute; top: 14px; left: 14px; max-width: calc(100% - 28px);
+  padding: 6px 12px; border-radius: var(--pill); background: #fff; color: var(--navy-900);
+  font-size: 0.8125rem; font-weight: 700; line-height: 1.3; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.card__body { display: grid; align-content: start; gap: 10px; padding: 22px clamp(20px, 2.2vw, 28px) 26px; }
+.card__title { font-size: var(--t-lead); color: var(--navy-900); }
+.card__title a { text-decoration: none; }
+.card__title a::after { content: ""; position: absolute; inset: 0; }
+.card__meta { display: flex; align-items: flex-start; gap: 10px; color: var(--muted); font-size: var(--t-small); line-height: 1.4; }
+.card__meta .i { width: 18px; height: 18px; margin-top: 1px; flex: none; color: var(--navy-700); }
+.card__summary { color: var(--muted); font-size: var(--t-small); line-height: 1.55; }
+.card:has(a:focus-visible) { outline: 3px solid var(--blue-400); outline-offset: 3px; }
+.card:has(a:focus-visible) a:focus-visible { outline: none; }
+@media (hover: hover) { .card:hover .card__media img { transform: scale(1.04); } .card:hover .card__title a { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.18em; } }
+
+/* the page for one event or post: the home page steps aside */
+.detail { display: none; }
+html.is-detail main > :not(#detail) { display: none !important; }
+html.is-detail #detail { display: block; }
+html.is-detail .header { background: var(--navy-950); }
+.detail { padding-block: calc(var(--header) + clamp(32px, 4vw, 56px)) var(--section); min-height: 70vh; }
+.detail:focus { outline: none; }
+.detail__wrap { width: min(1040px, 100% - 2 * var(--gutter)); margin-inline: auto; }
+.back { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-weight: 600; font-size: var(--t-small); color: var(--navy-900); text-decoration: none; }
+.back .i { width: 20px; height: 20px; transition: transform var(--t-ui) var(--ease-out); }
+@media (hover: hover) { .back:hover { text-decoration: underline; text-underline-offset: 0.25em; } .back:hover .i { transform: translateX(-3px); } }
+.detail [data-detail-tag] { margin-top: clamp(20px, 3vw, 36px); }
+.detail__title { margin-top: 18px; font-size: var(--t-head); color: var(--navy-900); max-width: 18ch; }
+.detail__meta { margin-top: clamp(20px, 2.4vw, 30px); display: flex; flex-wrap: wrap; gap: 10px clamp(20px, 3vw, 36px); font-weight: 600; color: var(--navy-900); }
+.detail__meta li { display: inline-flex; align-items: center; gap: 10px; }
+.detail__meta .i { width: 20px; height: 20px; color: var(--navy-700); flex: none; }
+.detail__media { margin-top: clamp(28px, 3.4vw, 44px); border-radius: var(--r-lg); overflow: clip; background: var(--blue-100); }
+.detail__media img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; }
+.detail__text { margin-top: clamp(28px, 3.4vw, 44px); max-width: 68ch; display: grid; gap: 1.1em; color: var(--ink); }
+.detail__text:empty { display: none; }
+.detail__text p { white-space: pre-line; }
+.detail__box { margin-top: clamp(28px, 3.4vw, 44px); padding: clamp(22px, 2.6vw, 32px); border-radius: var(--r-md); background: var(--blue-50); }
+.detail__box h2 { font-size: var(--t-small); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy-900); line-height: 1.3; }
+.detail__box ul { margin-top: 16px; display: grid; gap: 14px; }
+.detail__box li { display: flex; align-items: flex-start; gap: 14px; }
+.detail__box .i { width: 20px; height: 20px; margin-top: 2px; color: var(--navy-700); flex: none; }
+.detail__box strong { font-weight: 700; color: var(--navy-900); }
+.detail__box p { color: var(--muted); }
+.detail__missing { margin-top: clamp(24px, 3vw, 40px); color: var(--muted); }
+.footer__base-links { display: flex; flex-wrap: wrap; gap: 4px 24px; }
+.footer__base-links a { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* =====================================================================
    Where members have landed: name rows (one marquee, pausable)
    ===================================================================== */
 .alumni { background: var(--navy-950); overflow: clip; }
@@ -798,7 +869,53 @@ textarea.field__control { resize: vertical; min-height: 140px; }
 
 <body>
 <!-- Icons: Lucide (ISC licence); LinkedIn and Instagram marks drawn for this page -->
-<!--ICONS-->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><path d="M16 3.128a4 4 0 0 1 0 7.744" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><circle cx="9" cy="7" r="4" /></g></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></g></symbol>
+<symbol id="i-user-plus" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><line x1="19" x2="19" y1="8" y2="14" /><line x1="22" x2="16" y1="11" y2="11" /></g></symbol>
+<symbol id="i-percent" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="5" y2="19" /><circle cx="6.5" cy="6.5" r="2.5" /><circle cx="17.5" cy="17.5" r="2.5" /></g></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34" /><circle cx="11" cy="11" r="8" /></g></symbol>
+<symbol id="i-presentation" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20" /><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3" /><path d="m7 21 5-5 5 5" /></g></symbol>
+<symbol id="i-scale" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18" /><path d="m19 8 3 8a5 5 0 0 1-6 0zV7" /><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1" /><path d="m5 8 3 8a5 5 0 0 1-6 0zV7" /><path d="M7 21h10" /></g></symbol>
+<symbol id="i-users-round" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 21a8 8 0 0 0-16 0" /><circle cx="10" cy="8" r="5" /><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3" /></g></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" /><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" /><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" /></g></symbol>
+<symbol id="i-newspaper" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18h-5" /><path d="M18 14h-8" /><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /><rect width="8" height="4" x="10" y="6" rx="1" /></g></symbol>
+<symbol id="i-file-text" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" /><path d="M14 2v5a1 1 0 0 0 1 1h5" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></g></symbol>
+<symbol id="i-trending-up" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6" /><path d="m22 7-8.5 8.5-5-5L2 17" /></g></symbol>
+<symbol id="i-trending-down" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 17h6v-6" /><path d="m22 17-8.5-8.5-5 5L2 7" /></g></symbol>
+<symbol id="i-briefcase" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /><rect width="20" height="14" x="2" y="6" rx="2" /></g></symbol>
+<symbol id="i-book-open" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v16" /><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z" /></g></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19v3" /><path d="M19 10v2a7 7 0 0 1-14 0v-2" /><rect x="9" y="2" width="6" height="13" rx="3" /></g></symbol>
+<symbol id="i-graduation-cap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" /><path d="M22 10v6" /><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" /></g></symbol>
+<symbol id="i-landmark" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 18v-7" /><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z" /><path d="M14 18v-7" /><path d="M18 18v-7" /><path d="M3 22h18" /><path d="M6 18v-7" /></g></symbol>
+<symbol id="i-message-circle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></g></symbol>
+<symbol id="i-coffee" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v2" /><path d="M14 2v2" /><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" /><path d="M6 2v2" /></g></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></g></symbol>
+<symbol id="i-shield-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></g></symbol>
+<symbol id="i-megaphone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" /><path d="M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14" /><path d="M8 6v8" /></g></symbol>
+<symbol id="i-handshake" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3" /><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" /><path d="m21 3 1 11h-2" /><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" /><path d="M3 4h8" /></g></symbol>
+<symbol id="i-award" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526" /><circle cx="12" cy="8" r="6" /></g></symbol>
+<symbol id="i-video" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5" /><rect x="2" y="6" width="14" height="12" rx="2" /></g></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3" /><path d="M16 2v3" /><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18" /></g></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></g></symbol>
+<symbol id="i-map-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></g></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></g></symbol>
+<symbol id="i-arrow-up-right" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></g></symbol>
+<symbol id="i-chevron-right" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></g></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></g></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></g></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16" /><path d="M4 12h16" /><path d="M4 19h16" /></g></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="3" width="5" height="18" rx="1" /><rect x="5" y="3" width="5" height="18" rx="1" /></g></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" /></g></symbol>
+<symbol id="i-circle-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="m16 9-5.5 5.5L8 12" /></g></symbol>
+<symbol id="i-circle-minus" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M8 12h8" /></g></symbol>
+<symbol id="i-circle-alert" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" x2="12" y1="8" y2="12" /><line x1="12" x2="12.01" y1="16" y2="16" /></g></symbol>
+<symbol id="i-equal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="5" x2="19" y1="9" y2="9" /><line x1="5" x2="19" y1="15" y2="15" /></g></symbol>
+<symbol id="i-linkedin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></g></symbol>
+<symbol id="i-instagram" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></g></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></g></symbol>
+<symbol id="i-arrow-left" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></g></symbol>
+</svg>
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="header">
@@ -816,6 +933,8 @@ textarea.field__control { resize: vertical; min-height: 140px; }
         <li><a class="nav__link" href="#about">About</a></li>
         <li><a class="nav__link" href="#work">What we do</a></li>
         <li><a class="nav__link" href="#sessions">Sessions</a></li>
+        <li><a class="nav__link" href="#events">Events</a></li>
+        <li><a class="nav__link" href="#news">News</a></li>
         <li><a class="nav__link" href="#team">Team</a></li>
         <li><a class="nav__link" href="#partners">Partners</a></li>
         <li><a class="nav__link" href="#join">Join</a></li>
@@ -1106,6 +1225,37 @@ textarea.field__control { resize: vertical; min-height: 140px; }
     </div>
   </section>
 
+  <!-- Events -->
+  <section class="section events" id="events" aria-labelledby="events-title">
+    <div class="wrap section-head">
+      <h2 id="events-title" data-lines>Events</h2>
+      <p class="lead rv">Fairs, panels and workshops run by the club. Open an event for the details.</p>
+    </div>
+    <div class="wrap">
+      <div class="listing__head"><h3>Upcoming <span class="count" data-count="events" hidden></span></h3></div>
+      <div class="listing" data-list="events" aria-live="polite"><p class="listing__note">Loading events…</p></div>
+      <div class="listing__more">
+        <button class="btn btn--outline" type="button" data-more="events" aria-expanded="false" hidden>Show past events</button>
+      </div>
+      <div class="listing listing--past" data-list="events-past" hidden></div>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section class="section news" id="news" aria-labelledby="news-title">
+    <div class="wrap section-head">
+      <h2 id="news-title" data-lines>News</h2>
+      <p class="lead rv">What the club has been up to, from new partners to research and member news.</p>
+    </div>
+    <div class="wrap">
+      <div class="listing" data-list="news" aria-live="polite"><p class="listing__note">Loading news…</p></div>
+      <div class="listing__more">
+        <button class="btn btn--outline" type="button" data-more="news" aria-expanded="false" hidden>Show older news</button>
+      </div>
+      <div class="listing listing--past" data-list="news-more" hidden></div>
+    </div>
+  </section>
+
   <!-- Team -->
   <section class="section team" id="team" aria-labelledby="team-title">
     <div class="wrap section-head">
@@ -1266,6 +1416,24 @@ textarea.field__control { resize: vertical; min-height: 140px; }
       </div>
     </div>
   </section>
+  <!-- One event or news post, opened from the lists above (#event/name or #news/name) -->
+  <section class="detail" id="detail" aria-labelledby="detail-title" tabindex="-1">
+    <div class="detail__wrap">
+      <a class="back" href="#events" data-detail-back><svg class="i" aria-hidden="true"><use href="#i-arrow-left"/></svg><span data-detail-back-label>Back to events</span></a>
+      <div data-detail-body>
+        <span class="chip" data-detail-tag></span>
+        <h1 class="detail__title" id="detail-title" data-detail-title>Loading…</h1>
+        <ul class="detail__meta" role="list" data-detail-meta></ul>
+        <figure class="detail__media" data-detail-media hidden><img alt="" width="1600" height="800" decoding="async"></figure>
+        <div class="detail__text" data-detail-text></div>
+        <aside class="detail__box" data-detail-box hidden aria-labelledby="detail-box-title">
+          <h2 id="detail-box-title">Event details</h2>
+          <ul role="list" data-detail-box-list></ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="footer on-dark">
@@ -1286,6 +1454,8 @@ textarea.field__control { resize: vertical; min-height: 140px; }
           <li><a href="#about">About</a></li>
           <li><a href="#work">What we do</a></li>
           <li><a href="#sessions">Sessions</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#news">News</a></li>
           <li><a href="#team">Team</a></li>
         </ul>
       </nav>
@@ -1304,7 +1474,10 @@ textarea.field__control { resize: vertical; min-height: 140px; }
     </div>
     <div class="footer__base">
       <p>&copy; <span data-year>2026</span> Nova M&amp;A Club</p>
-      <a href="#top">Back to top</a>
+      <div class="footer__base-links">
+        <a href="https://app.pagescms.org/riverfishh/M-A-website-Real/main" target="_blank" rel="noopener">Club admin<span class="visually-hidden"> (opens in a new tab)</span></a>
+        <a href="#top">Back to top</a>
+      </div>
     </div>
   </div>
 </footer>
@@ -1710,6 +1883,163 @@ textarea.field__control { resize: vertical; min-height: 140px; }
     say("The contact form isn't connected yet. Message us on ", linkedinLink(), " instead.");
     console.warn("Nova M&A Club: the contact form is not connected. Set CONFIG.contactEmail or CONFIG.formEndpoint in the script at the bottom of index.html.");
   });
+
+  /* ---------- events and news: read from the CMS data, shown as cards and as one page each ---------- */
+  const mk = (tag, props = {}, ...kids) => {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(props)) { if (k === "class") n.className = v; else if (k === "text") n.textContent = v; else n.setAttribute(k, v); }
+    kids.forEach((c) => { if (c) n.append(c); });
+    return n;
+  };
+  const icon = (id) => {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("class", "i"); svg.setAttribute("aria-hidden", "true");
+    const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    use.setAttribute("href", "#i-" + id); svg.append(use);
+    return svg;
+  };
+  const parseDay = (iso) => { const [y, m, d] = iso.split("-").map(Number); return new Date(y, m - 1, d); };
+  const dayShort = (iso) => parseDay(iso).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", year: "numeric" });
+  const dayLong = (iso) => parseDay(iso).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+  const timeOf = (it) => (it.start_time ? (it.end_time ? it.start_time + " – " + it.end_time : it.start_time) : "");
+  const todayIso = () => { const n = new Date(); return n.getFullYear() + "-" + String(n.getMonth() + 1).padStart(2, "0") + "-" + String(n.getDate()).padStart(2, "0"); };
+  const safeImg = (u) => (/^(assets\/|https:\/\/)/.test(u || "") ? u : "");
+  const paragraphs = (t) => String(t || "").split(/\n\s*\n/).map((x) => x.trim()).filter(Boolean);
+
+  const data = { events: null, news: null }; // null: could not be loaded
+  const ready = Promise.all(["events", "news"].map((kind) =>
+    fetch("data/" + kind + ".json", { cache: "no-cache" })
+      .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+      .then((a) => { data[kind] = Array.isArray(a) ? a.filter((i) => i && i.slug && i.title && /^\d{4}-\d{2}-\d{2}$/.test(i.date)) : []; })
+      .catch(() => { data[kind] = null; })
+  ));
+
+  const metaLine = (id, text) => mk("p", { class: "card__meta" }, icon(id), mk("span", { text }));
+  const card = (kind, it) => {
+    const img = safeImg(it.image);
+    const media = mk("div", { class: "card__media" + (img ? "" : " card__media--empty") });
+    if (img) media.append(mk("img", { src: img, alt: "", loading: "lazy", decoding: "async" }));
+    if (it.category) media.append(mk("span", { class: "card__tag", text: it.category }));
+    const body = mk("div", { class: "card__body" }, mk("h3", { class: "card__title" }, mk("a", { href: "#" + kind + "/" + it.slug, text: it.title })));
+    if (kind === "event") {
+      body.append(metaLine("calendar", [dayShort(it.date), timeOf(it)].filter(Boolean).join(" · ")));
+      if (it.location) body.append(metaLine("map-pin", it.location));
+    } else {
+      body.append(metaLine("calendar", dayShort(it.date)));
+      if (it.summary) body.append(mk("p", { class: "card__summary", text: it.summary }));
+    }
+    return mk("article", { class: "card" }, media, body);
+  };
+  const note = (text) => mk("p", { class: "listing__note", text });
+  const unavailable = (what) => note(what + " can't be loaded right now. Please try again in a moment.");
+
+  const wireMore = (name, labels) => {
+    const btn = $('[data-more="' + name + '"]'), box = $('[data-list="' + name + '-' + labels.id + '"]');
+    if (!btn || !box || btn.dataset.wired) return;
+    btn.dataset.wired = "1";
+    btn.addEventListener("click", () => {
+      box.hidden = !box.hidden;
+      btn.setAttribute("aria-expanded", String(!box.hidden));
+      btn.textContent = box.hidden ? labels.show : labels.hide;
+    });
+  };
+
+  const renderEvents = () => {
+    const list = $('[data-list="events"]'), past = $('[data-list="events-past"]'), more = $('[data-more="events"]'), count = $('[data-count="events"]');
+    if (!list) return;
+    if (data.events === null) { list.replaceChildren(unavailable("Events")); return; }
+    const today = todayIso();
+    const upcoming = data.events.filter((e) => e.date >= today).sort((a, b) => a.date.localeCompare(b.date) || (a.start_time || "").localeCompare(b.start_time || ""));
+    const gone = data.events.filter((e) => e.date < today).sort((a, b) => b.date.localeCompare(a.date));
+    count.textContent = String(upcoming.length); count.hidden = !upcoming.length;
+    list.replaceChildren(...(upcoming.length ? upcoming.map((e) => card("event", e)) : [note("No upcoming events right now. Follow us on LinkedIn and Instagram to hear first.")]));
+    past.replaceChildren(...gone.map((e) => card("event", e)));
+    more.hidden = !gone.length;
+    wireMore("events", { id: "past", show: "Show past events", hide: "Hide past events" });
+  };
+
+  const NEWS_FIRST = 6;
+  const renderNews = () => {
+    const list = $('[data-list="news"]'), rest = $('[data-list="news-more"]'), more = $('[data-more="news"]');
+    if (!list) return;
+    if (data.news === null) { list.replaceChildren(unavailable("News")); return; }
+    const all = data.news.slice().sort((a, b) => b.date.localeCompare(a.date));
+    list.replaceChildren(...(all.length ? all.slice(0, NEWS_FIRST).map((n) => card("news", n)) : [note("No news yet. Check back soon.")]));
+    rest.replaceChildren(...all.slice(NEWS_FIRST).map((n) => card("news", n)));
+    more.hidden = all.length <= NEWS_FIRST;
+    wireMore("news", { id: "more", show: "Show older news", hide: "Hide older news" });
+  };
+  ready.then(() => { renderEvents(); renderNews(); });
+
+  /* one event or news post on its own page (#event/name, #news/name) */
+  const detail = $("#detail");
+  const parts = {
+    back: $("[data-detail-back]"), backLabel: $("[data-detail-back-label]"), tag: $("[data-detail-tag]"), title: $("[data-detail-title]"),
+    meta: $("[data-detail-meta]"), media: $("[data-detail-media]"), text: $("[data-detail-text]"), box: $("[data-detail-box]"), boxList: $("[data-detail-box-list]"),
+  };
+  const baseTitle = document.title;
+  const parseRoute = () => { const m = location.hash.match(/^#(event|news)\/([A-Za-z0-9-]+)$/); return m ? { kind: m[1], slug: m[2] } : null; };
+  let inDetail = false, savedScroll = null;
+
+  const fillDetail = (kind, it) => {
+    const isEvent = kind === "event";
+    parts.back.setAttribute("href", isEvent ? "#events" : "#news");
+    parts.backLabel.textContent = isEvent ? "Back to events" : "Back to news";
+    parts.meta.replaceChildren(); parts.boxList.replaceChildren(); parts.text.replaceChildren();
+    parts.box.hidden = true; parts.media.hidden = true;
+    if (!it) {
+      parts.tag.hidden = true;
+      parts.title.textContent = "We couldn't find that page";
+      parts.text.append(mk("p", { text: "It may have been removed, or the link may be wrong." }));
+      document.title = "Not found | Nova M&A Club";
+      return;
+    }
+    parts.tag.hidden = !it.category; parts.tag.textContent = it.category || "";
+    parts.title.textContent = it.title;
+    const li = (id, text) => parts.meta.append(mk("li", {}, icon(id), mk("span", { text })));
+    if (isEvent) {
+      li("calendar", dayShort(it.date));
+      if (timeOf(it)) li("clock", timeOf(it));
+      if (it.location) li("map-pin", it.location);
+    } else li("calendar", dayLong(it.date));
+    const img = safeImg(it.image);
+    if (img) { parts.media.hidden = false; parts.media.querySelector("img").setAttribute("src", img); }
+    paragraphs(isEvent ? it.description : it.body).forEach((t) => parts.text.append(mk("p", { text: t })));
+    if (isEvent) {
+      const row = (id, label, value) => { if (value) parts.boxList.append(mk("li", {}, icon(id), mk("p", {}, mk("strong", { text: label + ":" }), " " + value))); };
+      row("users", "Speakers", it.speakers);
+      row("clock", "Date and time", dayLong(it.date) + (timeOf(it) ? ", " + timeOf(it) : ""));
+      row("map-pin", "Location", it.location);
+      parts.box.hidden = !parts.boxList.children.length;
+    }
+    document.title = it.title + " | Nova M&A Club";
+  };
+
+  const route = async () => {
+    const r = parseRoute();
+    if (r) {
+      if (!inDetail) savedScroll = window.scrollY;
+      inDetail = true; root.classList.add("is-detail");
+      await ready;
+      const now = parseRoute();
+      if (!now || now.kind !== r.kind || now.slug !== r.slug) return; // the visitor moved on while it loaded
+      const list = r.kind === "event" ? data.events : data.news;
+      fillDetail(r.kind, (list || []).find((i) => i.slug === r.slug));
+      window.scrollTo({ top: 0, behavior: "instant" });
+      detail.focus({ preventScroll: true });
+    } else if (inDetail) {
+      inDetail = false; root.classList.remove("is-detail");
+      document.title = baseTitle;
+      const id = location.hash.slice(1);
+      const target = id ? document.getElementById(id) : null;
+      const fromList = !id || id === "events" || id === "news";
+      if (fromList && savedScroll !== null) window.scrollTo({ top: savedScroll, behavior: "instant" });
+      else if (target) target.scrollIntoView({ behavior: "instant" });
+      savedScroll = null;
+    }
+  };
+  window.addEventListener("hashchange", route);
+  route();
 })();
 </script>
 </body>
