@@ -17,7 +17,7 @@ Replace a file in `src/assets/` with a new photo **under the same name**, then r
 
 | File | Where it shows | Shape |
 | --- | --- | --- |
-| hero-club.webp, hero-group.webp, hero-trio.webp | First screen, cross-fading | Wide (16:10), people in the lower two thirds |
+| hero-team.webp, hero-trio.webp, hero-full.webp | First screen, cross-fading | Wide (16:10), people in the lower two thirds |
 | about-pair.webp | About, under "Our vision" | 16:10 |
 | opening-session.webp | "Our mission" (the picture that opens to full screen) | 16:9, dark |
 | research-accretion.webp | What we do → Deal research | A page from a deal brief |
