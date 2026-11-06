@@ -18,7 +18,7 @@ The "Club admin" link in the website footer opens the CMS for this repository.
 2. Fill in the form: title, type, date, times (24-hour, like `18:30`), location, photo, speakers and the text about the event.
 3. Save. The website updates about a minute or two later (GitHub rebuilds the site).
 
-- Events show under **Upcoming** until their date has passed, then move to **Past events**.
+- Events have their own page on the website (the Events link in the menu). They show under **Upcoming** until their date has passed, then move to **Past events**.
 - Everything is optional except title, type and date.
 - Switch on **Hide from the website** to save a draft without publishing it.
 - The text is plain text: leave a blank line between paragraphs.
@@ -35,4 +35,4 @@ Same steps, but choose **News**. News has its own page on the website (the News 
   Pages workflow runs it on every push, so a CMS save publishes automatically.
 - A post with a missing title or date is skipped with a warning in the workflow log instead of breaking the deploy.
 - The CMS form fields are defined in `.pages.yml`.
-- The news list is the page `#news`. Single pages have addresses like `#event/mentor-fair` and `#news/new-partner`.
+- The event list is the page `#events` and the news list is `#news`. Single pages have addresses like `#event/mentor-fair` and `#news/new-partner`.

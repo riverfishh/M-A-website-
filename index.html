@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="assets/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<script>document.documentElement.classList.add('js');if(/^#(event|news)\/[A-Za-z0-9-]+$/.test(location.hash))document.documentElement.classList.add('is-detail');else if(location.hash==='#news')document.documentElement.classList.add('is-news')</script>
+<script>document.documentElement.classList.add('js');if(/^#(event|news)\/[A-Za-z0-9-]+$/.test(location.hash))document.documentElement.classList.add('is-detail');else if(location.hash==='#news')document.documentElement.classList.add('is-news');else if(location.hash==='#events')document.documentElement.classList.add('is-events')</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -523,10 +523,10 @@ html:not(.js) .tabs__list { display: none; }
 
 /* the page for one event or post: the home page steps aside */
 .detail { display: none; }
-html.is-detail main > :not(#detail), html.is-news main > :not(#news) { display: none !important; }
-.news { display: none; }
-html.is-news .news { display: block; min-height: 70vh; padding-top: calc(var(--header) + clamp(32px, 4vw, 56px)); }
-html.is-news .header { background: var(--navy-950); }
+html.is-detail main > :not(#detail), html.is-news main > :not(#news), html.is-events main > :not(#events) { display: none !important; }
+.news, .events { display: none; }
+html.is-news .news, html.is-events .events { display: block; min-height: 70vh; padding-top: calc(var(--header) + clamp(32px, 4vw, 56px)); }
+html.is-news .header, html.is-events .header { background: var(--navy-950); }
 html.is-detail #detail { display: block; }
 html.is-detail .header { background: var(--navy-950); }
 .detail { padding-block: calc(var(--header) + clamp(32px, 4vw, 56px)) var(--section); min-height: 70vh; }
@@ -1983,10 +1983,11 @@ textarea.field__control { resize: vertical; min-height: 140px; }
   const baseTitle = document.title;
   const parseRoute = () => {
     if (location.hash === "#news") return { kind: "newslist" };
+    if (location.hash === "#events") return { kind: "eventslist" };
     const m = location.hash.match(/^#(event|news)\/([A-Za-z0-9-]+)$/);
     return m ? { kind: m[1], slug: m[2] } : null;
   };
-  let mode = null, shownKind = null, savedScroll = null; // mode: null (home), "news" (the news page) or "detail"
+  let mode = null, savedScroll = null; // mode: null (home), "events" or "news" (the list pages) or "detail"
 
   const fillDetail = (kind, it) => {
     const isEvent = kind === "event";
@@ -2026,11 +2027,12 @@ textarea.field__control { resize: vertical; min-height: 140px; }
     const r = parseRoute();
     if (r) {
       if (!mode) savedScroll = window.scrollY;
-      mode = r.kind === "newslist" ? "news" : "detail"; shownKind = r.kind;
+      mode = r.kind === "newslist" ? "news" : r.kind === "eventslist" ? "events" : "detail";
       root.classList.toggle("is-news", mode === "news");
+      root.classList.toggle("is-events", mode === "events");
       root.classList.toggle("is-detail", mode === "detail");
-      if (mode === "news") {
-        document.title = "News | " + baseTitle.split(" | ")[0];
+      if (mode !== "detail") {
+        document.title = (mode === "news" ? "News" : "Events") + " | " + baseTitle.split(" | ")[0];
         window.scrollTo({ top: 0, behavior: "instant" });
         return;
       }
@@ -2042,14 +2044,13 @@ textarea.field__control { resize: vertical; min-height: 140px; }
       window.scrollTo({ top: 0, behavior: "instant" });
       detail.focus({ preventScroll: true });
     } else if (mode) {
-      const wasEvent = shownKind === "event";
-      mode = null; shownKind = null;
-      root.classList.remove("is-detail", "is-news");
+      mode = null;
+      root.classList.remove("is-detail", "is-news", "is-events");
       document.title = baseTitle;
       const id = location.hash.slice(1);
       const target = id ? document.getElementById(id) : null;
-      // back to the list the visitor came from: put them where they were
-      if (savedScroll !== null && (!id || (id === "events" && wasEvent))) window.scrollTo({ top: savedScroll, behavior: "instant" });
+      // back to the home page the visitor came from: put them where they were
+      if (savedScroll !== null && !id) window.scrollTo({ top: savedScroll, behavior: "instant" });
       else if (target) target.scrollIntoView({ behavior: "instant" });
       savedScroll = null;
     }
