@@ -488,14 +488,6 @@ html:not(.js) .tabs__list { display: none; }
    ===================================================================== */
 .events { background: var(--paper); }
 .news { background: var(--blue-50); }
-.social { margin-top: 24px; display: flex; gap: 10px; }
-.social a {
-  display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%;
-  background: var(--blue-100); color: var(--navy-700);
-  transition: background-color var(--t-hover) var(--ease-out), color var(--t-hover) var(--ease-out), transform var(--t-press) var(--ease-out);
-}
-.social a:active { transform: scale(0.94); }
-@media (hover: hover) { .social a:hover { background: var(--navy-700); color: #fff; } }
 .listing__head { margin-top: clamp(36px, 4vw, 56px); }
 .listing__head h3 { display: flex; align-items: center; gap: 12px; color: var(--navy-900); }
 .count { display: inline-grid; place-items: center; min-width: 36px; height: 36px; padding: 0 10px; border-radius: var(--pill); background: var(--blue-100); color: var(--navy-700); font-size: var(--t-small); font-weight: 700; letter-spacing: 0; }
@@ -1241,10 +1233,6 @@ textarea.field__control { resize: vertical; min-height: 140px; }
     <div class="wrap section-head">
       <h2 id="events-title" data-lines>Events</h2>
       <p class="lead rv">Explore our speaker events and workshops to learn more about the M&amp;A industry and hear from professionals in the field.</p>
-      <div class="social" aria-label="Follow the club">
-        <a data-href=linkedin href="https://www.linkedin.com/company/nova-mergers-acquisitions-club/" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
-        <a data-href=instagram href="https://www.instagram.com/novamaclub/" target="_blank" rel="noopener" aria-label="Instagram (opens in a new tab)"><svg class="i" aria-hidden="true"><use href="#i-instagram"/></svg></a>
-      </div>
     </div>
     <div class="wrap">
       <div class="listing__head"><h3>Upcoming <span class="count" data-count="events" hidden></span></h3></div>
