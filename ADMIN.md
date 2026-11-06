@@ -26,7 +26,7 @@ The "Club admin" link in the website footer opens the CMS for this repository.
 
 ## Posting news
 
-Same steps, but choose **News**. The short summary appears on the card; the article opens on its own page.
+Same steps, but choose **News**. News has its own page on the website (the News link in the menu). The short summary appears on the card and the article opens on its own page.
 
 ## How it works (for whoever maintains the site)
 
@@ -35,4 +35,4 @@ Same steps, but choose **News**. The short summary appears on the card; the arti
   Pages workflow runs it on every push, so a CMS save publishes automatically.
 - A post with a missing title or date is skipped with a warning in the workflow log instead of breaking the deploy.
 - The CMS form fields are defined in `.pages.yml`.
-- Event and news pages have addresses like `#event/mentor-fair` and `#news/new-partner`.
+- The news list is the page `#news`. Single pages have addresses like `#event/mentor-fair` and `#news/new-partner`.
