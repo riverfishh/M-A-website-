@@ -1,6 +1,6 @@
 # Nova M&A Club website
 
-**Posting events and news:** see [ADMIN.md](ADMIN.md).
+**Posting events and publications:** see [ADMIN.md](ADMIN.md).
 
 `index.html` is the whole site in one file, with photos and font included. Open it in any browser. To put it online, upload that one file to any static host, such as Netlify Drop, GitHub Pages or Vercel.
 

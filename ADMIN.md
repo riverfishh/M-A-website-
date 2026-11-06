@@ -1,6 +1,6 @@
-# Posting events and news
+# Posting events and publications
 
-The club posts events and news through **Pages CMS**, an outside editor that signs in with GitHub and
+The club posts events and publications through **Pages CMS**, an outside editor that signs in with GitHub and
 shows simple forms. Nothing is installed on the website itself.
 
 ## One-time setup (a club admin does this once)
@@ -24,15 +24,15 @@ The "Club admin" link in the website footer opens the CMS for this repository.
 - The text is plain text: leave a blank line between paragraphs.
 - Photos you upload are stored in `assets/uploads`. Wide photos (about 1600 x 800) look best.
 
-## Posting news
+## Posting a publication
 
-Same steps, but choose **News**. News has its own page on the website (the News link in the menu). The short summary appears on the card and the article opens on its own page.
+Same steps, but choose **Publications**. Publications have their own page on the website (the Publications link in the menu). The short summary appears on the card and the article opens on its own page.
 
 ## How it works (for whoever maintains the site)
 
-- Each post is one small JSON file in `content/events/` or `content/news/`, created by the CMS.
+- Each post is one small JSON file in `content/events/` or `content/news/` (publications), created by the CMS.
 - `scripts/build_content.py` gathers them into `data/events.json` and `data/news.json`. The GitHub
   Pages workflow runs it on every push, so a CMS save publishes automatically.
 - A post with a missing title or date is skipped with a warning in the workflow log instead of breaking the deploy.
 - The CMS form fields are defined in `.pages.yml`.
-- The event list is the page `#events` and the news list is `#news`. Single pages have addresses like `#event/mentor-fair` and `#news/new-partner`.
+- The event list is the page `#events` and the publications list is `#publications`. Single pages have addresses like `#event/mentor-fair` and `#publication/new-partner`.

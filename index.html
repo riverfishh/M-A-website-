@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="assets/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<script>document.documentElement.classList.add('js');if(/^#(event|news)\/[A-Za-z0-9-]+$/.test(location.hash))document.documentElement.classList.add('is-detail');else if(location.hash==='#news')document.documentElement.classList.add('is-news');else if(location.hash==='#events')document.documentElement.classList.add('is-events')</script>
+<script>document.documentElement.classList.add('js');if(/^#(event|publication)\/[A-Za-z0-9-]+$/.test(location.hash))document.documentElement.classList.add('is-detail');else if(location.hash==='#publications')document.documentElement.classList.add('is-news');else if(location.hash==='#events')document.documentElement.classList.add('is-events')</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -523,7 +523,7 @@ html:not(.js) .tabs__list { display: none; }
 
 /* the page for one event or post: the home page steps aside */
 .detail { display: none; }
-html.is-detail main > :not(#detail), html.is-news main > :not(#news), html.is-events main > :not(#events) { display: none !important; }
+html.is-detail main > :not(#detail), html.is-news main > :not(#publications), html.is-events main > :not(#events) { display: none !important; }
 .news, .events { display: none; }
 html.is-news .news, html.is-events .events { display: block; min-height: 70vh; padding-top: calc(var(--header) + clamp(32px, 4vw, 56px)); }
 html.is-news .header, html.is-events .header { background: var(--navy-950); }
@@ -937,7 +937,7 @@ textarea.field__control { resize: vertical; min-height: 140px; }
         <li><a class="nav__link" href="#work">What we do</a></li>
         <li><a class="nav__link" href="#sessions">Sessions</a></li>
         <li><a class="nav__link" href="#events">Events</a></li>
-        <li><a class="nav__link" href="#news">News</a></li>
+        <li><a class="nav__link" href="#publications">Publications</a></li>
         <li><a class="nav__link" href="#team">Team</a></li>
         <li><a class="nav__link" href="#partners">Partners</a></li>
         <li><a class="nav__link" href="#join">Join</a></li>
@@ -962,7 +962,6 @@ textarea.field__control { resize: vertical; min-height: 140px; }
       <p class="hero__tagline" data-load style="--d:380ms">The student club at Nova SBE that analyses live M&amp;A deals and runs sessions with banks and investors.</p>
       <div class="hero__actions" data-load style="--d:500ms">
         <a class="btn btn--light" href="#partners">Partner with us</a>
-        <a class="hero__link" href="#join">Join the club</a>
       </div>
     </div>
     <button class="hero__toggle" type="button" aria-pressed="false" aria-label="Pause the photo slideshow">
@@ -1244,16 +1243,16 @@ textarea.field__control { resize: vertical; min-height: 140px; }
     </div>
   </section>
 
-  <!-- News -->
-  <section class="section news" id="news" aria-labelledby="news-title">
+  <!-- Publications -->
+  <section class="section news" id="publications" aria-labelledby="news-title">
     <div class="wrap section-head">
-      <h2 id="news-title" data-lines>News</h2>
-      <p class="lead rv">What the club has been up to, from new partners to research and member news.</p>
+      <h2 id="news-title" data-lines>Publications</h2>
+      <p class="lead rv">Research and updates from the club.</p>
     </div>
     <div class="wrap">
-      <div class="listing" data-list="news" aria-live="polite"><p class="listing__note">Loading news…</p></div>
+      <div class="listing" data-list="news" aria-live="polite"><p class="listing__note">Loading publications…</p></div>
       <div class="listing__more">
-        <button class="btn btn--outline" type="button" data-more="news" aria-expanded="false" hidden>Show older news</button>
+        <button class="btn btn--outline" type="button" data-more="news" aria-expanded="false" hidden>Show older publications</button>
       </div>
       <div class="listing listing--past" data-list="news-more" hidden></div>
     </div>
@@ -1419,7 +1418,7 @@ textarea.field__control { resize: vertical; min-height: 140px; }
       </div>
     </div>
   </section>
-  <!-- One event or news post, opened from the lists above (#event/name or #news/name) -->
+  <!-- One event or publication, opened from the lists above (#event/name or #publication/name) -->
   <section class="detail" id="detail" aria-labelledby="detail-title" tabindex="-1">
     <div class="detail__wrap">
       <a class="back" href="#events" data-detail-back><svg class="i" aria-hidden="true"><use href="#i-arrow-left"/></svg><span data-detail-back-label>Back to events</span></a>
@@ -1458,7 +1457,7 @@ textarea.field__control { resize: vertical; min-height: 140px; }
           <li><a href="#work">What we do</a></li>
           <li><a href="#sessions">Sessions</a></li>
           <li><a href="#events">Events</a></li>
-          <li><a href="#news">News</a></li>
+          <li><a href="#publications">Publications</a></li>
           <li><a href="#team">Team</a></li>
         </ul>
       </nav>
@@ -1887,7 +1886,7 @@ textarea.field__control { resize: vertical; min-height: 140px; }
     console.warn("Nova M&A Club: the contact form is not connected. Set CONFIG.contactEmail or CONFIG.formEndpoint in the script at the bottom of index.html.");
   });
 
-  /* ---------- events and news: read from the CMS data, shown as cards and as one page each ---------- */
+  /* ---------- events and publications: read from the CMS data, shown as cards and as one page each ---------- */
   const mk = (tag, props = {}, ...kids) => {
     const n = document.createElement(tag);
     for (const [k, v] of Object.entries(props)) { if (k === "class") n.className = v; else if (k === "text") n.textContent = v; else n.setAttribute(k, v); }
@@ -1965,16 +1964,16 @@ textarea.field__control { resize: vertical; min-height: 140px; }
   const renderNews = () => {
     const list = $('[data-list="news"]'), rest = $('[data-list="news-more"]'), more = $('[data-more="news"]');
     if (!list) return;
-    if (data.news === null) { list.replaceChildren(unavailable("News")); return; }
+    if (data.news === null) { list.replaceChildren(unavailable("Publications")); return; }
     const all = data.news.slice().sort((a, b) => b.date.localeCompare(a.date));
-    list.replaceChildren(...(all.length ? all.slice(0, NEWS_FIRST).map((n) => card("news", n)) : [note("No news yet. Check back soon.")]));
-    rest.replaceChildren(...all.slice(NEWS_FIRST).map((n) => card("news", n)));
+    list.replaceChildren(...(all.length ? all.slice(0, NEWS_FIRST).map((n) => card("publication", n)) : [note("No publications yet. Check back soon.")]));
+    rest.replaceChildren(...all.slice(NEWS_FIRST).map((n) => card("publication", n)));
     more.hidden = all.length <= NEWS_FIRST;
-    wireMore("news", { id: "more", show: "Show older news", hide: "Hide older news" });
+    wireMore("news", { id: "more", show: "Show older publications", hide: "Hide older publications" });
   };
   ready.then(() => { renderEvents(); renderNews(); });
 
-  /* one event or news post on its own page (#event/name, #news/name) */
+  /* one event or publication on its own page (#event/name, #publication/name) */
   const detail = $("#detail");
   const parts = {
     back: $("[data-detail-back]"), backLabel: $("[data-detail-back-label]"), tag: $("[data-detail-tag]"), title: $("[data-detail-title]"),
@@ -1982,17 +1981,17 @@ textarea.field__control { resize: vertical; min-height: 140px; }
   };
   const baseTitle = document.title;
   const parseRoute = () => {
-    if (location.hash === "#news") return { kind: "newslist" };
+    if (location.hash === "#publications") return { kind: "newslist" };
     if (location.hash === "#events") return { kind: "eventslist" };
-    const m = location.hash.match(/^#(event|news)\/([A-Za-z0-9-]+)$/);
+    const m = location.hash.match(/^#(event|publication)\/([A-Za-z0-9-]+)$/);
     return m ? { kind: m[1], slug: m[2] } : null;
   };
   let mode = null, savedScroll = null; // mode: null (home), "events" or "news" (the list pages) or "detail"
 
   const fillDetail = (kind, it) => {
     const isEvent = kind === "event";
-    parts.back.setAttribute("href", isEvent ? "#events" : "#news");
-    parts.backLabel.textContent = isEvent ? "Back to events" : "Back to news";
+    parts.back.setAttribute("href", isEvent ? "#events" : "#publications");
+    parts.backLabel.textContent = isEvent ? "Back to events" : "Back to publications";
     parts.meta.replaceChildren(); parts.boxList.replaceChildren(); parts.text.replaceChildren();
     parts.box.hidden = true; parts.media.hidden = true;
     if (!it) {
@@ -2032,7 +2031,7 @@ textarea.field__control { resize: vertical; min-height: 140px; }
       root.classList.toggle("is-events", mode === "events");
       root.classList.toggle("is-detail", mode === "detail");
       if (mode !== "detail") {
-        document.title = (mode === "news" ? "News" : "Events") + " | " + baseTitle.split(" | ")[0];
+        document.title = (mode === "news" ? "Publications" : "Events") + " | " + baseTitle.split(" | ")[0];
         window.scrollTo({ top: 0, behavior: "instant" });
         return;
       }

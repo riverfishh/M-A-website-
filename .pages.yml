@@ -1,6 +1,6 @@
 # Pages CMS configuration (https://pagescms.org)
 # Everything the club posts is saved as a small JSON file in this repo.
-# The website reads it through data/events.json and data/news.json,
+# The website reads it through data/events.json and data/news.json (publications),
 # which scripts/build_content.py rebuilds on every deploy.
 
 media:
@@ -69,7 +69,7 @@ content:
         description: "Switch on to keep this event off the site while you are still writing it."
 
   - name: news
-    label: News
+    label: Publications
     type: collection
     path: content/news
     format: json
@@ -83,16 +83,16 @@ content:
         order: desc
     fields:
       - name: title
-        label: Headline
+        label: Title
         type: string
         required: true
       - name: category
         label: Topic
         type: select
         required: true
-        default: Club news
+        default: Article
         options:
-          values: [Club news, Announcement, Research, Partners, Members]
+          values: [Article, Research, Newsletter, Announcement]
       - name: date
         label: Date
         type: date
@@ -104,7 +104,7 @@ content:
       - name: summary
         label: Short summary
         type: text
-        description: "One or two sentences shown on the news card."
+        description: "One or two sentences shown on the publication card."
       - name: body
         label: Article
         type: text
@@ -113,4 +113,4 @@ content:
         label: Hide from the website
         type: boolean
         default: false
-        description: "Switch on to keep this post off the site while you are still writing it."
+        description: "Switch on to keep this publication off the site while you are still writing it."
