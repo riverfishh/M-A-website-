@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Board",
+    "summary": "The board leads the club and its five departments.",
+    "tasks": []
+  },
+  {
+    "name": "Operations",
+    "summary": "Keeps the club running: its processes, planning and finances.",
+    "tasks": [
+      "Design club-wide processes",
+      "Oversee financial planning",
+      "Ensure financial transparency"
+    ]
+  },
+  {
+    "name": "Research",
+    "summary": "Follows the M&A market and turns it into insights for members and partners.",
+    "tasks": [
+      "Monitor M&A: updates, deals, and trends",
+      "Prepare pre-reads and post-event insights",
+      "Support partner identification and topic development"
+    ]
+  },
+  {
+    "name": "Relations",
+    "summary": "Looks after partners and events, from scheduling to follow-up.",
+    "tasks": [
+      "Coordinate scheduling and logistics",
+      "Manage sponsors and registrations",
+      "Collect feedback and handle follow-up"
+    ]
+  },
+  {
+    "name": "Marketing",
+    "summary": "Tells the club's story and brings new students in.",
+    "tasks": [
+      "Lead club communication",
+      "Support branding and marketing",
+      "Recruitment and student awareness"
+    ]
+  },
+  {
+    "name": "Legal",
+    "summary": "Keeps the club's agreements and data practices in order.",
+    "tasks": [
+      "Review partnership agreements",
+      "Ensure compliance and data protection",
+      "Advise on club governance"
+    ]
+  }
+]

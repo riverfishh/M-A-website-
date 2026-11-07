@@ -1,0 +1,66 @@
+[
+  {
+    "slug": "alberto-goncalves",
+    "name": "Alberto Gonçalves",
+    "department": "Research",
+    "role": "Head of Research",
+    "photo": "",
+    "order": 1.0
+  },
+  {
+    "slug": "carolina-fernandes",
+    "name": "Carolina Fernandes",
+    "department": "Relations",
+    "role": "Head of Relations",
+    "photo": "",
+    "order": 1.0
+  },
+  {
+    "slug": "dinis-almeida",
+    "name": "Dinis Almeida",
+    "department": "Marketing",
+    "role": "Head of Marketing",
+    "photo": "",
+    "order": 1.0
+  },
+  {
+    "slug": "diogo-ji",
+    "name": "Diogo Ji",
+    "department": "Board",
+    "role": "Interim President",
+    "photo": "",
+    "order": 1.0
+  },
+  {
+    "slug": "leonard-ahrens",
+    "name": "Leonard Ahrens",
+    "department": "Legal",
+    "role": "Head of Legal",
+    "photo": "",
+    "order": 1.0
+  },
+  {
+    "slug": "rafael-silva",
+    "name": "Rafael Silva",
+    "department": "Operations",
+    "role": "Head of Operations",
+    "photo": "",
+    "order": 1.0
+  },
+  {
+    "slug": "vasco-coutinho",
+    "name": "Vasco Coutinho",
+    "department": "Board",
+    "role": "Vice President",
+    "photo": "",
+    "order": 2.0
+  },
+  {
+    "slug": "bernardo-melo",
+    "name": "Bernardo Melo",
+    "department": "Board",
+    "role": "Internal Board Advisory",
+    "photo": "",
+    "order": 3.0
+  }
+]

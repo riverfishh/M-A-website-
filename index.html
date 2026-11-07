@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="assets/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<script>document.documentElement.classList.add('js');if(/^#(event|publication)\/[A-Za-z0-9-]+$/.test(location.hash))document.documentElement.classList.add('is-detail');else if(location.hash==='#publications')document.documentElement.classList.add('is-news');else if(location.hash==='#events')document.documentElement.classList.add('is-events')</script>
+<script>document.documentElement.classList.add('js');(function(){var h=location.hash,r=document.documentElement.classList,m={'#events':'events','#publications':'news','#team':'team'};if(/^#(event|publication)\/[A-Za-z0-9-]+$/.test(h))r.add('is-detail');else if(m[h])r.add('is-'+m[h])})()</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -488,6 +488,39 @@ html:not(.js) .tabs__list { display: none; }
    ===================================================================== */
 .events { background: var(--paper); }
 .news { background: var(--blue-50); }
+/* the team page: a panel for each department, with its people */
+.team { background: var(--paper); }
+.team__filter { margin-top: clamp(32px, 4vw, 48px); display: flex; flex-wrap: wrap; gap: 10px; }
+.pill {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: var(--pill);
+  border: 1.5px solid var(--line); background: #fff; color: var(--navy-900); font-weight: 650; font-size: var(--t-small); cursor: pointer;
+  transition: background-color var(--t-hover) var(--ease-out), color var(--t-hover) var(--ease-out), border-color var(--t-hover) var(--ease-out), transform var(--t-press) var(--ease-out);
+}
+.pill:active { transform: scale(0.97); }
+.pill[aria-pressed="true"] { background: var(--navy-700); border-color: var(--navy-700); color: #fff; }
+@media (hover: hover) { .pill:not([aria-pressed="true"]):hover { background: var(--blue-50); border-color: var(--blue-200); } }
+.dept { margin-top: var(--gap); padding: clamp(24px, 3vw, 44px); border-radius: var(--r-lg); background: var(--blue-50); scroll-margin-top: calc(var(--header) + 16px); }
+.team__list { margin-top: clamp(28px, 3.4vw, 44px); }
+.team__list > .dept:first-child { margin-top: 0; }
+.dept__head { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 24px clamp(28px, 5vw, 72px); align-items: start; }
+.dept__title { display: flex; align-items: center; gap: 16px; }
+.dept__title h3 { font-size: var(--t-head); font-size: clamp(1.75rem, 1.3rem + 1.8vw, 2.75rem); color: var(--navy-900); }
+.dept__summary { margin-top: 14px; color: var(--muted); font-size: var(--t-lead); line-height: 1.4; font-weight: 500; letter-spacing: -0.01em; }
+.dept__tasks h4 { font-size: var(--t-small); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy-900); }
+.dept__tasks ul { margin-top: 12px; display: grid; gap: 10px; }
+.dept__tasks li { display: flex; align-items: flex-start; gap: 12px; color: var(--ink); line-height: 1.4; }
+.dept__tasks .i { width: 20px; height: 20px; margin-top: 1px; flex: none; color: var(--navy-700); }
+.members { margin-top: clamp(24px, 3vw, 36px); display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr)); gap: var(--gap); }
+.member { background: #fff; border-radius: var(--r-md); overflow: clip; }
+.member__photo { aspect-ratio: 4 / 5; background: var(--blue-100); }
+.member__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+.member__mono { width: 100%; height: 100%; display: grid; place-items: center; background: var(--navy-700); color: #fff; font-size: clamp(2rem, 1.4rem + 2vw, 3rem); font-weight: 700; letter-spacing: 0.02em; }
+.member__body { padding: 14px 18px 18px; }
+.member__dept { margin-bottom: 6px; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); line-height: 1.3; }
+.member__name { font-size: var(--t-body); font-weight: 700; letter-spacing: -0.015em; color: var(--navy-900); line-height: 1.25; }
+.member__role { margin-top: 4px; font-size: var(--t-small); font-weight: 650; color: var(--navy-600); line-height: 1.35; }
+@media (max-width: 859px) { .dept__head { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 599px) { .members { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } .dept { padding: 20px 16px; } .member__body { padding: 12px 14px 16px; } }
 .listing__head { margin-top: clamp(36px, 4vw, 56px); }
 .listing__head h3 { display: flex; align-items: center; gap: 12px; color: var(--navy-900); }
 .count { display: inline-grid; place-items: center; min-width: 36px; height: 36px; padding: 0 10px; border-radius: var(--pill); background: var(--blue-100); color: var(--navy-700); font-size: var(--t-small); font-weight: 700; letter-spacing: 0; }
@@ -523,10 +556,10 @@ html:not(.js) .tabs__list { display: none; }
 
 /* the page for one event or post: the home page steps aside */
 .detail { display: none; }
-html.is-detail main > :not(#detail), html.is-news main > :not(#publications), html.is-events main > :not(#events) { display: none !important; }
-.news, .events { display: none; }
-html.is-news .news, html.is-events .events { display: block; min-height: 70vh; padding-top: calc(var(--header) + clamp(32px, 4vw, 56px)); }
-html.is-news .header, html.is-events .header { background: var(--navy-950); }
+html.is-detail main > :not(#detail), html.is-news main > :not(#publications), html.is-events main > :not(#events), html.is-team main > :not(#team) { display: none !important; }
+.news, .events, .team { display: none; }
+html.is-news .news, html.is-events .events, html.is-team .team { display: block; min-height: 70vh; padding-top: calc(var(--header) + clamp(32px, 4vw, 56px)); }
+html.is-news .header, html.is-events .header, html.is-team .header { background: var(--navy-950); }
 html.is-detail #detail { display: block; }
 html.is-detail .header { background: var(--navy-950); }
 .detail { padding-block: calc(var(--header) + clamp(32px, 4vw, 56px)) var(--section); min-height: 70vh; }
@@ -595,28 +628,6 @@ html.is-detail .header { background: var(--navy-950); }
 html:not(.js) .row__track { width: auto; }
 html:not(.js) .row__list { flex-wrap: wrap; }
 html:not(.js) .row__list[aria-hidden="true"], html:not(.js) .marquee-toggle { display: none; }
-
-/* =====================================================================
-   Team
-   ===================================================================== */
-.team { background: var(--blue-50); }
-.team__lead { margin-top: clamp(36px, 4vw, 56px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
-.heads { margin-top: var(--gap); display: grid; background: #fff; border-radius: var(--r-lg); padding: clamp(10px, 1.4vw, 18px) clamp(20px, 3vw, 40px); }
-.head { display: grid; grid-template-columns: 56px minmax(0, 0.85fr) minmax(0, 1.6fr); gap: 6px clamp(18px, 2.6vw, 40px); align-items: center; padding-block: clamp(14px, 1.5vw, 20px); }
-.head .person__mono { width: 56px; height: 56px; }
-.head .person__name { margin-top: 0; }
-.head__remit { color: var(--muted); line-height: 1.5; }
-.person { background: #fff; border-radius: var(--r-lg); padding: clamp(22px, 2.2vw, 30px); }
-.person__mono {
-  display: grid; place-items: center; width: 60px; height: 60px; border-radius: 50%;
-  background: var(--navy-700); color: #fff; font-weight: 700; font-size: var(--t-body); letter-spacing: 0.02em;
-}
-.person__name { margin-top: 18px; font-size: var(--t-body); font-weight: 700; letter-spacing: -0.015em; color: var(--navy-900); line-height: 1.25; }
-.person__role { margin-top: 4px; font-size: var(--t-small); font-weight: 700; color: var(--navy-600); }
-.person__remit { margin-top: 12px; color: var(--muted); line-height: 1.5; }
-.person--lead { display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: center; }
-.person--lead .person__mono { width: 76px; height: 76px; background: var(--navy-900); font-size: var(--t-lead); }
-.person--lead .person__name { margin-top: 0; font-size: var(--t-lead); }
 
 /* =====================================================================
    Partners
@@ -844,12 +855,6 @@ textarea.field__control { resize: vertical; min-height: 140px; }
   .hero__content { padding-bottom: 170px; }
   .hero__toggle { bottom: auto; top: calc(var(--header) + 16px); right: 16px; }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 26px; }
-  .team__lead { grid-template-columns: minmax(0, 1fr); }
-  .person--lead { gap: 16px; }
-  .person--lead .person__mono { width: 60px; height: 60px; font-size: var(--t-body); }
-  .head { grid-template-columns: 48px minmax(0, 1fr); align-items: start; }
-  .head .person__mono { width: 48px; height: 48px; }
-  .head__remit { grid-column: 2; }
   .session--online { flex-direction: column; align-items: stretch; padding-top: 48px; }
   .session__body { padding: 16px 16px 18px; }
   .form__row, .calc__fields, .join__figures { grid-template-columns: minmax(0, 1fr); }
@@ -1261,21 +1266,12 @@ textarea.field__control { resize: vertical; min-height: 140px; }
   <!-- Team -->
   <section class="section team" id="team" aria-labelledby="team-title">
     <div class="wrap section-head">
-      <h2 id="team-title" data-lines>Who runs the club</h2>
-      <p class="lead rv">A president, a vice president and five heads of department lead the club's 37 members.</p>
+      <h2 id="team-title" data-lines>Our team</h2>
+      <p class="lead rv">Meet the board and the five departments that run the club, and see what each one does.</p>
     </div>
     <div class="wrap">
-      <ul class="team__lead" role="list" data-reveal>
-        <li class="person person--lead"><span class="person__mono" aria-hidden="true">DJ</span><div><h3 class="person__name">Diogo Ji</h3><p class="person__role">President</p></div></li>
-        <li class="person person--lead"><span class="person__mono" aria-hidden="true">VC</span><div><h3 class="person__name">Vasco Coutinho</h3><p class="person__role">Vice President</p></div></li>
-      </ul>
-      <ul class="heads" role="list" data-reveal>
-        <li class="head"><span class="person__mono" aria-hidden="true">AG</span><div><h3 class="person__name">Alberto Gonçalves</h3><p class="person__role">Head of Research</p></div><p class="head__remit">Covers M&amp;A news, deals and trends, prepares pre-reads and post-event insights, and helps choose partners and topics.</p></li>
-        <li class="head"><span class="person__mono" aria-hidden="true">CF</span><div><h3 class="person__name">Carolina Fernandes</h3><p class="person__role">Head of Relations</p></div><p class="head__remit">Builds relationships with partner firms, organises company events, and handles scheduling, registrations and follow-up.</p></li>
-        <li class="head"><span class="person__mono" aria-hidden="true">RS</span><div><h3 class="person__name">Rafael Silva</h3><p class="person__role">Head of Operations</p></div><p class="head__remit">Plans and runs club events end to end, manages the budget, and coordinates logistics and internal processes.</p></li>
-        <li class="head"><span class="person__mono" aria-hidden="true">DA</span><div><h3 class="person__name">Dinis Almeida</h3><p class="person__role">Head of Marketing</p></div><p class="head__remit">Leads club communication, branding and student recruitment.</p></li>
-        <li class="head"><span class="person__mono" aria-hidden="true">LA</span><div><h3 class="person__name">Leonard Ahrens</h3><p class="person__role">Head of Legal</p></div><p class="head__remit">Handles contracts, compliance and data protection, and adds the legal angle to the deals we cover.</p></li>
-      </ul>
+      <div class="team__filter" role="group" aria-label="Show a department" data-team-filter hidden></div>
+      <div class="team__list" data-team aria-live="polite"><p class="listing__note">Loading the team…</p></div>
     </div>
   </section>
 
@@ -1908,11 +1904,18 @@ textarea.field__control { resize: vertical; min-height: 140px; }
   const safeImg = (u) => (/^(assets\/|https:\/\/)/.test(u || "") ? u : "");
   const paragraphs = (t) => String(t || "").split(/\n\s*\n/).map((x) => x.trim()).filter(Boolean);
 
-  const data = { events: null, news: null }; // null: could not be loaded
-  const ready = Promise.all(["events", "news"].map((kind) =>
+  const isDay = (d) => /^\d{4}-\d{2}-\d{2}$/.test(d);
+  const checks = {
+    events: (i) => i && i.slug && i.title && isDay(i.date),
+    news: (i) => i && i.slug && i.title && isDay(i.date),
+    team: (i) => i && i.slug && i.name,
+    departments: (i) => i && i.name,
+  };
+  const data = { events: null, news: null, team: null, departments: null }; // null: could not be loaded
+  const ready = Promise.all(Object.keys(checks).map((kind) =>
     fetch("data/" + kind + ".json", { cache: "no-cache" })
       .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
-      .then((a) => { data[kind] = Array.isArray(a) ? a.filter((i) => i && i.slug && i.title && /^\d{4}-\d{2}-\d{2}$/.test(i.date)) : []; })
+      .then((a) => { data[kind] = Array.isArray(a) ? a.filter(checks[kind]) : []; })
       .catch(() => { data[kind] = null; })
   ));
 
@@ -1971,7 +1974,57 @@ textarea.field__control { resize: vertical; min-height: 140px; }
     more.hidden = all.length <= NEWS_FIRST;
     wireMore("news", { id: "more", show: "Show older publications", hide: "Hide older publications" });
   };
-  ready.then(() => { renderEvents(); renderNews(); });
+
+  /* the team page: a panel for each department, filterable, with the people the CMS lists */
+  const DEPT_ICON = { board: "landmark", operations: "layers", research: "search", relations: "handshake", marketing: "megaphone", legal: "scale" };
+  const initials = (name) => { const w = name.split(/\s+/).filter(Boolean); return ((w[0] || "")[0] || "") + (w.length > 1 ? w[w.length - 1][0] : ""); };
+  const memberCard = (p) => {
+    const img = safeImg(p.photo);
+    const photo = mk("div", { class: "member__photo" });
+    if (img) photo.append(mk("img", { src: img, alt: "", loading: "lazy", decoding: "async" }));
+    else photo.append(mk("span", { class: "member__mono", "aria-hidden": "true", text: initials(p.name).toUpperCase() }));
+    const body = mk("div", { class: "member__body" });
+    if (p.department) body.append(mk("p", { class: "member__dept", text: p.department }));
+    body.append(mk("h4", { class: "member__name", text: p.name }));
+    if (p.role) body.append(mk("p", { class: "member__role", text: p.role }));
+    return mk("li", { class: "member" }, photo, body);
+  };
+  const renderTeam = () => {
+    const box = $("[data-team]"), filter = $("[data-team-filter]");
+    if (!box) return;
+    if (data.team === null || data.departments === null) { box.replaceChildren(unavailable("The team")); return; }
+    const key = (n) => String(n || "").trim().toLowerCase();
+    const groups = data.departments.map((d) => ({ name: d.name, summary: d.summary || "", tasks: Array.isArray(d.tasks) ? d.tasks.filter(Boolean) : [], people: [] }));
+    data.team.slice().sort((a, b) => (Number(a.order) || 100) - (Number(b.order) || 100) || a.name.localeCompare(b.name)).forEach((p) => {
+      let g = groups.find((x) => key(x.name) === key(p.department));
+      if (!g) { g = { name: p.department || "Team", summary: "", tasks: [], people: [] }; groups.push(g); }
+      g.people.push(p);
+    });
+    const shown = groups.filter((g) => g.people.length || g.summary || g.tasks.length);
+    if (!shown.length) { box.replaceChildren(note("Our team will appear here soon.")); filter.hidden = true; return; }
+    const panels = shown.map((g) => {
+      const head = mk("div", { class: "dept__head" }, mk("div", {},
+        mk("div", { class: "dept__title" }, mk("span", { class: "icon-dot" }, icon(DEPT_ICON[key(g.name)] || "users")), mk("h3", { text: g.name })),
+        g.summary ? mk("p", { class: "dept__summary", text: g.summary }) : null));
+      if (g.tasks.length) head.append(mk("div", { class: "dept__tasks" }, mk("h4", { text: "Key tasks" }),
+        mk("ul", { role: "list" }, ...g.tasks.map((t) => mk("li", {}, icon("check"), mk("span", { text: t }))))));
+      const panel = mk("section", { class: "dept", "data-dept": key(g.name), "aria-label": g.name }, head);
+      if (g.people.length) panel.append(mk("ul", { class: "members", role: "list" }, ...g.people.map(memberCard)));
+      return panel;
+    });
+    box.replaceChildren(...panels);
+    const pills = [{ label: "All", dept: "" }].concat(shown.map((g) => ({ label: g.name, dept: key(g.name) })));
+    const buttons = pills.map((pl, i) => mk("button", { class: "pill", type: "button", "aria-pressed": String(i === 0), "data-pill": pl.dept, text: pl.label }));
+    filter.replaceChildren(...buttons);
+    filter.hidden = shown.length < 2;
+    filter.onclick = (e) => {
+      const b = e.target.closest("[data-pill]");
+      if (!b) return;
+      buttons.forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      panels.forEach((pn) => { pn.hidden = !!b.dataset.pill && pn.dataset.dept !== b.dataset.pill; });
+    };
+  };
+  ready.then(() => { renderEvents(); renderNews(); renderTeam(); });
 
   /* one event or publication on its own page (#event/name, #publication/name) */
   const detail = $("#detail");
@@ -1980,9 +2033,10 @@ textarea.field__control { resize: vertical; min-height: 140px; }
     meta: $("[data-detail-meta]"), media: $("[data-detail-media]"), text: $("[data-detail-text]"), box: $("[data-detail-box]"), boxList: $("[data-detail-box-list]"),
   };
   const baseTitle = document.title;
+  const PAGES = { "#events": "events", "#publications": "news", "#team": "team" }; // the pages that stand on their own
+  const PAGE_TITLE = { events: "Events", news: "Publications", team: "Team" };
   const parseRoute = () => {
-    if (location.hash === "#publications") return { kind: "newslist" };
-    if (location.hash === "#events") return { kind: "eventslist" };
+    if (PAGES[location.hash]) return { kind: "page", page: PAGES[location.hash] };
     const m = location.hash.match(/^#(event|publication)\/([A-Za-z0-9-]+)$/);
     return m ? { kind: m[1], slug: m[2] } : null;
   };
@@ -2026,12 +2080,11 @@ textarea.field__control { resize: vertical; min-height: 140px; }
     const r = parseRoute();
     if (r) {
       if (!mode) savedScroll = window.scrollY;
-      mode = r.kind === "newslist" ? "news" : r.kind === "eventslist" ? "events" : "detail";
-      root.classList.toggle("is-news", mode === "news");
-      root.classList.toggle("is-events", mode === "events");
+      mode = r.kind === "page" ? r.page : "detail";
+      Object.keys(PAGE_TITLE).forEach((k) => root.classList.toggle("is-" + k, mode === k));
       root.classList.toggle("is-detail", mode === "detail");
       if (mode !== "detail") {
-        document.title = (mode === "news" ? "Publications" : "Events") + " | " + baseTitle.split(" | ")[0];
+        document.title = PAGE_TITLE[mode] + " | " + baseTitle.split(" | ")[0];
         window.scrollTo({ top: 0, behavior: "instant" });
         return;
       }
@@ -2044,7 +2097,7 @@ textarea.field__control { resize: vertical; min-height: 140px; }
       detail.focus({ preventScroll: true });
     } else if (mode) {
       mode = null;
-      root.classList.remove("is-detail", "is-news", "is-events");
+      root.classList.remove("is-detail", "is-news", "is-events", "is-team");
       document.title = baseTitle;
       const id = location.hash.slice(1);
       const target = id ? document.getElementById(id) : null;

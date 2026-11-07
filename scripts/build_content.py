@@ -3,6 +3,8 @@
 
   content/events/*.json  ->  data/events.json
   content/news/*.json    ->  data/news.json
+  content/team/*.json    ->  data/team.json
+  content/departments.json -> data/departments.json
 
 Runs on every deploy (see .github/workflows/static.yml). It never fails the deploy
 because of one bad post: a post it cannot use is skipped with a warning.
@@ -72,6 +74,66 @@ def build(kind):
     print(f"{kind}: {len(items)} published")
 
 
+def write(name, items):
+    out = ROOT / "data" / f"{name}.json"
+    out.parent.mkdir(exist_ok=True)
+    out.write_text(json.dumps(items, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"{name}: {len(items)} published")
+
+
+def build_team():
+    people = []
+    for path in sorted((ROOT / "content" / "team").glob("*.json")):
+        try:
+            raw = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, ValueError) as err:
+            warn(path, f"skipped, not valid JSON ({err})")
+            continue
+        if not isinstance(raw, dict) or raw.get("draft") is True:
+            continue
+        name = text(raw.get("name"))
+        if not name:
+            warn(path, "skipped, a name is required")
+            continue
+        try:
+            order = float(raw.get("order"))
+        except (TypeError, ValueError):
+            order = 100
+        people.append({
+            "slug": re.sub(r"[^a-z0-9-]+", "-", path.stem.lower()).strip("-") or "person",
+            "name": name,
+            "department": text(raw.get("department")),
+            "role": text(raw.get("role")),
+            "photo": clean_image(raw.get("photo")),
+            "order": order,
+        })
+    people.sort(key=lambda p: (p["order"], p["name"]))
+    write("team", people)
+
+
+def build_departments():
+    path = ROOT / "content" / "departments.json"
+    items = []
+    try:
+        raw = json.loads(path.read_text(encoding="utf-8"))
+        entries = raw.get("departments", []) if isinstance(raw, dict) else []
+    except (OSError, ValueError) as err:
+        warn(path, f"skipped, not valid JSON ({err})")
+        entries = []
+    for entry in entries:
+        if not isinstance(entry, dict) or not text(entry.get("name")):
+            continue
+        tasks = entry.get("tasks")
+        items.append({
+            "name": text(entry.get("name")),
+            "summary": text(entry.get("summary")),
+            "tasks": [text(t) for t in tasks if text(t)] if isinstance(tasks, list) else [],
+        })
+    write("departments", items)
+
+
 if __name__ == "__main__":
     for kind in FIELDS:
         build(kind)
+    build_team()
+    build_departments()

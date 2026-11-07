@@ -114,3 +114,69 @@ content:
         type: boolean
         default: false
         description: "Switch on to keep this publication off the site while you are still writing it."
+
+  - name: team
+    label: Team members
+    type: collection
+    path: content/team
+    format: json
+    filename: "{primary}.json"
+    view:
+      fields: [name, department, role]
+      primary: name
+      sort: [department, name]
+      default:
+        sort: department
+        order: asc
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: department
+        label: Department
+        type: select
+        required: true
+        options:
+          values: [Board, Operations, Research, Relations, Marketing, Legal]
+      - name: role
+        label: Role
+        type: string
+        description: "For example: Head of Research, Associate, Analyst"
+      - name: photo
+        label: Photo
+        type: image
+        description: "A portrait photo, taller than it is wide (about 800 x 1000). Without one, the person's initials are shown."
+      - name: order
+        label: Position in the list
+        type: number
+        description: "Optional. Lower numbers come first; heads are usually 1. People with the same number are sorted by name."
+      - name: draft
+        label: Hide from the website
+        type: boolean
+        default: false
+        description: "Switch on for someone who has left or should not be shown yet."
+
+  - name: departments
+    label: Departments
+    type: file
+    path: content/departments.json
+    format: json
+    fields:
+      - name: departments
+        label: Departments
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+            description: "Must match the department chosen on team members, so rename it there too."
+          - name: summary
+            label: What the department does
+            type: text
+          - name: tasks
+            label: Key tasks
+            type: string
+            list: true
