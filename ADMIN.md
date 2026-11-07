@@ -1,4 +1,4 @@
-# Posting events and publications
+# Posting events, publications and the team
 
 The club posts events and publications through **Pages CMS**, an outside editor that signs in with GitHub and
 shows simple forms. Nothing is installed on the website itself.
@@ -28,9 +28,23 @@ The "Club admin" link in the website footer opens the CMS for this repository.
 
 Same steps, but choose **Publications**. Publications have their own page on the website (the Publications link in the menu). The short summary appears on the card and the article opens on its own page.
 
+## Managing the team page
+
+The Team link opens a page with a panel for each department.
+
+- **Add a person:** choose **Team members**, then **Add an entry**. Fill in the name, pick the department,
+  write the role, and upload a photo. A portrait photo (about 800 x 1000) works best. Under the photo the
+  site shows the department, the name and the role. Without a photo the initials are shown.
+- **Order:** the optional "Position in the list" number puts people first (heads are usually 1). People
+  with the same number are sorted by name.
+- **Someone leaves:** switch on **Hide from the website** instead of deleting them.
+- **What a department does:** choose **Departments** to edit each department's short description and key tasks.
+  If you rename a department there, also pick the new name on the people in it.
+
 ## How it works (for whoever maintains the site)
 
-- Each post is one small JSON file in `content/events/` or `content/news/` (publications), created by the CMS.
+- Each post is one small JSON file in `content/events/`, `content/news/` (publications) or `content/team/`, created by the CMS.
+  Department descriptions are in `content/departments.json`.
 - `scripts/build_content.py` gathers them into `data/events.json` and `data/news.json`. The GitHub
   Pages workflow runs it on every push, so a CMS save publishes automatically.
 - A post with a missing title or date is skipped with a warning in the workflow log instead of breaking the deploy.
