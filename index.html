@@ -569,7 +569,7 @@ html.is-detail .header { background: var(--navy-950); }
 .back .i { width: 20px; height: 20px; transition: transform var(--t-ui) var(--ease-out); }
 @media (hover: hover) { .back:hover { text-decoration: underline; text-underline-offset: 0.25em; } .back:hover .i { transform: translateX(-3px); } }
 .detail [data-detail-tag] { margin-top: clamp(20px, 3vw, 36px); }
-.detail__title { margin-top: 18px; font-size: var(--t-head); color: var(--navy-900); max-width: 18ch; }
+.detail__title { margin-top: 18px; font-size: var(--t-head); color: var(--navy-900); max-width: 24ch; }
 .detail__meta { margin-top: clamp(20px, 2.4vw, 30px); display: flex; flex-wrap: wrap; gap: 10px clamp(20px, 3vw, 36px); font-weight: 600; color: var(--navy-900); }
 .detail__meta li { display: inline-flex; align-items: center; gap: 10px; }
 .detail__meta .i { width: 20px; height: 20px; color: var(--navy-700); flex: none; }
@@ -585,6 +585,31 @@ html.is-detail .header { background: var(--navy-950); }
 .detail__box .i { width: 20px; height: 20px; margin-top: 2px; color: var(--navy-700); flex: none; }
 .detail__box strong { font-weight: 700; color: var(--navy-900); }
 .detail__box p { color: var(--muted); }
+/* the PDF viewer on a publication: page controls, zoom, download, and the pages in a scrolling frame */
+.pdfview { margin-top: clamp(28px, 3.4vw, 44px); }
+.pdfview__bar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px clamp(16px, 2.4vw, 32px); padding-bottom: 16px; border-bottom: 1.5px solid var(--line); }
+.pdfview__group { display: inline-flex; align-items: center; gap: 8px; }
+.pdfview__btn {
+  display: grid; place-items: center; width: 44px; height: 44px; border-radius: var(--r-sm);
+  border: 1.5px solid var(--line); background: #fff; color: var(--navy-900); cursor: pointer;
+  transition: background-color var(--t-hover) var(--ease-out), border-color var(--t-hover) var(--ease-out), transform var(--t-press) var(--ease-out);
+}
+.pdfview__btn .i { width: 20px; height: 20px; }
+.pdfview__btn:active:not(:disabled) { transform: scale(0.94); }
+.pdfview__btn:disabled { color: var(--blue-200); cursor: default; }
+@media (hover: hover) { .pdfview__btn:hover:not(:disabled) { background: var(--blue-50); border-color: var(--blue-200); } }
+.pdfview__count { min-width: 3.4em; text-align: center; color: var(--muted); font-weight: 600; font-size: var(--t-small); font-variant-numeric: tabular-nums; }
+.pdfview__dl { margin-left: auto; }
+.pdfview.is-failed [data-pdf-nav], .pdfview.is-failed [data-pdf-zoomgroup] { display: none; }
+.pdfview__pane {
+  position: relative; margin-top: 16px; height: clamp(420px, 78vh, 820px); overflow: auto; overscroll-behavior: contain;
+  padding: 16px; border-radius: var(--r-md); background: var(--blue-50);
+  display: flex; flex-direction: column; align-items: safe center; gap: 14px;
+}
+.pdfview__page { position: relative; flex: none; background: #fff; border-radius: 4px; overflow: clip; box-shadow: 0 0 0 1px var(--line); }
+.pdfview__page canvas { display: block; width: 100%; height: 100%; }
+.pdfview__state { margin: auto; color: var(--muted); font-weight: 500; text-align: center; }
+@media (max-width: 599px) { .pdfview__pane { padding: 10px; height: clamp(360px, 72vh, 640px); } .pdfview__dl { margin-left: 0; } }
 .detail__missing { margin-top: clamp(24px, 3vw, 40px); color: var(--muted); }
 .footer__base-links { display: flex; flex-wrap: wrap; gap: 4px 24px; }
 .footer__base-links a { display: inline-flex; align-items: center; min-height: 44px; }
@@ -923,6 +948,10 @@ textarea.field__control { resize: vertical; min-height: 140px; }
 <symbol id="i-instagram" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></g></symbol>
 <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></g></symbol>
 <symbol id="i-arrow-left" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></g></symbol>
+<symbol id="i-chevron-left" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6" /></g></symbol>
+<symbol id="i-minus" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /></g></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="M12 5v14" /></g></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3" /><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><path d="m7 10 5 5 5-5" /></g></symbol>
 </svg>
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -1423,6 +1452,22 @@ textarea.field__control { resize: vertical; min-height: 140px; }
         <h1 class="detail__title" id="detail-title" data-detail-title>Loading…</h1>
         <ul class="detail__meta" role="list" data-detail-meta></ul>
         <figure class="detail__media" data-detail-media hidden><img alt="" width="1600" height="800" decoding="async"></figure>
+        <div class="pdfview" data-pdf hidden>
+          <div class="pdfview__bar" role="toolbar" aria-label="PDF controls">
+            <div class="pdfview__group" data-pdf-nav>
+              <button class="pdfview__btn" type="button" data-pdf-prev aria-label="Previous page"><svg class="i" aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+              <span class="pdfview__count" aria-live="polite"><span data-pdf-page>1</span> / <span data-pdf-total>&ndash;</span></span>
+              <button class="pdfview__btn" type="button" data-pdf-next aria-label="Next page"><svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></button>
+            </div>
+            <div class="pdfview__group" data-pdf-zoomgroup>
+              <button class="pdfview__btn" type="button" data-pdf-out aria-label="Zoom out"><svg class="i" aria-hidden="true"><use href="#i-minus"/></svg></button>
+              <span class="pdfview__count" data-pdf-zoom aria-live="polite">100%</span>
+              <button class="pdfview__btn" type="button" data-pdf-in aria-label="Zoom in"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></button>
+            </div>
+            <a class="btn btn--outline btn--sm pdfview__dl" data-pdf-download href="#" download><svg class="i" aria-hidden="true"><use href="#i-download"/></svg>Download</a>
+          </div>
+          <div class="pdfview__pane" data-pdf-pane tabindex="0" role="region" aria-label="PDF preview, scroll to read"></div>
+        </div>
         <div class="detail__text" data-detail-text></div>
         <aside class="detail__box" data-detail-box hidden aria-labelledby="detail-box-title">
           <h2 id="detail-box-title">Event details</h2>
@@ -2026,6 +2071,175 @@ textarea.field__control { resize: vertical; min-height: 140px; }
   };
   ready.then(() => { renderEvents(); renderNews(); renderTeam(); });
 
+  /* ---------- PDF viewer for a publication (PDF.js from cdnjs, loaded only when a PDF is opened) ---------- */
+  const PDFJS = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/";
+  let pdfjsReady = null;
+  const loadPdfjs = () => {
+    if (window.pdfjsLib) return Promise.resolve(window.pdfjsLib);
+    if (!pdfjsReady) pdfjsReady = new Promise((resolve, reject) => {
+      const tag = document.createElement("script");
+      tag.src = PDFJS + "pdf.min.js"; tag.crossOrigin = "anonymous"; tag.async = true;
+      tag.onload = () => { try { window.pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS + "pdf.worker.min.js"; resolve(window.pdfjsLib); } catch (e) { reject(e); } };
+      tag.onerror = () => { pdfjsReady = null; tag.remove(); reject(new Error("pdf.js did not load")); };
+      document.head.append(tag);
+    });
+    return pdfjsReady;
+  };
+  const safePdf = (u) => (/^(assets\/[^?#]+|https:\/\/[^\s]+)\.pdf(\?[^\s]*)?$/i.test(u || "") ? u : "");
+
+  const pv = {
+    root: $("[data-pdf]"), pane: $("[data-pdf-pane]"), prev: $("[data-pdf-prev]"), next: $("[data-pdf-next]"),
+    zin: $("[data-pdf-in]"), zout: $("[data-pdf-out]"), page: $("[data-pdf-page]"), total: $("[data-pdf-total]"),
+    zoom: $("[data-pdf-zoom]"), dl: $("[data-pdf-download]"),
+  };
+  const PAD = 16, ZMIN = 50, ZMAX = 300, ZSTEP = 25;
+  let pdf = null; // the document being shown: { dead, doc, zoom, width, pages: [{ wrap, canvas, ratio, rendered, busy, task }] }
+
+  const closePdf = () => {
+    if (pdf) {
+      pdf.dead = true;
+      pdf.pages.forEach((p) => { if (p.task) { try { p.task.cancel(); } catch (e) { /* already done */ } } });
+      if (pdf.doc) { try { pdf.doc.destroy(); } catch (e) { /* already gone */ } }
+      pdf = null;
+    }
+    pv.pane.replaceChildren(); pv.root.hidden = true; pv.root.classList.remove("is-failed");
+  };
+
+  const pdfCurrent = () => {
+    if (!pdf || !pdf.pages.length) return 0;
+    const mid = pv.pane.scrollTop + pv.pane.clientHeight * 0.3;
+    let cur = 0;
+    pdf.pages.forEach((p, i) => { if (p.wrap.offsetTop - PAD <= mid) cur = i; });
+    return cur;
+  };
+  const pdfUpdate = () => {
+    if (!pdf) return;
+    const cur = pdfCurrent(), n = pdf.pages.length;
+    pv.page.textContent = String(cur + 1);
+    pv.prev.disabled = cur <= 0; pv.next.disabled = cur >= n - 1;
+    pv.zoom.textContent = pdf.zoom + "%";
+    pv.zout.disabled = pdf.zoom <= ZMIN; pv.zin.disabled = pdf.zoom >= ZMAX;
+  };
+  const pdfLayout = () => {
+    if (!pdf) return;
+    const w = Math.max(120, Math.round((pv.pane.clientWidth - 2 * PAD) * pdf.zoom / 100));
+    pdf.width = w;
+    pdf.pages.forEach((p) => {
+      p.wrap.style.width = w + "px"; p.wrap.style.height = Math.round(w * p.ratio) + "px";
+      if (p.rendered !== w && p.task) { try { p.task.cancel(); } catch (e) { /* done */ } }
+    });
+  };
+  const pdfRenderPage = async (st, i) => {
+    const p = st.pages[i], w = st.width;
+    p.busy = true;
+    try {
+      const page = await st.doc.getPage(i + 1);
+      if (st.dead) return;
+      const base = page.getViewport({ scale: 1 });
+      p.ratio = base.height / base.width;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const vp = page.getViewport({ scale: (w / base.width) * dpr });
+      p.wrap.style.height = Math.round(w * p.ratio) + "px";
+      p.canvas.width = Math.floor(vp.width); p.canvas.height = Math.floor(vp.height);
+      p.task = page.render({ canvasContext: p.canvas.getContext("2d"), viewport: vp });
+      await p.task.promise;
+      p.rendered = w;
+    } catch (e) {
+      if (!e || e.name !== "RenderingCancelledException") console.warn("Nova M&A Club: a PDF page could not be drawn.", e);
+    } finally {
+      p.busy = false; p.task = null;
+      if (!st.dead) pdfRenderVisible();
+    }
+  };
+  const pdfRenderVisible = () => {
+    if (!pdf) return;
+    const top = pv.pane.scrollTop - 700, bottom = pv.pane.scrollTop + pv.pane.clientHeight + 700;
+    pdf.pages.forEach((p, i) => {
+      const y = p.wrap.offsetTop;
+      if (y + p.wrap.offsetHeight < top || y > bottom) return;
+      if (p.rendered === pdf.width || p.busy) return;
+      pdfRenderPage(pdf, i);
+    });
+  };
+  const pdfGoTo = (i) => {
+    if (!pdf) return;
+    const p = pdf.pages[Math.max(0, Math.min(pdf.pages.length - 1, i))];
+    pv.pane.scrollTo({ top: p.wrap.offsetTop - PAD, behavior: reduce.matches ? "auto" : "smooth" });
+  };
+  const pdfSetZoom = (z) => {
+    if (!pdf) return;
+    z = Math.max(ZMIN, Math.min(ZMAX, z));
+    if (z === pdf.zoom) return;
+    const centre = (pv.pane.scrollTop + pv.pane.clientHeight / 2) / Math.max(1, pv.pane.scrollHeight);
+    pdf.zoom = z;
+    pdfLayout();
+    pv.pane.scrollTop = centre * pv.pane.scrollHeight - pv.pane.clientHeight / 2;
+    pdfUpdate(); pdfRenderVisible();
+  };
+  const pdfFail = (st) => {
+    if (st.dead) return;
+    pv.root.classList.add("is-failed");
+    pv.pane.replaceChildren(mk("p", { class: "pdfview__state", text: "The preview could not be loaded. Use Download to read the PDF." }));
+  };
+
+  const openPdf = async (url) => {
+    closePdf();
+    const st = pdf = { dead: false, doc: null, zoom: 100, width: 0, pages: [] };
+    pv.root.hidden = false;
+    pv.dl.setAttribute("href", url);
+    pv.dl.setAttribute("download", decodeURIComponent(url.split("?")[0].split("/").pop() || "publication.pdf"));
+    pv.page.textContent = "1"; pv.total.textContent = "–"; pv.zoom.textContent = "100%";
+    pv.prev.disabled = pv.next.disabled = true; pv.zout.disabled = pv.zin.disabled = false;
+    pv.pane.replaceChildren(mk("p", { class: "pdfview__state", text: "Loading the PDF…" }));
+    try {
+      const lib = await loadPdfjs();
+      const doc = await lib.getDocument({ url }).promise;
+      if (st.dead) { doc.destroy(); return; }
+      st.doc = doc;
+      const n = doc.numPages;
+      pv.total.textContent = String(n);
+      const first = await doc.getPage(1);
+      if (st.dead) return;
+      const v = first.getViewport({ scale: 1 });
+      pv.pane.replaceChildren();
+      for (let i = 0; i < n; i++) {
+        const canvas = mk("canvas", { role: "img", "aria-label": "Page " + (i + 1) + " of " + n });
+        const wrap = mk("div", { class: "pdfview__page" }, canvas);
+        pv.pane.append(wrap);
+        st.pages.push({ wrap, canvas, ratio: v.height / v.width, rendered: 0, busy: false, task: null });
+      }
+      pdfLayout(); pdfUpdate(); pdfRenderVisible();
+      // the other pages may be a different shape: read their sizes in the background
+      (async () => {
+        let changed = false;
+        for (let i = 1; i < n && !st.dead; i++) {
+          const vp = (await doc.getPage(i + 1)).getViewport({ scale: 1 });
+          const r = vp.height / vp.width;
+          if (Math.abs(r - st.pages[i].ratio) > 0.001) { st.pages[i].ratio = r; changed = true; }
+        }
+        if (changed && !st.dead) { pdfLayout(); pdfUpdate(); pdfRenderVisible(); }
+      })().catch(() => {});
+    } catch (e) {
+      console.warn("Nova M&A Club: the PDF could not be opened.", e);
+      pdfFail(st);
+    }
+  };
+
+  pv.prev.addEventListener("click", () => pdfGoTo(pdfCurrent() - 1));
+  pv.next.addEventListener("click", () => pdfGoTo(pdfCurrent() + 1));
+  pv.zin.addEventListener("click", () => pdf && pdfSetZoom(pdf.zoom + ZSTEP));
+  pv.zout.addEventListener("click", () => pdf && pdfSetZoom(pdf.zoom - ZSTEP));
+  let pdfFrame = 0;
+  pv.pane.addEventListener("scroll", () => { if (pdfFrame) return; pdfFrame = requestAnimationFrame(() => { pdfFrame = 0; pdfUpdate(); pdfRenderVisible(); }); }, { passive: true });
+  if ("ResizeObserver" in window) {
+    let paneWidth = 0;
+    new ResizeObserver(() => {
+      const w = pv.pane.clientWidth;
+      if (!pdf || !w || w === paneWidth) { paneWidth = w; return; }
+      paneWidth = w; pdfLayout(); pdfUpdate(); pdfRenderVisible();
+    }).observe(pv.pane);
+  }
+
   /* one event or publication on its own page (#event/name, #publication/name) */
   const detail = $("#detail");
   const parts = {
@@ -2047,7 +2261,7 @@ textarea.field__control { resize: vertical; min-height: 140px; }
     parts.back.setAttribute("href", isEvent ? "#events" : "#publications");
     parts.backLabel.textContent = isEvent ? "Back to events" : "Back to publications";
     parts.meta.replaceChildren(); parts.boxList.replaceChildren(); parts.text.replaceChildren();
-    parts.box.hidden = true; parts.media.hidden = true;
+    parts.box.hidden = true; parts.media.hidden = true; closePdf();
     if (!it) {
       parts.tag.hidden = true;
       parts.title.textContent = "We couldn't find that page";
@@ -2063,8 +2277,9 @@ textarea.field__control { resize: vertical; min-height: 140px; }
       if (timeOf(it)) li("clock", timeOf(it));
       if (it.location) li("map-pin", it.location);
     } else li("calendar", dayLong(it.date));
-    const img = safeImg(it.image);
-    if (img) { parts.media.hidden = false; parts.media.querySelector("img").setAttribute("src", img); }
+    const img = safeImg(it.image), file = isEvent ? "" : safePdf(it.pdf);
+    if (file) openPdf(file);
+    else if (img) { parts.media.hidden = false; parts.media.querySelector("img").setAttribute("src", img); }
     paragraphs(isEvent ? it.description : it.body).forEach((t) => parts.text.append(mk("p", { text: t })));
     if (isEvent) {
       const row = (id, label, value) => { if (value) parts.boxList.append(mk("li", {}, icon(id), mk("p", {}, mk("strong", { text: label + ":" }), " " + value))); };
@@ -2084,6 +2299,7 @@ textarea.field__control { resize: vertical; min-height: 140px; }
       Object.keys(PAGE_TITLE).forEach((k) => root.classList.toggle("is-" + k, mode === k));
       root.classList.toggle("is-detail", mode === "detail");
       if (mode !== "detail") {
+        closePdf();
         document.title = PAGE_TITLE[mode] + " | " + baseTitle.split(" | ")[0];
         window.scrollTo({ top: 0, behavior: "instant" });
         return;
@@ -2096,7 +2312,7 @@ textarea.field__control { resize: vertical; min-height: 140px; }
       window.scrollTo({ top: 0, behavior: "instant" });
       detail.focus({ preventScroll: true });
     } else if (mode) {
-      mode = null;
+      mode = null; closePdf();
       root.classList.remove("is-detail", "is-news", "is-events", "is-team");
       document.title = baseTitle;
       const id = location.hash.slice(1);

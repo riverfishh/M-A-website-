@@ -6,7 +6,7 @@
 media:
   input: assets/uploads
   output: assets/uploads
-  extensions: [jpg, jpeg, png, webp]
+  extensions: [jpg, jpeg, png, webp, pdf]
 
 content:
   - name: events
@@ -97,18 +97,22 @@ content:
         label: Date
         type: date
         required: true
+      - name: pdf
+        label: PDF
+        type: file
+        description: "The publication itself. It opens on the website in a built-in PDF viewer, with a download button."
       - name: image
-        label: Photo
+        label: Cover photo
         type: image
-        description: "Optional."
+        description: "Optional. Shown on the publication card."
       - name: summary
         label: Short summary
         type: text
         description: "One or two sentences shown on the publication card."
       - name: body
-        label: Article
+        label: Text under the PDF
         type: text
-        description: "Plain text. Leave a blank line between paragraphs."
+        description: "Optional. Plain text, with a blank line between paragraphs. Without a PDF, this is the article."
       - name: draft
         label: Hide from the website
         type: boolean

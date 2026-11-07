@@ -19,7 +19,7 @@ TIME = re.compile(r"^\d{1,2}:\d{2}$")
 
 FIELDS = {
     "events": ["title", "category", "date", "start_time", "end_time", "location", "image", "speakers", "description"],
-    "news": ["title", "category", "date", "image", "summary", "body"],
+    "news": ["title", "category", "date", "pdf", "image", "summary", "body"],
 }
 
 
@@ -37,6 +37,14 @@ def clean_image(value):
         return value
     value = value.lstrip("/")
     return value if value.startswith("assets/") else ""
+
+
+def clean_pdf(value):
+    value = text(value)
+    if value.startswith("https://") and value.lower().split("?")[0].endswith(".pdf"):
+        return value
+    value = value.lstrip("/")
+    return value if value.startswith("assets/") and value.lower().endswith(".pdf") else ""
 
 
 def build(kind):
@@ -62,6 +70,8 @@ def build(kind):
             item[field] = text(raw.get(field))
         item["date"] = date[:10]
         item["image"] = clean_image(raw.get("image"))
+        if kind == "news":
+            item["pdf"] = clean_pdf(raw.get("pdf"))
         for field in ("start_time", "end_time"):
             if item.get(field) and not TIME.match(item[field]):
                 warn(path, f"{field} should look like 18:30, ignoring it")

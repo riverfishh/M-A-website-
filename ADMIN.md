@@ -26,7 +26,12 @@ The "Club admin" link in the website footer opens the CMS for this repository.
 
 ## Posting a publication
 
-Same steps, but choose **Publications**. Publications have their own page on the website (the Publications link in the menu). The short summary appears on the card and the article opens on its own page.
+Choose **Publications**, then **Add an entry**, and upload the **PDF**. On the website the PDF opens in a
+built-in viewer with page arrows, zoom and a Download button. The optional **Cover photo** and
+**Short summary** appear on the publication card, and the optional **Text under the PDF** is shown below
+the viewer. Without a PDF the entry is shown as a plain text article.
+
+Publications have their own page on the website (the Publications link in the menu).
 
 ## Managing the team page
 
@@ -49,4 +54,5 @@ The Team link opens a page with a panel for each department.
   Pages workflow runs it on every push, so a CMS save publishes automatically.
 - A post with a missing title or date is skipped with a warning in the workflow log instead of breaking the deploy.
 - The CMS form fields are defined in `.pages.yml`.
+- The PDF viewer uses the PDF.js library, loaded from cdnjs when a PDF is opened (the browser needs internet access). If it cannot load, the page shows the Download button instead.
 - The event list is the page `#events` and the publications list is `#publications`. Single pages have addresses like `#event/mentor-fair` and `#publication/new-partner`.
