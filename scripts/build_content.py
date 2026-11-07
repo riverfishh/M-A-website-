@@ -3,7 +3,7 @@
 
   content/events/*.json  ->  data/events.json
   content/news/*.json    ->  data/news.json
-  content/team/*.json    ->  data/team.json
+  content/team/**/*.json ->  data/team.json  (folders made in the CMS are fine)
   content/departments.json -> data/departments.json
 
 Runs on every deploy (see .github/workflows/static.yml). It never fails the deploy
@@ -39,6 +39,20 @@ def clean_image(value):
     return value if value.startswith("assets/") else ""
 
 
+def make_slug(path, base, seen, fallback):
+    """The address of a post, from its file name. Posts may sit in folders made in the CMS."""
+    slug = re.sub(r"[^a-z0-9-]+", "-", path.stem.lower()).strip("-") or fallback
+    if slug in seen:  # the same file name in two folders: put the folder in front
+        folder = "-".join(path.relative_to(base).parts[:-1] + (path.stem,))
+        slug = re.sub(r"[^a-z0-9-]+", "-", folder.lower()).strip("-") or fallback
+        n = 2
+        while slug in seen:
+            slug = f"{slug}-{n}"
+            n += 1
+    seen.add(slug)
+    return slug
+
+
 def clean_pdf(value):
     value = text(value)
     if value.startswith("https://") and value.lower().split("?")[0].endswith(".pdf"):
@@ -49,7 +63,8 @@ def clean_pdf(value):
 
 def build(kind):
     items = []
-    for path in sorted((ROOT / "content" / kind).glob("*.json")):
+    base, seen = ROOT / "content" / kind, set()
+    for path in sorted(base.rglob("*.json")):
         try:
             raw = json.loads(path.read_text(encoding="utf-8"))
         except (OSError, ValueError) as err:
@@ -65,7 +80,7 @@ def build(kind):
         if not title or not DATE.match(date):
             warn(path, "skipped, a title and a date are required")
             continue
-        item = {"slug": re.sub(r"[^a-z0-9-]+", "-", path.stem.lower()).strip("-") or "post"}
+        item = {"slug": make_slug(path, base, seen, "post")}
         for field in FIELDS[kind]:
             item[field] = text(raw.get(field))
         item["date"] = date[:10]
@@ -93,7 +108,8 @@ def write(name, items):
 
 def build_team():
     people = []
-    for path in sorted((ROOT / "content" / "team").glob("*.json")):
+    base, seen = ROOT / "content" / "team", set()
+    for path in sorted(base.rglob("*.json")):
         try:
             raw = json.loads(path.read_text(encoding="utf-8"))
         except (OSError, ValueError) as err:
@@ -110,7 +126,7 @@ def build_team():
         except (TypeError, ValueError):
             order = 100
         people.append({
-            "slug": re.sub(r"[^a-z0-9-]+", "-", path.stem.lower()).strip("-") or "person",
+            "slug": make_slug(path, base, seen, "person"),
             "name": name,
             "department": text(raw.get("department")),
             "role": text(raw.get("role")),
