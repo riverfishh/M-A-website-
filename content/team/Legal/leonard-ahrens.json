@@ -2,6 +2,7 @@
   "name": "Leonard Ahrens",
   "department": "Legal",
   "role": "Head of Legal",
+  "photo": "assets/uploads/Leo.jpg",
   "order": 1,
   "draft": false
 }
