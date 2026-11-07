@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nova M&amp;A Club | Nova SBE Mergers &amp; Acquisitions Student Club</title>
-<meta name="description" content="The student M&amp;A club of Nova School of Business and Economics: deal research, sessions with banks and investors, and 37 members across five departments. Partner with us or get in touch.">
+<meta name="description" content="The student M&amp;A club of Nova School of Business and Economics: deal research, sessions with banks and investors, and 37 members across five departments. Get in touch.">
 <meta name="theme-color" content="#061634">
 <meta property="og:title" content="Nova M&amp;A Club | Nova SBE Mergers &amp; Acquisitions Student Club">
 <meta property="og:description" content="The student M&amp;A club of Nova School of Business and Economics: deal research, sessions with banks and investors, and 37 members across five departments.">
@@ -655,37 +655,6 @@ html:not(.js) .row__list { flex-wrap: wrap; }
 html:not(.js) .row__list[aria-hidden="true"], html:not(.js) .marquee-toggle { display: none; }
 
 /* =====================================================================
-   Partners
-   ===================================================================== */
-.partners__panel {
-  position: relative; overflow: clip;
-  background: var(--navy-700); color: #fff; border-radius: var(--r-lg);
-  padding: clamp(28px, 5.5vw, 80px);
-}
-.partners__top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: end; }
-.partners__top .lead { margin-top: 18px; max-width: 46ch; color: rgba(255, 255, 255, 0.84); }
-.benefits { margin-top: clamp(40px, 5vw, 64px); display: grid; gap: 10px; }
-.benefit { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 12px clamp(24px, 4vw, 64px); align-items: baseline; padding: clamp(18px, 2vw, 26px) clamp(20px, 2.4vw, 32px); border-radius: var(--r-md); background: rgba(255, 255, 255, 0.07); }
-.benefit h3 { font-size: var(--t-lead); }
-.benefit p { color: rgba(255, 255, 255, 0.86); }
-.formats { margin-top: clamp(40px, 5vw, 64px); display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr); gap: var(--gap); align-items: start; }
-.formats h3 { font-size: var(--t-body); font-weight: 700; letter-spacing: -0.01em; padding-top: 10px; }
-.formats ul { display: flex; flex-wrap: wrap; gap: 10px; }
-.formats li { padding: 10px 18px; border-radius: var(--pill); background: rgba(255, 255, 255, 0.12); font-size: var(--t-small); font-weight: 600; }
-.process { margin-top: clamp(40px, 5vw, 64px); }
-.process h3 { font-size: var(--t-body); font-weight: 700; letter-spacing: -0.01em; }
-.steps { margin-top: 22px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap); counter-reset: step; }
-.step { position: relative; counter-increment: step; }
-.step::before {
-  content: counter(step); display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
-  background: var(--blue-400); color: var(--navy-950); font-weight: 700;
-}
-.step:not(:last-child)::after { content: ""; position: absolute; left: 56px; right: 8px; top: 21px; height: 2px; border-radius: 2px; background: rgba(255, 255, 255, 0.18); }
-.step h4 { margin-top: 16px; }
-.step p { margin-top: 6px; color: rgba(255, 255, 255, 0.86); line-height: 1.5; }
-.partners__email { margin-top: 24px; color: rgba(255, 255, 255, 0.86); }
-
-/* =====================================================================
    Join (split, reference look)
    ===================================================================== */
 .join__grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
@@ -860,7 +829,7 @@ textarea.field__control { resize: vertical; min-height: 140px; }
   :root { --header: 68px; }
   .stat { grid-template-columns: minmax(0, 1fr); row-gap: 10px; padding-inline: 12px; }
   .stat .icon-dot { grid-row: auto; width: 44px; height: 44px; }
-  .about__top, .check__grid, .join__grid, .contact__grid, .partners__top, .formats { grid-template-columns: minmax(0, 1fr); }
+  .about__top, .check__grid, .join__grid, .contact__grid { grid-template-columns: minmax(0, 1fr); }
   .about__top { align-items: start; }
   .about__photo, .about__history, .about__cards { grid-column: 1 / -1; }
   .about__cards { grid-template-columns: minmax(0, 1fr); }
@@ -870,9 +839,6 @@ textarea.field__control { resize: vertical; min-height: 140px; }
   .tab .icon-dot { width: 38px; height: 38px; }
   .panel { grid-template-columns: minmax(0, 1fr); padding: 8px 8px 14px; }
   .panel__media { order: -1; }
-  .steps { grid-template-columns: minmax(0, 1fr); }
-  .benefit { grid-template-columns: minmax(0, 1fr); }
-  .step:not(:last-child)::after { display: none; }
   .join__photo { max-width: 440px; }
   .contact__grid { gap: 40px; }
 }
@@ -973,7 +939,6 @@ textarea.field__control { resize: vertical; min-height: 140px; }
         <li><a class="nav__link" href="#events">Events</a></li>
         <li><a class="nav__link" href="#publications">Publications</a></li>
         <li><a class="nav__link" href="#team">Team</a></li>
-        <li><a class="nav__link" href="#partners">Partners</a></li>
         <li><a class="nav__link" href="#join">Join</a></li>
       </ul>
       <a class="btn btn--light nav__cta" href="#contact">Get in touch</a>
@@ -994,9 +959,6 @@ textarea.field__control { resize: vertical; min-height: 140px; }
     <div class="hero__content wrap">
       <h1 class="hero__title" id="hero-title"><span class="line"><span>Nova M&amp;A Club</span></span></h1>
       <p class="hero__tagline" data-load style="--d:380ms">The student club at Nova SBE that analyses live M&amp;A deals and runs sessions with banks and investors.</p>
-      <div class="hero__actions" data-load style="--d:500ms">
-        <a class="btn btn--light" href="#partners">Partner with us</a>
-      </div>
     </div>
     <button class="hero__toggle" type="button" aria-pressed="false" aria-label="Pause the photo slideshow">
       <span class="swap" aria-hidden="true"><svg class="i i--a"><use href="#i-pause"/></svg><svg class="i i--b"><use href="#i-play"/></svg></span>
@@ -1304,52 +1266,6 @@ textarea.field__control { resize: vertical; min-height: 140px; }
     </div>
   </section>
 
-  <!-- Partners -->
-  <section class="section partners" id="partners" aria-labelledby="partners-title">
-    <div class="wrap">
-      <div class="partners__panel">
-        <div class="partners__top">
-          <div>
-            <h2 id="partners-title" data-lines>Partner with the club</h2>
-            <p class="lead rv">If your firm wants to meet Nova SBE students who are serious about M&amp;A, we would like to hear from you. We work with banks, funds and advisors on sessions built around your team's expertise.</p>
-          </div>
-          <div class="rv">
-            <a class="btn btn--light" href="#contact" data-enquiry="session">Propose a session</a>
-          </div>
-        </div>
-
-        <ul class="benefits" role="list" data-reveal>
-          <li class="benefit"><h3>Visibility and reach</h3><p>Engage directly with Nova SBE students, share your insights with an active student audience and take part in high-visibility events.</p></li>
-          <li class="benefit"><h3>Sessions built together</h3><p>We co-create each session with you, so students learn from real-world insight and your team gets a direct exchange with motivated students.</p></li>
-          <li class="benefit"><h3>An early look at talent</h3><p>Meet motivated, M&amp;A-focused students early, spot promising candidates and build connections that last.</p></li>
-        </ul>
-
-        <div class="formats" data-reveal>
-          <h3>Formats we can run with you</h3>
-          <ul role="list">
-            <li>Speaker events and panels</li>
-            <li>Technical workshops</li>
-            <li>Case studies and case competitions</li>
-            <li>Firm and team presentations</li>
-            <li>Online sessions with live Q&amp;A</li>
-            <li>Legal learning sessions on SPAs, due diligence and closing</li>
-          </ul>
-        </div>
-
-        <div class="process">
-          <h3>How it works</h3>
-          <ol class="steps" data-reveal>
-            <li class="step"><h4>Tell us what you have in mind</h4><p>Send a short note with the topic, format and rough timing. Our Relations team picks it up and stays your point of contact.</p></li>
-            <li class="step"><h4>Shape the session together</h4><p>We agree on the format, date and audience, and our researchers prepare a pre-read where it helps.</p></li>
-            <li class="step"><h4>We run the logistics</h4><p>Scheduling, promotion, registrations and the day itself are handled by our Relations, Marketing and Operations teams.</p></li>
-            <li class="step"><h4>Follow-up</h4><p>Afterwards we write up the key insights, collect feedback and follow up with you.</p></li>
-          </ol>
-          <p class="partners__email" data-requires-email hidden>Prefer email? Write to <a class="link" data-contact-email href="#"></a>.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Join -->
   <section class="section join" id="join" aria-labelledby="join-title">
     <div class="wrap join__grid">
@@ -1505,7 +1421,6 @@ textarea.field__control { resize: vertical; min-height: 140px; }
       <nav aria-labelledby="footer-work">
         <h3 id="footer-work">Work with us</h3>
         <ul class="footer__links" role="list">
-          <li><a href="#partners">Partner with the club</a></li>
           <li><a href="#join">Join the club</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
