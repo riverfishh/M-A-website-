@@ -1950,8 +1950,12 @@ textarea.field__control { resize: vertical; min-height: 140px; }
       if (st.dead) return;
       const base = page.getViewport({ scale: 1 });
       p.ratio = base.height / base.width;
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      const vp = page.getViewport({ scale: (w / base.width) * dpr });
+      // draw at least twice as large as shown, so text stays crisp; but keep the canvas under what browsers can handle
+      const sharp = Math.max(window.devicePixelRatio || 1, 2);
+      let scale = (w / base.width) * sharp;
+      const area = base.width * base.height * scale * scale, MAX_PIXELS = 16e6;
+      if (area > MAX_PIXELS) scale *= Math.sqrt(MAX_PIXELS / area);
+      const vp = page.getViewport({ scale });
       p.wrap.style.height = Math.round(w * p.ratio) + "px";
       p.canvas.width = Math.floor(vp.width); p.canvas.height = Math.floor(vp.height);
       p.task = page.render({ canvasContext: p.canvas.getContext("2d"), viewport: vp });
