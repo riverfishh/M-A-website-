@@ -1,14 +1,14 @@
 [
   {
-    "slug": "alberto-goncalves",
+    "slug": "research-alberto-goncalves",
     "name": "Alberto Gonçalves",
     "department": "Research",
     "role": "Head of Research",
-    "photo": "",
+    "photo": "assets/uploads/Alberto Gonçalves.jpg",
     "order": 1.0
   },
   {
-    "slug": "carolina-fernandes",
+    "slug": "relations-carolina-fernandes",
     "name": "Carolina Fernandes",
     "department": "Relations",
     "role": "Head of Relations",
@@ -16,7 +16,7 @@
     "order": 1.0
   },
   {
-    "slug": "dinis-almeida",
+    "slug": "marketing-dinis-almeida",
     "name": "Dinis Almeida",
     "department": "Marketing",
     "role": "Head of Marketing",
@@ -32,15 +32,15 @@
     "order": 1.0
   },
   {
-    "slug": "leonard-ahrens",
+    "slug": "legal-leonard-ahrens",
     "name": "Leonard Ahrens",
     "department": "Legal",
     "role": "Head of Legal",
-    "photo": "",
+    "photo": "assets/uploads/Leo.jpg",
     "order": 1.0
   },
   {
-    "slug": "rafael-silva",
+    "slug": "operations-rafael-silva",
     "name": "Rafael Silva",
     "department": "Operations",
     "role": "Head of Operations",
@@ -48,11 +48,51 @@
     "order": 1.0
   },
   {
+    "slug": "jason-hsu",
+    "name": "Jason Hsu",
+    "department": "Marketing",
+    "role": "Associate",
+    "photo": "assets/uploads/DSC_4487 (1).jpg",
+    "order": 2.0
+  },
+  {
+    "slug": "julian-endress",
+    "name": "Julian Endress",
+    "department": "Operations",
+    "role": "Associate",
+    "photo": "",
+    "order": 2.0
+  },
+  {
+    "slug": "kian-pinto",
+    "name": "Kian Pinto",
+    "department": "Research",
+    "role": "Team Leader",
+    "photo": "assets/uploads/Kian Pinto.jpg",
+    "order": 2.0
+  },
+  {
+    "slug": "lisa-scheier",
+    "name": "Lisa Scheier",
+    "department": "Legal",
+    "role": "Analyst",
+    "photo": "assets/uploads/Lisa Scheier.jpg",
+    "order": 2.0
+  },
+  {
     "slug": "vasco-coutinho",
     "name": "Vasco Coutinho",
     "department": "Board",
     "role": "Vice President",
-    "photo": "",
+    "photo": "assets/uploads/Vasco Coutinho.jpeg",
+    "order": 2.0
+  },
+  {
+    "slug": "yuren-ahing",
+    "name": "Yuren Ahing",
+    "department": "Relations",
+    "role": "Analyst",
+    "photo": "assets/uploads/Yuren Ahing_.jpg",
     "order": 2.0
   },
   {
@@ -62,5 +102,117 @@
     "role": "Internal Board Advisory",
     "photo": "",
     "order": 3.0
+  },
+  {
+    "slug": "julia-fletjerska",
+    "name": "Julia Fletjerska",
+    "department": "Operations",
+    "role": "Analyst",
+    "photo": "assets/uploads/Julia Flejterska.jpg",
+    "order": 3.0
+  },
+  {
+    "slug": "julian-marx",
+    "name": "Julian Marx",
+    "department": "Legal",
+    "role": "Analyst",
+    "photo": "assets/uploads/Julian Marx.jpg",
+    "order": 3.0
+  },
+  {
+    "slug": "lena-claeys",
+    "name": "Lena Claeys",
+    "department": "Research",
+    "role": "Team Leader",
+    "photo": "",
+    "order": 3.0
+  },
+  {
+    "slug": "pascal-bentscheck",
+    "name": "Pascal Bentscheck",
+    "department": "Relations",
+    "role": "Analyst",
+    "photo": "assets/uploads/Pascal Bentscheck.jpg",
+    "order": 3.0
+  },
+  {
+    "slug": "adrian-resch",
+    "name": "Adrian Resch",
+    "department": "Relations",
+    "role": "Analyst",
+    "photo": "assets/uploads/Adrian Resch.jpg",
+    "order": 4.0
+  },
+  {
+    "slug": "dinis-almeida",
+    "name": "Dinis Almeida",
+    "department": "Board",
+    "role": "Head of Marketing",
+    "photo": "",
+    "order": 4.0
+  },
+  {
+    "slug": "olfa-ayadi",
+    "name": "Olfa Ayadi",
+    "department": "Research",
+    "role": "Team Leader",
+    "photo": "",
+    "order": 4.0
+  },
+  {
+    "slug": "leonard-ahrens",
+    "name": "Leonard Ahrens",
+    "department": "Board",
+    "role": "Head of Legal",
+    "photo": "",
+    "order": 5.0
+  },
+  {
+    "slug": "lucrezia-reimbold",
+    "name": "Lucrezia Reimbold",
+    "department": "Relations",
+    "role": "Analyst",
+    "photo": "assets/uploads/Lucrezia Reimbold.jpg",
+    "order": 5.0
+  },
+  {
+    "slug": "martim-almeida",
+    "name": "Martim Almeida",
+    "department": "Research",
+    "role": "Associate",
+    "photo": "",
+    "order": 5.0
+  },
+  {
+    "slug": "luca-noel-dietlein",
+    "name": "Luca-noel Dietlein",
+    "department": "Relations",
+    "role": "Analyst",
+    "photo": "",
+    "order": 6.0
+  },
+  {
+    "slug": "rafael-silva",
+    "name": "Rafael Silva",
+    "department": "Board",
+    "role": "Head of Operations",
+    "photo": "assets/uploads/Rafael (1).jpg",
+    "order": 6.0
+  },
+  {
+    "slug": "alberto-goncalves",
+    "name": "Alberto Gonçalves",
+    "department": "Board",
+    "role": "Head of Research",
+    "photo": "",
+    "order": 7.0
+  },
+  {
+    "slug": "carolina-fernandes",
+    "name": "Carolina Fernandes",
+    "department": "Board",
+    "role": "Head of Relations",
+    "photo": "",
+    "order": 8.0
   }
 ]
