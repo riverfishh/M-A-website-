@@ -327,7 +327,7 @@ html.menu-open { overflow: hidden; }
 .stats-band { position: relative; z-index: 2; margin-top: calc(-1 * var(--lift)); }
 .stats-band::before { content: ""; position: absolute; inset: var(--lift) 0 0 0; z-index: -1; background: var(--blue-50); }
 .stats {
-  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
   background: #fff; border-radius: var(--r-lg);
   padding: clamp(18px, 1.7vw, 24px) clamp(8px, 1.4vw, 20px);
 }
@@ -430,39 +430,6 @@ html.menu-open { overflow: hidden; }
 .panel__media figcaption .chip { background: var(--blue-100); }
 html:not(.js) .tabs { grid-template-columns: 1fr; }
 html:not(.js) .tabs__list { display: none; }
-
-/* =====================================================================
-   Live tool: the first test from the briefs
-   ===================================================================== */
-.check { background: var(--navy-900); }
-.check__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
-.check__copy .lead { margin-top: 18px; }
-.check__copy p + p { margin-top: 14px; }
-.check__note { color: rgba(255, 255, 255, 0.7); font-size: var(--t-small); max-width: 52ch; }
-.calc { background: #fff; color: var(--ink); border-radius: var(--r-lg); padding: clamp(24px, 3vw, 40px); }
-.calc__fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.calc__fields label { display: block; font-size: var(--t-small); font-weight: 700; color: var(--navy-900); margin-bottom: 8px; }
-.calc__fields input {
-  width: 100%; min-height: 64px; padding: 8px 18px;
-  border: 1.5px solid var(--line); border-radius: var(--r-sm); background: var(--blue-50);
-  font-size: var(--t-lead); font-weight: 700; letter-spacing: -0.02em; color: var(--navy-900); font-variant-numeric: tabular-nums;
-  transition: border-color var(--t-hover) var(--ease-out), background-color var(--t-hover) var(--ease-out);
-}
-.calc__fields input:hover { border-color: var(--blue-200); }
-.calc__fields input:focus { border-color: var(--navy-700); background: #fff; }
-.calc__out { margin-top: 26px; }
-.verdict { display: inline-flex; align-items: center; gap: 12px; padding: 10px 18px 10px 12px; border-radius: var(--pill); background: var(--blue-100); color: var(--navy-700); font-weight: 700; font-size: var(--t-lead); letter-spacing: -0.02em; }
-.verdict .i { width: 28px; height: 28px; }
-.verdict[data-state="dilutive"] { background: #FDECEA; color: #A3261A; }
-.verdict[data-state="neutral"], .verdict[data-state="invalid"] { background: var(--blue-50); color: var(--muted); }
-.verdict.is-swapping > * { animation: swap-in 280ms var(--ease-out) both; }
-@keyframes swap-in { from { opacity: 0; transform: scale(0.92); filter: blur(3px); } to { opacity: 1; transform: none; filter: blur(0); } }
-.calc__why { margin-top: 14px; color: var(--ink); }
-.bars { margin-top: 22px; display: grid; gap: 14px; }
-.bar__label { display: flex; justify-content: space-between; gap: 12px; font-size: var(--t-small); font-weight: 600; color: var(--muted); margin-bottom: 6px; font-variant-numeric: tabular-nums; }
-.bar__track { height: 12px; border-radius: var(--pill); background: var(--blue-50); overflow: clip; }
-.bar__fill { height: 100%; border-radius: var(--pill); background: var(--navy-700); transform-origin: left; transition: transform 320ms var(--ease-out); }
-.bar__fill--target { background: var(--blue-400); }
 
 /* =====================================================================
    Sessions with industry
@@ -812,7 +779,7 @@ textarea.field__control { resize: vertical; min-height: 140px; }
   html { scroll-behavior: auto; }
   .hero__slide { transition: none; }
   .hero__toggle { display: none; }
-  .btn, .bar__fill, .nav, .tab, .tab .icon-dot, .link, .hero__link, .swap > .i { transition: none !important; }
+  .btn, .nav, .tab, .tab .icon-dot, .link, .hero__link, .swap > .i { transition: none !important; }
 }
 
 /* =====================================================================
@@ -829,7 +796,7 @@ textarea.field__control { resize: vertical; min-height: 140px; }
   :root { --header: 68px; }
   .stat { grid-template-columns: minmax(0, 1fr); row-gap: 10px; padding-inline: 12px; }
   .stat .icon-dot { grid-row: auto; width: 44px; height: 44px; }
-  .about__top, .check__grid, .join__grid, .contact__grid { grid-template-columns: minmax(0, 1fr); }
+  .about__top, .join__grid, .contact__grid { grid-template-columns: minmax(0, 1fr); }
   .about__top { align-items: start; }
   .about__photo, .about__history, .about__cards { grid-column: 1 / -1; }
   .about__cards { grid-template-columns: minmax(0, 1fr); }
@@ -845,10 +812,10 @@ textarea.field__control { resize: vertical; min-height: 140px; }
 @media (max-width: 639px) {
   .hero__content { padding-bottom: 170px; }
   .hero__toggle { bottom: auto; top: calc(var(--header) + 16px); right: 16px; }
-  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 26px; }
+  .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 26px; }
   .session--online { flex-direction: column; align-items: stretch; padding-top: 48px; }
   .session__body { padding: 16px 16px 18px; }
-  .form__row, .calc__fields, .join__figures { grid-template-columns: minmax(0, 1fr); }
+  .form__row, .join__figures { grid-template-columns: minmax(0, 1fr); }
   .footer__grid { grid-template-columns: minmax(0, 1fr); }
   .row__list li { min-height: 52px; padding: 0 20px; }
   .about__card { position: static; max-width: none; border-radius: 0; padding: 18px 20px 22px; }
@@ -973,7 +940,6 @@ textarea.field__control { resize: vertical; min-height: 140px; }
         <li class="stat"><span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg></span><p class="stat__figure"><span data-roll>37</span></p><p class="stat__label">Members</p></li>
         <li class="stat"><span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg></span><p class="stat__figure"><span data-roll>11</span></p><p class="stat__label">Nationalities</p></li>
         <li class="stat"><span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-user-plus"/></svg></span><p class="stat__figure"><span data-roll>130+</span></p><p class="stat__label">Fall 2026 applicants</p></li>
-        <li class="stat"><span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-percent"/></svg></span><p class="stat__figure"><span data-roll>15%</span></p><p class="stat__label">Admission rate</p></li>
       </ul>
     </div>
   </section>
@@ -1121,32 +1087,6 @@ textarea.field__control { resize: vertical; min-height: 140px; }
     </div>
   </section>
 
-  <!-- Live tool -->
-  <section class="section check on-dark" id="check" aria-labelledby="check-title">
-    <div class="wrap check__grid">
-      <div class="check__copy">
-        <h2 id="check-title" data-lines>Run the first test from our briefs</h2>
-        <p class="lead rv">In an all-stock deal, the buyer's earnings per share rise when the buyer trades at a higher P/E than the target.</p>
-        <p class="rv">Change the two numbers. They start with Pfizer and Exelixis from our Spring 2026 brief.</p>
-        <p class="check__note rv">The test assumes the deal is paid for entirely in stock, with no acquisition premium, no synergies and no transaction costs.</p>
-      </div>
-      <form class="calc rv" aria-label="Accretion and dilution check" novalidate>
-        <div class="calc__fields">
-          <div><label for="pe-buyer">Buyer P/E</label><input id="pe-buyer" name="buyer" type="number" inputmode="decimal" min="0.01" step="0.01" value="20.54"></div>
-          <div><label for="pe-target">Target P/E</label><input id="pe-target" name="target" type="number" inputmode="decimal" min="0.01" step="0.01" value="15.82"></div>
-        </div>
-        <div class="calc__out" role="status" aria-live="polite" aria-atomic="true">
-          <p class="verdict" data-state="accretive"><svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg><span data-check="verdict">Accretive</span></p>
-          <p class="calc__why" data-check="why">For every $1 of its own earnings, the buyer issues shares worth $20.54. It acquires the target's earnings at only $15.82 per $1.</p>
-          <div class="bars" aria-hidden="true">
-            <div><div class="bar__label"><span>Buyer earnings yield</span><span data-check="yb">4.87%</span></div><div class="bar__track"><div class="bar__fill" data-check="barb" style="transform:scaleX(.77)"></div></div></div>
-            <div><div class="bar__label"><span>Target earnings yield</span><span data-check="yt">6.32%</span></div><div class="bar__track"><div class="bar__fill bar__fill--target" data-check="bart" style="transform:scaleX(1)"></div></div></div>
-          </div>
-        </div>
-      </form>
-    </div>
-  </section>
-
   <!-- Sessions -->
   <section class="section sessions" id="sessions" aria-labelledby="sessions-title">
     <div class="wrap section-head">
@@ -1277,7 +1217,6 @@ textarea.field__control { resize: vertical; min-height: 140px; }
         <p class="lead rv">We recruit Nova SBE Bachelor's and Master's students through an application round announced on our Instagram and LinkedIn.</p>
         <div class="join__figures" data-reveal>
           <p class="join__figure"><strong>130+</strong><span>applicants in our Fall 2026 round</span></p>
-          <p class="join__figure"><strong>15%</strong><span>of applicants admitted</span></p>
         </div>
         <div class="join__actions rv">
           <a class="btn btn--primary" data-href=instagram href="https://www.instagram.com/novamaclub/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-instagram"/></svg>Follow us on Instagram<span class="visually-hidden"> (opens in a new tab)</span></a>
@@ -1692,49 +1631,6 @@ textarea.field__control { resize: vertical; min-height: 140px; }
       select(next, { focus: true, animate: false });
     });
     select(0, { animate: false });
-  }
-
-  /* ---------- the first test from our briefs ---------- */
-  const calc = $(".calc");
-  if (calc) {
-    const buyerIn = $("#pe-buyer"), targetIn = $("#pe-target");
-    const out = (n) => $('[data-check="' + n + '"]', calc);
-    const verdictEl = $(".verdict", calc);
-    const verdictIcon = $("use", verdictEl);
-    const usd = (n) => "$" + n.toFixed(2);
-    const setVerdict = (state, label, icon) => {
-      if (verdictEl.dataset.state !== state) {
-        verdictEl.dataset.state = state;
-        verdictIcon.setAttribute("href", "#i-" + icon);
-        out("verdict").textContent = label;
-        if (!reduce.matches) { verdictEl.classList.remove("is-swapping"); void verdictEl.offsetWidth; verdictEl.classList.add("is-swapping"); }
-      }
-    };
-    const update = () => {
-      const b = parseFloat(buyerIn.value), t = parseFloat(targetIn.value);
-      if (!(b > 0) || !(t > 0)) {
-        setVerdict("invalid", "Enter two P/E ratios", "circle-alert");
-        out("why").textContent = "Enter a P/E above zero for both companies.";
-        return;
-      }
-      const yb = 100 / b, yt = 100 / t, top = Math.max(yb, yt);
-      out("yb").textContent = yb.toFixed(2) + "%";
-      out("yt").textContent = yt.toFixed(2) + "%";
-      out("barb").style.transform = "scaleX(" + (yb / top).toFixed(3) + ")";
-      out("bart").style.transform = "scaleX(" + (yt / top).toFixed(3) + ")";
-      if (Math.abs(b - t) < 0.005) {
-        setVerdict("neutral", "Neutral", "circle-minus");
-        out("why").textContent = "Both companies trade at the same P/E, so the buyer's earnings per share do not change.";
-      } else if (b > t) {
-        setVerdict("accretive", "Accretive", "circle-check");
-        out("why").textContent = "For every $1 of its own earnings, the buyer issues shares worth " + usd(b) + ". It acquires the target's earnings at only " + usd(t) + " per $1.";
-      } else {
-        setVerdict("dilutive", "Dilutive", "trending-down");
-        out("why").textContent = "For every $1 of its own earnings, the buyer issues shares worth only " + usd(b) + ". It pays " + usd(t) + " per $1 of the target's earnings.";
-      }
-    };
-    [buyerIn, targetIn].forEach((el) => el.addEventListener("input", update));
-    calc.addEventListener("submit", (e) => e.preventDefault());
   }
 
   /* ---------- name rows: pausable, paused off screen ---------- */
