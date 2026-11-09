@@ -200,7 +200,8 @@
     {
       "name": "Efficio",
       "group": "Consulting, markets and beyond",
-      "logo": "assets/uploads/1dcec965-0717-4e8f-b70a-08383122a50f-1717067949503.png"
+      "logo": "assets/uploads/1dcec965-0717-4e8f-b70a-08383122a50f-1717067949503.png",
+      "logo_size": "Largest"
     },
     {
       "name": "Société Générale",
@@ -210,7 +211,8 @@
     {
       "name": "Banco BiG",
       "group": "Consulting, markets and beyond",
-      "logo": "assets/uploads/BiG-logo.png"
+      "logo": "assets/uploads/BiG-logo.png",
+      "logo_size": "Larger"
     },
     {
       "name": "Banco Carregosa",
