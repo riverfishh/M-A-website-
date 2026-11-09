@@ -75,11 +75,13 @@
     },
     {
       "name": "Easyfairs",
-      "group": "M&A and investment banking"
+      "group": "M&A and investment banking",
+      "logo": "assets/uploads/Easyfairs_Logo.png"
     },
     {
       "name": "MTU Aero Engines",
-      "group": "M&A and investment banking"
+      "group": "M&A and investment banking",
+      "logo": "assets/uploads/MTU_Aero_Engines_Logo.svg.webp"
     },
     {
       "name": "Bufab",
