@@ -152,6 +152,14 @@
     "order": 4.0
   },
   {
+    "slug": "isa-zhu",
+    "name": "Isa Zhu",
+    "department": "Operations",
+    "role": "Analyst",
+    "photo": "",
+    "order": 4.0
+  },
+  {
     "slug": "olfa-ayadi",
     "name": "Olfa Ayadi",
     "department": "Research",
@@ -165,6 +173,14 @@
     "department": "Board",
     "role": "Head of Legal",
     "photo": "",
+    "order": 5.0
+  },
+  {
+    "slug": "luca-hartenfels",
+    "name": "Luca Hartenfels",
+    "department": "Operations",
+    "role": "Analyst",
+    "photo": "assets/uploads/Luca Hartenfels.jpg",
     "order": 5.0
   },
   {
@@ -184,10 +200,26 @@
     "order": 5.0
   },
   {
+    "slug": "barbara-novais",
+    "name": "Bárbara Novais",
+    "department": "Operations",
+    "role": "Analyst",
+    "photo": "assets/uploads/Bárbara Novais.jpg",
+    "order": 6.0
+  },
+  {
     "slug": "luca-noel-dietlein",
     "name": "Luca-noel Dietlein",
     "department": "Relations",
     "role": "Analyst",
+    "photo": "",
+    "order": 6.0
+  },
+  {
+    "slug": "martim-sambado",
+    "name": "Martim Sambado",
+    "department": "Research",
+    "role": "Associate",
     "photo": "",
     "order": 6.0
   },
@@ -204,6 +236,14 @@
     "name": "Alberto Gonçalves",
     "department": "Board",
     "role": "Head of Research",
+    "photo": "assets/uploads/Alberto Gonçalves-1.jpg",
+    "order": 7.0
+  },
+  {
+    "slug": "antonio-polvora",
+    "name": "António Pólvora",
+    "department": "Research",
+    "role": "Associate",
     "photo": "",
     "order": 7.0
   },
@@ -214,5 +254,85 @@
     "role": "Head of Relations",
     "photo": "",
     "order": 8.0
+  },
+  {
+    "slug": "julia-chretien",
+    "name": "Julia Chretien",
+    "department": "Research",
+    "role": "Associate",
+    "photo": "",
+    "order": 8.0
+  },
+  {
+    "slug": "rodrigo-carvalho",
+    "name": "Rodrigo Carvalho",
+    "department": "Research",
+    "role": "Analyst",
+    "photo": "assets/uploads/Rodrigo Carvalho.jpg",
+    "order": 9.0
+  },
+  {
+    "slug": "aoife-palmer-oriordan",
+    "name": "Aoife Palmer-O’Riordan",
+    "department": "Research",
+    "role": "Analyst",
+    "photo": "assets/uploads/Aofie Palmer - O_Riordan.jpg",
+    "order": 100
+  },
+  {
+    "slug": "beatriz-goncalves",
+    "name": "Beatriz Gonçalves",
+    "department": "Marketing",
+    "role": "Associate",
+    "photo": "",
+    "order": 100
+  },
+  {
+    "slug": "florian-bernleithner",
+    "name": "Florian Bernleithner",
+    "department": "Research",
+    "role": "Analyst",
+    "photo": "assets/uploads/Florian Bernleithner.jpg",
+    "order": 100
+  },
+  {
+    "slug": "joao-comazzetto",
+    "name": "João Comazzetto",
+    "department": "Research",
+    "role": "Analyst",
+    "photo": "assets/uploads/João Comazzetto_.jpg",
+    "order": 100
+  },
+  {
+    "slug": "luis-faleiro",
+    "name": "Luís Faleiro",
+    "department": "Research",
+    "role": "Analyst",
+    "photo": "assets/uploads/Luís.jpg",
+    "order": 100
+  },
+  {
+    "slug": "maciej-nysiak",
+    "name": "Maciej Nysiak",
+    "department": "Research",
+    "role": "Analyst",
+    "photo": "assets/uploads/Maciek.jpg",
+    "order": 100
+  },
+  {
+    "slug": "oliver-osvald",
+    "name": "Olivér Osvald",
+    "department": "Research",
+    "role": "Analyst",
+    "photo": "assets/uploads/Olivér Osvald.jpg",
+    "order": 100
+  },
+  {
+    "slug": "vincent",
+    "name": "Vincent",
+    "department": "Research",
+    "role": "Analyst",
+    "photo": "assets/uploads/Vincent.jpg",
+    "order": 100
   }
 ]

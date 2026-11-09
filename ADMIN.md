@@ -46,9 +46,19 @@ The Team link opens a page with a panel for each department.
 - **What a department does:** choose **Departments** to edit each department's short description and key tasks.
   If you rename a department there, also pick the new name on the people in it.
 
+## Managing the alumni logos
+
+"Where our members have landed" is managed under **Alumni companies** in the CMS.
+
+- **Add a logo:** open the company and upload a file in **Logo (optional)**. The site then shows the logo
+  in a white pill. Use an SVG or a transparent PNG of the company mark only, under 1 MB.
+- **No logo yet:** leave it empty and the company name is shown instead. Nothing looks broken.
+- **Add or remove a company:** use **Add an item** or delete it. **Row** chooses which of the three lines it appears on.
+- Check the company's brand guidelines before using its logo.
+
 ## How it works (for whoever maintains the site)
 
-- Each post is one small JSON file in `content/events/`, `content/news/` (publications) or `content/team/`, created by the CMS.
+- Each post is one small JSON file in `content/events/`, `content/news/` (publications) or `content/team/`, created by the CMS. The alumni companies are in `content/alumni.json`.
   Department descriptions are in `content/departments.json`.
 - `scripts/build_content.py` gathers them into `data/events.json` and `data/news.json`. The GitHub
   Pages workflow runs it on every push, so a CMS save publishes automatically.

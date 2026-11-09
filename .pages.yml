@@ -6,7 +6,7 @@
 media:
   input: assets/uploads
   output: assets/uploads
-  extensions: [jpg, jpeg, png, webp, pdf]
+  extensions: [jpg, jpeg, png, webp, svg, pdf]
 
 content:
   - name: events
@@ -184,3 +184,33 @@ content:
             label: Key tasks
             type: string
             list: true
+
+  - name: alumni
+    label: Alumni companies
+    type: file
+    path: content/alumni.json
+    format: json
+    fields:
+      - name: companies
+        label: Companies
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Company name
+            type: string
+            required: true
+            description: "Shown on the website when there is no logo."
+          - name: group
+            label: Row
+            type: select
+            required: true
+            options:
+              values:
+                - M&A and investment banking
+                - Private equity and venture capital
+                - Consulting, markets and beyond
+          - name: logo
+            label: Logo (optional)
+            type: image
+            description: "SVG or transparent PNG, one company mark, under 1 MB. Leave empty to show the name instead."

@@ -602,6 +602,8 @@ html.is-detail .header { background: var(--navy-950); }
 .row__viewport { overflow: clip; width: min(var(--wrap), 100% - 2 * var(--gutter)); margin-inline: auto; border-radius: var(--pill); }
 .row__track { display: flex; width: max-content; }
 .row__list { display: flex; gap: 12px; padding-right: 12px; }
+.row__list li.has-logo { background: #fff; padding: 0 28px; }
+.row__list li.has-logo img { display: block; height: 32px; width: auto; max-width: 160px; object-fit: contain; }
 .row__list li {
   display: inline-flex; align-items: center; min-height: 64px; padding: 0 26px;
   border-radius: var(--pill); background: rgba(255, 255, 255, 0.08);
@@ -820,6 +822,8 @@ textarea.field__control { resize: vertical; min-height: 140px; }
   .form__row, .join__figures { grid-template-columns: minmax(0, 1fr); }
   .footer__grid { grid-template-columns: minmax(0, 1fr); }
   .row__list li { min-height: 52px; padding: 0 20px; }
+  .row__list li.has-logo { padding: 0 22px; }
+  .row__list li.has-logo img { height: 26px; max-width: 120px; }
   .about__card { position: static; max-width: none; border-radius: 0; padding: 18px 20px 22px; }
   .join__photo img { aspect-ratio: 1 / 1; }
 }
@@ -1638,13 +1642,34 @@ textarea.field__control { resize: vertical; min-height: 140px; }
   /* ---------- name rows: pausable, paused off screen ---------- */
   const alumni = $(".alumni");
   if (alumni) {
-    $$(".row__track", alumni).forEach((track) => {
+    /* the company list comes from the CMS (data/alumni.json); the names in the HTML are the fallback */
+    const setupRows = () => $$(".row__track", alumni).forEach((track) => {
       const list = $(".row__list", track);
       const copy = list.cloneNode(true);
       copy.setAttribute("aria-hidden", "true");
       copy.removeAttribute("role");
       track.append(copy);
     });
+    const renderAlumni = (items) => {
+      $$(".row", alumni).forEach((row) => {
+        const label = $(".row__label", row).textContent.trim();
+        const mine = items.filter((c) => c.group === label);
+        if (!mine.length) return;
+        const list = $(".row__list", row);
+        list.replaceChildren(...mine.map((c) => {
+          const logo = safeImg(c.logo);
+          if (!logo) return mk("li", { text: c.name });
+          const li = mk("li", { class: "has-logo" }, mk("img", { src: logo, alt: c.name, height: 32, decoding: "async" }));
+          $("img", li).addEventListener("error", () => { li.className = ""; li.replaceChildren(c.name); });
+          return li;
+        }));
+      });
+    };
+    fetch("data/alumni.json", { cache: "no-cache" })
+      .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+      .then((a) => { if (Array.isArray(a)) renderAlumni(a.filter((c) => c && c.name && typeof c.group === "string")); })
+      .catch(() => {})
+      .then(setupRows);
     const btn = $(".marquee-toggle", alumni);
     const label = $("[data-marquee-label]", btn);
     btn.addEventListener("click", () => {

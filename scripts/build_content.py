@@ -5,6 +5,7 @@
   content/news/*.json    ->  data/news.json
   content/team/**/*.json ->  data/team.json  (folders made in the CMS are fine)
   content/departments.json -> data/departments.json
+  content/alumni.json -> data/alumni.json
 
 Runs on every deploy (see .github/workflows/static.yml). It never fails the deploy
 because of one bad post: a post it cannot use is skipped with a warning.
@@ -158,8 +159,29 @@ def build_departments():
     write("departments", items)
 
 
+def build_alumni():
+    path = ROOT / "content" / "alumni.json"
+    items = []
+    try:
+        raw = json.loads(path.read_text(encoding="utf-8"))
+        entries = raw.get("companies", []) if isinstance(raw, dict) else []
+    except (OSError, ValueError) as err:
+        warn(path, f"skipped, not valid JSON ({err})")
+        entries = []
+    for entry in entries:
+        if not isinstance(entry, dict) or not text(entry.get("name")):
+            continue
+        items.append({
+            "name": text(entry.get("name")),
+            "group": text(entry.get("group")),
+            "logo": clean_image(entry.get("logo")),
+        })
+    write("alumni", items)
+
+
 if __name__ == "__main__":
     for kind in FIELDS:
         build(kind)
     build_team()
     build_departments()
+    build_alumni()
