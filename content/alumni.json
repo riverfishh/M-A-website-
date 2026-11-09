@@ -23,7 +23,7 @@
     {
       "name": "Santander CIB",
       "group": "M&A and investment banking",
-      "logo": "assets/uploads/Santander-CIB-1.png"
+      "logo": "assets/uploads/Santander_Logo.png"
     },
     {
       "name": "Lincoln International",
@@ -43,17 +43,17 @@
     {
       "name": "ING",
       "group": "M&A and investment banking",
-      "logo": "assets/uploads/kisspng-ing-group-wholesale-banking-finance-ing-diba-a-g-accor-5aec31177e4462.0126007015254285035172.jpg"
+      "logo": "assets/uploads/ING-logo.png"
     },
     {
       "name": "Raiffeisen Bank International",
       "group": "M&A and investment banking",
-      "logo": "assets/uploads/RBI-Logo-Int-St-Squared-Col-Pos-RGB-1713357659543.webp"
+      "logo": "assets/uploads/Raiffeisen_Bank_International_Logo.svg.webp"
     },
     {
       "name": "KPMG",
       "group": "M&A and investment banking",
-      "logo": "assets/uploads/kisspng-logo-kpmg-switzerland-organization-brand-cayman-captive-forum-2-15-2-18-speaker-logistics-1713924244148.webp"
+      "logo": "assets/uploads/KPMG_blue_logo.svg.webp"
     },
     {
       "name": "BDO",
@@ -90,15 +90,18 @@
     },
     {
       "name": "vdp",
-      "group": "M&A and investment banking"
+      "group": "M&A and investment banking",
+      "logo": "assets/uploads/csm_VDP_Logo_mitSchriftzugund1910_Schwarz_82ce008c82.png"
     },
     {
       "name": "One Equity Partners",
-      "group": "Private equity and venture capital"
+      "group": "Private equity and venture capital",
+      "logo": "assets/uploads/One_Equity_Partners_logo.svg.webp"
     },
     {
       "name": "Allianz Global Investors",
-      "group": "Private equity and venture capital"
+      "group": "Private equity and venture capital",
+      "logo": "assets/uploads/Allianz_Global_Investors_logo.svg.webp"
     },
     {
       "name": "Sofina",
