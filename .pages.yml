@@ -58,6 +58,10 @@ content:
         label: Speakers
         type: string
         description: "For example: Professionals from J.P. Morgan, Goldman Sachs and Citi (optional)"
+      - name: register_url
+        label: Registration link
+        type: string
+        description: "Optional. Paste the full link (starting with https://), for example a Microsoft Forms link. A Register now button then appears on the event. Leave empty for no button."
       - name: description
         label: About the event
         type: text

@@ -19,7 +19,7 @@ DATE = re.compile(r"^\d{4}-\d{2}-\d{2}")
 TIME = re.compile(r"^\d{1,2}:\d{2}$")
 
 FIELDS = {
-    "events": ["title", "category", "date", "start_time", "end_time", "location", "image", "speakers", "description"],
+    "events": ["title", "category", "date", "start_time", "end_time", "location", "image", "speakers", "register_url", "description"],
     "news": ["title", "category", "date", "pdf", "image", "summary", "body"],
 }
 
@@ -86,6 +86,12 @@ def build(kind):
             item[field] = text(raw.get(field))
         item["date"] = date[:10]
         item["image"] = clean_image(raw.get("image"))
+        if kind == "events":
+            link = item.get("register_url", "")
+            if link and not re.match(r"^https?://[^\s]+$", link):
+                warn(path, "the registration link should start with https://, ignoring it")
+                link = ""
+            item["register_url"] = link
         if kind == "news":
             item["pdf"] = clean_pdf(raw.get("pdf"))
         for field in ("start_time", "end_time"):
