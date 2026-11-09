@@ -81,12 +81,14 @@
     {
       "name": "MTU Aero Engines",
       "group": "M&A and investment banking",
-      "logo": "assets/uploads/MTU_Aero_Engines_Logo.svg.webp"
+      "logo": "assets/uploads/MTU_Aero_Engines_Logo.svg.webp",
+      "logo_size": "Larger"
     },
     {
       "name": "Bufab",
       "group": "M&A and investment banking",
-      "logo": "assets/uploads/bufab.png.webp"
+      "logo": "assets/uploads/bufab.png.webp",
+      "logo_size": "Larger"
     },
     {
       "name": "vdp",
