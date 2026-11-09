@@ -3,7 +3,7 @@
     {
       "name": "BNP Paribas CIB",
       "group": "M&A and investment banking",
-      "logo": "assets/uploads/bnp-paribas-2.png"
+      "logo": "assets/uploads/cib-bl-q-1.png"
     },
     {
       "name": "Rothschild & Co",
@@ -12,19 +12,23 @@
     },
     {
       "name": "Morgan Stanley",
-      "group": "M&A and investment banking"
+      "group": "M&A and investment banking",
+      "logo": "assets/uploads/morgan-stanley-new.svg"
     },
     {
       "name": "Raymond James",
-      "group": "M&A and investment banking"
+      "group": "M&A and investment banking",
+      "logo": "assets/uploads/Raymond_James_Financial_Logo.png"
     },
     {
       "name": "Santander CIB",
-      "group": "M&A and investment banking"
+      "group": "M&A and investment banking",
+      "logo": "assets/uploads/Santander-CIB-1.png"
     },
     {
       "name": "Lincoln International",
-      "group": "M&A and investment banking"
+      "group": "M&A and investment banking",
+      "logo": "assets/uploads/LincolnInternational-Logo-RGB.webp"
     },
     {
       "name": "Clearwater International",
@@ -32,7 +36,8 @@
     },
     {
       "name": "ODDO BHF",
-      "group": "M&A and investment banking"
+      "group": "M&A and investment banking",
+      "logo": "assets/uploads/oddo-logo.png"
     },
     {
       "name": "ING",
