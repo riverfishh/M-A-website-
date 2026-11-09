@@ -209,7 +209,8 @@
     {
       "name": "Société Générale",
       "group": "Consulting, markets and beyond",
-      "logo": "assets/uploads/logo-societe-generale.webp"
+      "logo": "assets/uploads/logo-societe-generale.webp",
+      "logo_size": "Largest"
     },
     {
       "name": "Banco BiG",
