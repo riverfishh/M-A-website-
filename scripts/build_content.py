@@ -175,6 +175,7 @@ def build_alumni():
             "name": text(entry.get("name")),
             "group": text(entry.get("group")),
             "logo": clean_image(entry.get("logo")),
+            "size": {"Smaller": "s", "Larger": "l", "Largest": "xl"}.get(text(entry.get("logo_size")), ""),
         })
     write("alumni", items)
 

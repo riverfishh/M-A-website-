@@ -2,236 +2,283 @@
   {
     "name": "BNP Paribas CIB",
     "group": "M&A and investment banking",
-    "logo": ""
+    "logo": "assets/uploads/bnp-paribas-2-1.png",
+    "size": ""
   },
   {
     "name": "Rothschild & Co",
     "group": "M&A and investment banking",
-    "logo": ""
+    "logo": "assets/uploads/rothschild-co-logo-1024x173.png",
+    "size": ""
   },
   {
     "name": "Morgan Stanley",
     "group": "M&A and investment banking",
-    "logo": ""
+    "logo": "assets/uploads/morgan-stanley-new-1.svg",
+    "size": ""
   },
   {
     "name": "Raymond James",
     "group": "M&A and investment banking",
-    "logo": ""
+    "logo": "assets/uploads/Raymond_James_Financial_Logo.png",
+    "size": ""
   },
   {
     "name": "Santander CIB",
     "group": "M&A and investment banking",
-    "logo": ""
+    "logo": "assets/uploads/Santander_Logo.png",
+    "size": ""
   },
   {
     "name": "Lincoln International",
     "group": "M&A and investment banking",
-    "logo": ""
+    "logo": "assets/uploads/LincolnInternational-Logo-RGB.webp",
+    "size": ""
   },
   {
     "name": "Clearwater International",
     "group": "M&A and investment banking",
-    "logo": ""
+    "logo": "assets/uploads/CW_LOGO_VERT_INDIGO__ResizedImageWzYyOCwyOThd.webp",
+    "size": ""
   },
   {
     "name": "ODDO BHF",
     "group": "M&A and investment banking",
-    "logo": ""
+    "logo": "assets/uploads/oddo-logo.png",
+    "size": ""
   },
   {
     "name": "ING",
     "group": "M&A and investment banking",
-    "logo": ""
+    "logo": "assets/uploads/ING-logo.png",
+    "size": ""
   },
   {
     "name": "Raiffeisen Bank International",
     "group": "M&A and investment banking",
-    "logo": ""
+    "logo": "assets/uploads/Raiffeisen_Bank_International_Logo.svg.webp",
+    "size": ""
   },
   {
     "name": "KPMG",
     "group": "M&A and investment banking",
-    "logo": ""
+    "logo": "assets/uploads/KPMG_blue_logo.svg.webp",
+    "size": ""
   },
   {
     "name": "BDO",
     "group": "M&A and investment banking",
-    "logo": ""
+    "logo": "assets/uploads/BDO_Deutsche_Warentreuhand_Logo.svg",
+    "size": ""
   },
   {
     "name": "Rödl",
     "group": "M&A and investment banking",
-    "logo": ""
+    "logo": "assets/uploads/images.png",
+    "size": ""
   },
   {
     "name": "Parklane Capital",
     "group": "M&A and investment banking",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Cluster Advisory",
     "group": "M&A and investment banking",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Easyfairs",
     "group": "M&A and investment banking",
-    "logo": ""
+    "logo": "assets/uploads/Easyfairs_Logo.png",
+    "size": ""
   },
   {
     "name": "MTU Aero Engines",
     "group": "M&A and investment banking",
-    "logo": ""
+    "logo": "assets/uploads/MTU_Aero_Engines_Logo.svg.webp",
+    "size": ""
   },
   {
     "name": "Bufab",
     "group": "M&A and investment banking",
-    "logo": ""
+    "logo": "assets/uploads/bufab.png.webp",
+    "size": ""
   },
   {
     "name": "vdp",
     "group": "M&A and investment banking",
-    "logo": ""
+    "logo": "assets/uploads/csm_VDP_Logo_mitSchriftzugund1910_Schwarz_82ce008c82.png",
+    "size": ""
   },
   {
     "name": "One Equity Partners",
     "group": "Private equity and venture capital",
-    "logo": ""
+    "logo": "assets/uploads/One_Equity_Partners_logo.svg.webp",
+    "size": ""
   },
   {
     "name": "Allianz Global Investors",
     "group": "Private equity and venture capital",
-    "logo": ""
+    "logo": "assets/uploads/Allianz_Global_Investors_logo.svg.webp",
+    "size": ""
   },
   {
     "name": "Sofina",
     "group": "Private equity and venture capital",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "NORD Holding",
     "group": "Private equity and venture capital",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "XAnge",
     "group": "Private equity and venture capital",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Athos Partners",
     "group": "Private equity and venture capital",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Alter Domus",
     "group": "Private equity and venture capital",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Caixa Capital",
     "group": "Private equity and venture capital",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Quest Capital",
     "group": "Private equity and venture capital",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Core Capital",
     "group": "Private equity and venture capital",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Simon Capital",
     "group": "Private equity and venture capital",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Vibe Capital Partners",
     "group": "Private equity and venture capital",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Start Ventures",
     "group": "Private equity and venture capital",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "McKinsey & Company",
     "group": "Consulting, markets and beyond",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Boston Consulting Group",
     "group": "Consulting, markets and beyond",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "EY-Parthenon",
     "group": "Consulting, markets and beyond",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Deloitte",
     "group": "Consulting, markets and beyond",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Accenture",
     "group": "Consulting, markets and beyond",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Alvarez & Marsal",
     "group": "Consulting, markets and beyond",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Stern Stewart & Co.",
     "group": "Consulting, markets and beyond",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Efficio",
     "group": "Consulting, markets and beyond",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Société Générale",
     "group": "Consulting, markets and beyond",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Banco BiG",
     "group": "Consulting, markets and beyond",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Banco Carregosa",
     "group": "Consulting, markets and beyond",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "BMW Group",
     "group": "Consulting, markets and beyond",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Berkshire Hathaway HomeServices",
     "group": "Consulting, markets and beyond",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "Cloudflare",
     "group": "Consulting, markets and beyond",
-    "logo": ""
+    "logo": "",
+    "size": ""
   },
   {
     "name": "U.S. Embassy",
     "group": "Consulting, markets and beyond",
-    "logo": ""
+    "logo": "",
+    "size": ""
   }
 ]

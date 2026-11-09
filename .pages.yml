@@ -214,3 +214,13 @@ content:
             label: Logo (optional)
             type: image
             description: "SVG or transparent PNG, one company mark, under 1 MB. Leave empty to show the name instead."
+          - name: logo_size
+            label: Logo size
+            type: select
+            options:
+              values:
+                - Smaller
+                - Normal
+                - Larger
+                - Largest
+            description: "Optional. If this logo looks too small or too big next to the others, change it here."
