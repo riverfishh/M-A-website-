@@ -94,7 +94,8 @@
     {
       "name": "vdp",
       "group": "M&A and investment banking",
-      "logo": "assets/uploads/csm_VDP_Logo_mitSchriftzugund1910_Schwarz_82ce008c82.png"
+      "logo": "assets/uploads/csm_VDP_Logo_mitSchriftzugund1910_Schwarz_82ce008c82.png",
+      "logo_size": "Larger"
     },
     {
       "name": "One Equity Partners",
