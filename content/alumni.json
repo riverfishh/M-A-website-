@@ -178,7 +178,8 @@
     {
       "name": "Deloitte",
       "group": "Consulting, markets and beyond",
-      "logo": "assets/uploads/DeloitteNewLogo.png"
+      "logo": "assets/uploads/DeloitteNewLogo.png",
+      "logo_size": "Largest"
     },
     {
       "name": "Accenture",
@@ -188,7 +189,8 @@
     {
       "name": "Alvarez & Marsal",
       "group": "Consulting, markets and beyond",
-      "logo": "assets/uploads/images (1).png"
+      "logo": "assets/uploads/images (1).png",
+      "logo_size": "Larger"
     },
     {
       "name": "Stern Stewart & Co.",
