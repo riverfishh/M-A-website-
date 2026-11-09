@@ -129,7 +129,8 @@
     {
       "name": "Alter Domus",
       "group": "Private equity and venture capital",
-      "logo": "assets/uploads/lg-690beeea5ac89-Alter-Domus.webp"
+      "logo": "assets/uploads/lg-690beeea5ac89-Alter-Domus.webp",
+      "logo_size": "Largest"
     },
     {
       "name": "Caixa Capital",
