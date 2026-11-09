@@ -107,11 +107,13 @@
     },
     {
       "name": "Sofina",
-      "group": "Private equity and venture capital"
+      "group": "Private equity and venture capital",
+      "logo": "assets/uploads/sofina.svg"
     },
     {
       "name": "NORD Holding",
-      "group": "Private equity and venture capital"
+      "group": "Private equity and venture capital",
+      "logo": "assets/uploads/NORD_Holding_Logo.png"
     },
     {
       "name": "XAnge",
