@@ -117,7 +117,8 @@
     },
     {
       "name": "XAnge",
-      "group": "Private equity and venture capital"
+      "group": "Private equity and venture capital",
+      "logo": "assets/uploads/LogoXangeSiparex_Black_2024-300x139.png"
     },
     {
       "name": "Athos Partners",
@@ -125,15 +126,18 @@
     },
     {
       "name": "Alter Domus",
-      "group": "Private equity and venture capital"
+      "group": "Private equity and venture capital",
+      "logo": "assets/uploads/lg-690beeea5ac89-Alter-Domus.webp"
     },
     {
       "name": "Caixa Capital",
-      "group": "Private equity and venture capital"
+      "group": "Private equity and venture capital",
+      "logo": "assets/uploads/Caixa-Capital.png"
     },
     {
       "name": "Quest Capital",
-      "group": "Private equity and venture capital"
+      "group": "Private equity and venture capital",
+      "logo": "assets/uploads/logo_quest_capital_site_appii.png"
     },
     {
       "name": "Core Capital",
