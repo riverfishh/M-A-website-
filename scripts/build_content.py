@@ -186,9 +186,27 @@ def build_alumni():
     write("alumni", items)
 
 
+def build_settings():
+    path = ROOT / "content" / "settings.json"
+    link = ""
+    try:
+        raw = json.loads(path.read_text(encoding="utf-8"))
+        link = text(raw.get("whatsapp_url")) if isinstance(raw, dict) else ""
+    except (OSError, ValueError) as err:
+        warn(path, f"skipped, not valid JSON ({err})")
+    if link and not re.match(r"^https://[^\s]+$", link):
+        warn(path, "the WhatsApp link should start with https://, ignoring it")
+        link = ""
+    out = ROOT / "data" / "settings.json"
+    out.parent.mkdir(exist_ok=True)
+    out.write_text(json.dumps({"whatsapp_url": link}, indent=2) + "\n", encoding="utf-8")
+    print("settings: written")
+
+
 if __name__ == "__main__":
     for kind in FIELDS:
         build(kind)
     build_team()
     build_departments()
     build_alumni()
+    build_settings()

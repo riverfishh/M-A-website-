@@ -2,7 +2,7 @@
   {
     "name": "BNP Paribas CIB",
     "group": "M&A and investment banking",
-    "logo": "assets/uploads/bnp-paribas-2-1.png",
+    "logo": "assets/uploads/BNP_Paribas_logo_logotype_emblem.png",
     "size": ""
   },
   {
@@ -27,7 +27,7 @@
     "name": "Santander CIB",
     "group": "M&A and investment banking",
     "logo": "assets/uploads/Santander_Logo.png",
-    "size": ""
+    "size": "xl"
   },
   {
     "name": "Lincoln International",
@@ -99,19 +99,19 @@
     "name": "MTU Aero Engines",
     "group": "M&A and investment banking",
     "logo": "assets/uploads/MTU_Aero_Engines_Logo.svg.webp",
-    "size": ""
+    "size": "l"
   },
   {
     "name": "Bufab",
     "group": "M&A and investment banking",
     "logo": "assets/uploads/bufab.png.webp",
-    "size": ""
+    "size": "xl"
   },
   {
     "name": "vdp",
     "group": "M&A and investment banking",
     "logo": "assets/uploads/csm_VDP_Logo_mitSchriftzugund1910_Schwarz_82ce008c82.png",
-    "size": ""
+    "size": "l"
   },
   {
     "name": "One Equity Partners",
@@ -128,19 +128,19 @@
   {
     "name": "Sofina",
     "group": "Private equity and venture capital",
-    "logo": "",
+    "logo": "assets/uploads/sofina.svg",
     "size": ""
   },
   {
     "name": "NORD Holding",
     "group": "Private equity and venture capital",
-    "logo": "",
+    "logo": "assets/uploads/NORD_Holding_Logo.png",
     "size": ""
   },
   {
     "name": "XAnge",
     "group": "Private equity and venture capital",
-    "logo": "",
+    "logo": "assets/uploads/LogoXangeSiparex_Black_2024-300x139.png",
     "size": ""
   },
   {
@@ -152,19 +152,19 @@
   {
     "name": "Alter Domus",
     "group": "Private equity and venture capital",
-    "logo": "",
-    "size": ""
+    "logo": "assets/uploads/Alterdomus-logo.png",
+    "size": "l"
   },
   {
     "name": "Caixa Capital",
     "group": "Private equity and venture capital",
-    "logo": "",
-    "size": ""
+    "logo": "assets/uploads/Caixa-Capital.png",
+    "size": "l"
   },
   {
     "name": "Quest Capital",
     "group": "Private equity and venture capital",
-    "logo": "",
+    "logo": "assets/uploads/logo_quest_capital_site_appii.png",
     "size": ""
   },
   {
@@ -176,109 +176,109 @@
   {
     "name": "Simon Capital",
     "group": "Private equity and venture capital",
-    "logo": "",
+    "logo": "assets/uploads/simon_capital_schwarz.png",
     "size": ""
   },
   {
     "name": "Vibe Capital Partners",
     "group": "Private equity and venture capital",
-    "logo": "",
-    "size": ""
+    "logo": "assets/uploads/images.jpeg",
+    "size": "xl"
   },
   {
     "name": "Start Ventures",
     "group": "Private equity and venture capital",
-    "logo": "",
+    "logo": "assets/uploads/Start_Ventures-logo-footer.svg",
     "size": ""
   },
   {
     "name": "McKinsey & Company",
     "group": "Consulting, markets and beyond",
-    "logo": "",
+    "logo": "assets/uploads/McKinsey_Script_Mark_2019.svg.webp",
     "size": ""
   },
   {
     "name": "Boston Consulting Group",
     "group": "Consulting, markets and beyond",
-    "logo": "",
+    "logo": "assets/uploads/Boston_Consulting_Group_2020_logo.svg",
     "size": ""
   },
   {
     "name": "EY-Parthenon",
     "group": "Consulting, markets and beyond",
-    "logo": "",
+    "logo": "assets/uploads/EY_Parthenon_logo.svg.webp",
     "size": ""
   },
   {
     "name": "Deloitte",
     "group": "Consulting, markets and beyond",
-    "logo": "",
-    "size": ""
+    "logo": "assets/uploads/DeloitteNewLogo.png",
+    "size": "xl"
   },
   {
     "name": "Accenture",
     "group": "Consulting, markets and beyond",
-    "logo": "",
+    "logo": "assets/uploads/Accenture_logo.svg",
     "size": ""
   },
   {
     "name": "Alvarez & Marsal",
     "group": "Consulting, markets and beyond",
-    "logo": "",
-    "size": ""
+    "logo": "assets/uploads/images (1).png",
+    "size": "l"
   },
   {
     "name": "Stern Stewart & Co.",
     "group": "Consulting, markets and beyond",
-    "logo": "",
+    "logo": "assets/uploads/Logo_SternStewartCo_RGB_pos.png",
     "size": ""
   },
   {
     "name": "Efficio",
     "group": "Consulting, markets and beyond",
-    "logo": "",
-    "size": ""
+    "logo": "assets/uploads/8e568ddc-61a7-4c9f-b9a6-fd2c220e498b.png",
+    "size": "l"
   },
   {
     "name": "Société Générale",
     "group": "Consulting, markets and beyond",
-    "logo": "",
-    "size": ""
+    "logo": "assets/uploads/logo-societe-generale.webp",
+    "size": "xl"
   },
   {
     "name": "Banco BiG",
     "group": "Consulting, markets and beyond",
-    "logo": "",
-    "size": ""
+    "logo": "assets/uploads/BiG-logo.png",
+    "size": "l"
   },
   {
     "name": "Banco Carregosa",
     "group": "Consulting, markets and beyond",
-    "logo": "",
-    "size": ""
+    "logo": "assets/uploads/1742654824186.jpeg",
+    "size": "xl"
   },
   {
     "name": "BMW Group",
     "group": "Consulting, markets and beyond",
-    "logo": "",
+    "logo": "assets/uploads/Logo_BMW_Group_2021.svg.webp",
     "size": ""
   },
   {
     "name": "Berkshire Hathaway HomeServices",
     "group": "Consulting, markets and beyond",
-    "logo": "",
+    "logo": "assets/uploads/Berkshire-Hathaway-HomeServices-Logo.png",
     "size": ""
   },
   {
     "name": "Cloudflare",
     "group": "Consulting, markets and beyond",
-    "logo": "",
+    "logo": "assets/uploads/Cloudflare_Logo.svg.webp",
     "size": ""
   },
   {
     "name": "U.S. Embassy",
     "group": "Consulting, markets and beyond",
-    "logo": "",
-    "size": ""
+    "logo": "assets/uploads/Seal_of_an_Embassy_of_the_United_States_of_America.png",
+    "size": "xl"
   }
 ]

@@ -228,3 +228,14 @@ content:
                 - Larger
                 - Largest
             description: "Optional. If this logo looks too small or too big next to the others, change it here."
+
+  - name: settings
+    label: Website settings
+    type: file
+    path: content/settings.json
+    format: json
+    fields:
+      - name: whatsapp_url
+        label: WhatsApp community link
+        type: string
+        description: "Paste the invite link (https://chat.whatsapp.com/...). The Stay connected pop-up appears when people open the website, and stays hidden while this is empty."
