@@ -155,7 +155,8 @@
     {
       "name": "Vibe Capital Partners",
       "group": "Private equity and venture capital",
-      "logo": "assets/uploads/images.jpeg"
+      "logo": "assets/uploads/images.jpeg",
+      "logo_size": "Largest"
     },
     {
       "name": "Start Ventures",
