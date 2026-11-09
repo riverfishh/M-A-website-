@@ -3,7 +3,7 @@
     {
       "name": "BNP Paribas CIB",
       "group": "M&A and investment banking",
-      "logo": "assets/uploads/bnp-paribas-2-1.png"
+      "logo": "assets/uploads/BNP_Paribas_logo_logotype_emblem.png"
     },
     {
       "name": "Rothschild & Co",
@@ -23,7 +23,8 @@
     {
       "name": "Santander CIB",
       "group": "M&A and investment banking",
-      "logo": "assets/uploads/Santander_Logo.png"
+      "logo": "assets/uploads/Santander_Logo.png",
+      "logo_size": "Largest"
     },
     {
       "name": "Lincoln International",
