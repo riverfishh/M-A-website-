@@ -135,7 +135,8 @@
     {
       "name": "Caixa Capital",
       "group": "Private equity and venture capital",
-      "logo": "assets/uploads/Caixa-Capital.png"
+      "logo": "assets/uploads/Caixa-Capital.png",
+      "logo_size": "Larger"
     },
     {
       "name": "Quest Capital",
