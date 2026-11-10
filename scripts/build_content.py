@@ -113,6 +113,18 @@ def write(name, items):
     print(f"{name}: {len(items)} published")
 
 
+def clean_linkedin(path, value):
+    value = text(value)
+    if not value:
+        return ""
+    if re.match(r"^(www\.)?linkedin\.com/", value, re.I):
+        value = "https://" + value
+    if re.match(r"^https://([a-z0-9-]+\.)*linkedin\.com/\S*$", value, re.I):
+        return value
+    warn(path, "the LinkedIn link should be a linkedin.com address, ignoring it")
+    return ""
+
+
 def build_team():
     people = []
     base, seen = ROOT / "content" / "team", set()
@@ -138,6 +150,7 @@ def build_team():
             "department": text(raw.get("department")),
             "role": text(raw.get("role")),
             "photo": clean_image(raw.get("photo")),
+            "linkedin": clean_linkedin(path, raw.get("linkedin")),
             "order": order,
         })
     people.sort(key=lambda p: (p["order"], p["name"]))

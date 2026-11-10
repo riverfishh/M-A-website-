@@ -5,6 +5,7 @@
     "department": "Research",
     "role": "Head of Research",
     "photo": "assets/uploads/Alberto Gonçalves.jpg",
+    "linkedin": "",
     "order": 1.0
   },
   {
@@ -13,6 +14,7 @@
     "department": "Relations",
     "role": "Head of Relations",
     "photo": "",
+    "linkedin": "",
     "order": 1.0
   },
   {
@@ -21,6 +23,7 @@
     "department": "Marketing",
     "role": "Head of Marketing",
     "photo": "",
+    "linkedin": "",
     "order": 1.0
   },
   {
@@ -29,6 +32,7 @@
     "department": "Board",
     "role": "Interim President",
     "photo": "",
+    "linkedin": "",
     "order": 1.0
   },
   {
@@ -37,6 +41,7 @@
     "department": "Legal",
     "role": "Head of Legal",
     "photo": "assets/uploads/Leo.jpg",
+    "linkedin": "",
     "order": 1.0
   },
   {
@@ -45,6 +50,7 @@
     "department": "Operations",
     "role": "Head of Operations",
     "photo": "assets/uploads/Rafael (1).jpg",
+    "linkedin": "",
     "order": 1.0
   },
   {
@@ -53,6 +59,7 @@
     "department": "Marketing",
     "role": "Associate",
     "photo": "assets/uploads/DSC_4487 (1).jpg",
+    "linkedin": "",
     "order": 2.0
   },
   {
@@ -61,6 +68,7 @@
     "department": "Operations",
     "role": "Associate",
     "photo": "",
+    "linkedin": "",
     "order": 2.0
   },
   {
@@ -69,6 +77,7 @@
     "department": "Research",
     "role": "Team Leader",
     "photo": "assets/uploads/Kian Pinto.jpg",
+    "linkedin": "",
     "order": 2.0
   },
   {
@@ -77,6 +86,7 @@
     "department": "Legal",
     "role": "Analyst",
     "photo": "assets/uploads/Lisa Scheier.jpg",
+    "linkedin": "",
     "order": 2.0
   },
   {
@@ -85,6 +95,7 @@
     "department": "Board",
     "role": "Vice President",
     "photo": "assets/uploads/Vasco Coutinho.jpeg",
+    "linkedin": "",
     "order": 2.0
   },
   {
@@ -93,6 +104,7 @@
     "department": "Relations",
     "role": "Analyst",
     "photo": "assets/uploads/Yuren Ahing_.jpg",
+    "linkedin": "",
     "order": 2.0
   },
   {
@@ -101,6 +113,7 @@
     "department": "Board",
     "role": "Internal Board Advisory",
     "photo": "",
+    "linkedin": "",
     "order": 3.0
   },
   {
@@ -109,6 +122,7 @@
     "department": "Operations",
     "role": "Analyst",
     "photo": "assets/uploads/Julia Flejterska.jpg",
+    "linkedin": "",
     "order": 3.0
   },
   {
@@ -117,6 +131,7 @@
     "department": "Legal",
     "role": "Analyst",
     "photo": "assets/uploads/Julian Marx.jpg",
+    "linkedin": "",
     "order": 3.0
   },
   {
@@ -125,6 +140,7 @@
     "department": "Research",
     "role": "Team Leader",
     "photo": "",
+    "linkedin": "",
     "order": 3.0
   },
   {
@@ -133,6 +149,7 @@
     "department": "Relations",
     "role": "Analyst",
     "photo": "assets/uploads/Pascal Bentscheck.jpg",
+    "linkedin": "",
     "order": 3.0
   },
   {
@@ -141,6 +158,7 @@
     "department": "Relations",
     "role": "Analyst",
     "photo": "assets/uploads/Adrian Resch.jpg",
+    "linkedin": "",
     "order": 4.0
   },
   {
@@ -149,6 +167,7 @@
     "department": "Board",
     "role": "Head of Marketing",
     "photo": "",
+    "linkedin": "",
     "order": 4.0
   },
   {
@@ -157,6 +176,7 @@
     "department": "Operations",
     "role": "Analyst",
     "photo": "",
+    "linkedin": "",
     "order": 4.0
   },
   {
@@ -165,6 +185,7 @@
     "department": "Research",
     "role": "Team Leader",
     "photo": "",
+    "linkedin": "",
     "order": 4.0
   },
   {
@@ -173,6 +194,7 @@
     "department": "Board",
     "role": "Head of Legal",
     "photo": "",
+    "linkedin": "",
     "order": 5.0
   },
   {
@@ -181,6 +203,7 @@
     "department": "Operations",
     "role": "Analyst",
     "photo": "assets/uploads/Luca Hartenfels.jpg",
+    "linkedin": "",
     "order": 5.0
   },
   {
@@ -189,6 +212,7 @@
     "department": "Relations",
     "role": "Analyst",
     "photo": "assets/uploads/Lucrezia Reimbold.jpg",
+    "linkedin": "",
     "order": 5.0
   },
   {
@@ -197,6 +221,7 @@
     "department": "Research",
     "role": "Associate",
     "photo": "",
+    "linkedin": "",
     "order": 5.0
   },
   {
@@ -205,6 +230,7 @@
     "department": "Operations",
     "role": "Analyst",
     "photo": "assets/uploads/Bárbara Novais.jpg",
+    "linkedin": "",
     "order": 6.0
   },
   {
@@ -213,6 +239,7 @@
     "department": "Relations",
     "role": "Analyst",
     "photo": "",
+    "linkedin": "",
     "order": 6.0
   },
   {
@@ -221,6 +248,7 @@
     "department": "Research",
     "role": "Associate",
     "photo": "",
+    "linkedin": "",
     "order": 6.0
   },
   {
@@ -229,6 +257,7 @@
     "department": "Board",
     "role": "Head of Operations",
     "photo": "assets/uploads/Rafael (1).jpg",
+    "linkedin": "",
     "order": 6.0
   },
   {
@@ -237,6 +266,7 @@
     "department": "Board",
     "role": "Head of Research",
     "photo": "assets/uploads/Alberto Gonçalves-1.jpg",
+    "linkedin": "",
     "order": 7.0
   },
   {
@@ -245,6 +275,7 @@
     "department": "Research",
     "role": "Associate",
     "photo": "",
+    "linkedin": "",
     "order": 7.0
   },
   {
@@ -253,6 +284,7 @@
     "department": "Board",
     "role": "Head of Relations",
     "photo": "",
+    "linkedin": "",
     "order": 8.0
   },
   {
@@ -261,6 +293,7 @@
     "department": "Research",
     "role": "Associate",
     "photo": "",
+    "linkedin": "",
     "order": 8.0
   },
   {
@@ -269,6 +302,7 @@
     "department": "Research",
     "role": "Analyst",
     "photo": "assets/uploads/Rodrigo Carvalho.jpg",
+    "linkedin": "",
     "order": 9.0
   },
   {
@@ -277,6 +311,7 @@
     "department": "Research",
     "role": "Analyst",
     "photo": "assets/uploads/Aofie Palmer - O_Riordan.jpg",
+    "linkedin": "",
     "order": 100
   },
   {
@@ -285,6 +320,7 @@
     "department": "Marketing",
     "role": "Associate",
     "photo": "",
+    "linkedin": "",
     "order": 100
   },
   {
@@ -293,6 +329,7 @@
     "department": "Research",
     "role": "Analyst",
     "photo": "assets/uploads/Florian Bernleithner.jpg",
+    "linkedin": "",
     "order": 100
   },
   {
@@ -301,6 +338,7 @@
     "department": "Research",
     "role": "Analyst",
     "photo": "assets/uploads/João Comazzetto_.jpg",
+    "linkedin": "",
     "order": 100
   },
   {
@@ -309,6 +347,7 @@
     "department": "Research",
     "role": "Analyst",
     "photo": "assets/uploads/Luís.jpg",
+    "linkedin": "",
     "order": 100
   },
   {
@@ -317,6 +356,7 @@
     "department": "Research",
     "role": "Analyst",
     "photo": "assets/uploads/Maciek.jpg",
+    "linkedin": "",
     "order": 100
   },
   {
@@ -325,6 +365,7 @@
     "department": "Research",
     "role": "Analyst",
     "photo": "assets/uploads/Olivér Osvald.jpg",
+    "linkedin": "",
     "order": 100
   },
   {
@@ -333,6 +374,7 @@
     "department": "Research",
     "role": "Analyst",
     "photo": "assets/uploads/Vincent.jpg",
+    "linkedin": "",
     "order": 100
   }
 ]

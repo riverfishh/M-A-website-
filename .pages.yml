@@ -151,6 +151,10 @@ content:
         label: Role
         type: string
         description: "For example: Head of Research, Associate, Analyst"
+      - name: linkedin
+        label: LinkedIn link
+        type: string
+        description: "Optional. Paste the link to their LinkedIn profile. A LinkedIn link then shows under their role. Leave empty to show nothing."
       - name: photo
         label: Photo
         type: image
