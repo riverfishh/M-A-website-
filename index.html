@@ -1307,6 +1307,7 @@ textarea.field__control { resize: vertical; min-height: 140px; }
         <ul class="channels" role="list" data-reveal>
           <li data-requires-email hidden><span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg></span><div><small>Email</small><a data-contact-email href="#"></a></div></li>
           <li><span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg></span><div><small>LinkedIn</small><a data-href=linkedin href="https://www.linkedin.com/company/nova-mergers-acquisitions-club/" target="_blank" rel="noopener">Nova Mergers &amp; Acquisitions Club<span class="visually-hidden"> (opens in a new tab)</span></a></div></li>
+          <li data-wa-slot hidden><span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg></span><div><small>WhatsApp</small><a data-wa-href href="#" target="_blank" rel="noopener">WhatsApp Community<span class="visually-hidden"> (opens in a new tab)</span></a></div></li>
           <li><span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-instagram"/></svg></span><div><small>Instagram</small><a data-href=instagram href="https://www.instagram.com/novamaclub/" target="_blank" rel="noopener">@novamaclub<span class="visually-hidden"> (opens in a new tab)</span></a></div></li>
           <li><span class="icon-dot"><svg class="i" aria-hidden="true"><use href="#i-map-pin"/></svg></span><div><small>Campus</small><address>Campus de Carcavelos, Rua da Holanda 1, 2775-405 Carcavelos, Portugal</address></div></li>
         </ul>
@@ -1413,6 +1414,7 @@ textarea.field__control { resize: vertical; min-height: 140px; }
         <div class="footer__social">
           <a data-href=linkedin href="https://www.linkedin.com/company/nova-mergers-acquisitions-club/" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
           <a data-href=instagram href="https://www.instagram.com/novamaclub/" target="_blank" rel="noopener" aria-label="Instagram (opens in a new tab)"><svg class="i" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+          <a data-wa-slot data-wa-href hidden href="#" target="_blank" rel="noopener" aria-label="WhatsApp community (opens in a new tab)"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
           <a data-requires-email hidden data-contact-email-href href="#" aria-label="Email the club"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg></a>
         </div>
       </div>
@@ -2270,6 +2272,11 @@ textarea.field__control { resize: vertical; min-height: 140px; }
     .then(function (s) {
       var u = s && s.whatsapp_url;
       if (!/^https:\/\/[^\s]+$/.test(u || "")) return;
+      document.querySelectorAll("[data-wa-slot]").forEach(function (el) {
+        el.hidden = false;
+        el.querySelectorAll("[data-wa-href]").forEach(function (a) { a.href = u; });
+        if (el.hasAttribute("data-wa-href")) el.href = u;
+      });
       showToast(u);
       if (barClosed) return;
       bar.querySelector("[data-notice-link]").href = u;
