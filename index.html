@@ -179,6 +179,25 @@ svg.i { width: 22px; height: 22px; flex: none; }
 .notice__close .i { width: 20px; height: 20px; }
 @media (hover: hover) { .notice__close:hover { background: rgba(255, 255, 255, 0.1); } }
 
+/* ---------- WhatsApp toast (bottom right, slides up) ---------- */
+.toast { position: fixed; right: 24px; bottom: 24px; z-index: 45; width: min(380px, calc(100% - 2 * var(--gutter))); padding: 22px 22px 20px; border-radius: var(--r-lg); background: #fff; color: var(--navy-900); display: grid; gap: 10px; border: 1px solid var(--blue-100); transform: translateY(calc(100% + 48px)); opacity: 0; visibility: hidden; }
+.toast.is-in { visibility: visible; animation: toast-up 0.6s var(--ease-out) forwards; }
+.toast.is-out { visibility: visible; animation: toast-down 0.35s var(--ease-out) forwards; }
+@keyframes toast-up { from { transform: translateY(calc(100% + 48px)); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes toast-down { from { transform: none; opacity: 1; } to { transform: translateY(calc(100% + 48px)); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .toast.is-in, .toast.is-out { animation-duration: 0.01s; } }
+.toast__head { display: flex; align-items: center; gap: 12px; padding-right: 36px; }
+.toast__icon { flex: none; width: 40px; height: 40px; border-radius: 50%; background: #e6f7ec; color: #178f48; display: grid; place-items: center; }
+.toast__icon .i { width: 22px; height: 22px; }
+.toast h2 { font-size: 1.25rem; line-height: 1.1; letter-spacing: -0.02em; }
+.toast p { color: var(--muted); font-size: var(--t-small); line-height: 1.5; }
+.toast__btn { justify-self: stretch; min-height: 46px; margin-top: 4px; background: #178f48; color: #fff; }
+@media (hover: hover) { .toast__btn:hover { background: #12763b; } }
+.toast__close { position: absolute; top: 8px; right: 8px; width: 40px; height: 40px; border: 0; border-radius: 50%; background: transparent; color: var(--navy-900); cursor: pointer; display: grid; place-items: center; }
+.toast__close .i { width: 20px; height: 20px; }
+@media (hover: hover) { .toast__close:hover { background: var(--blue-50); } }
+@media (max-width: 560px) { .toast { right: var(--gutter); bottom: 16px; } }
+
 /* ---------- buttons ---------- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
@@ -2219,17 +2238,40 @@ textarea.field__control { resize: vertical; min-height: 140px; }
 })();
 </script>
 
+<aside class="toast" id="wa-toast" role="complementary" aria-labelledby="wa-toast-title">
+  <button class="toast__close" type="button" data-toast-close aria-label="Close"><svg class="i" aria-hidden="true"><use href="#i-close"/></svg></button>
+  <div class="toast__head"><span class="toast__icon" aria-hidden="true"><svg class="i"><use href="#i-whatsapp"/></svg></span><h2 id="wa-toast-title">Stay connected.</h2></div>
+  <p>Join our WhatsApp community to stay up to date with club activities, upcoming events, workshops and opportunities.</p>
+  <a class="btn toast__btn" data-toast-link href="#" target="_blank" rel="noopener noreferrer">Join the WhatsApp community<span class="visually-hidden"> (opens in a new tab)</span></a>
+</aside>
 <script>
 (function () {
   var bar = document.getElementById("wa-notice");
   if (!bar) return;
-  try { if (sessionStorage.getItem("wa-notice-closed")) return; } catch (e) {}
+  var barClosed = false;
+  try { barClosed = !!sessionStorage.getItem("wa-notice-closed"); } catch (e) {}
   var root = document.documentElement;
+  var toast = document.getElementById("wa-toast");
+  var toastDone = false;
+  try { toastDone = !!sessionStorage.getItem("wa-toast-closed"); } catch (e) {}
+  var hideToast = function () {
+    toast.classList.remove("is-in"); toast.classList.add("is-out");
+    try { sessionStorage.setItem("wa-toast-closed", "1"); } catch (e) {}
+  };
+  var showToast = function (u) {
+    if (toastDone || !toast) return;
+    toast.querySelector("[data-toast-link]").href = u;
+    toast.querySelector("[data-toast-link]").addEventListener("click", hideToast);
+    toast.querySelector("[data-toast-close]").addEventListener("click", hideToast);
+    setTimeout(function () { toast.classList.add("is-in"); }, 1800);
+  };
   fetch("data/settings.json", { cache: "no-cache" })
     .then(function (r) { if (!r.ok) throw 0; return r.json(); })
     .then(function (s) {
       var u = s && s.whatsapp_url;
       if (!/^https:\/\/[^\s]+$/.test(u || "")) return;
+      showToast(u);
+      if (barClosed) return;
       bar.querySelector("[data-notice-link]").href = u;
       bar.hidden = false; root.classList.add("has-notice");
       bar.querySelector("[data-notice-close]").addEventListener("click", function () {
