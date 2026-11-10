@@ -238,4 +238,4 @@ content:
       - name: whatsapp_url
         label: WhatsApp community link
         type: string
-        description: "Paste the invite link (https://chat.whatsapp.com/...). A rolling green notice with this link appears at the top of the website, and stays hidden while this is empty."
+        description: "Paste the invite link (https://chat.whatsapp.com/...). The pop-up in the bottom-right corner and the WhatsApp links in Get in touch and the footer use this link, and stay hidden while this is empty."

@@ -96,10 +96,8 @@
   --section: clamp(72px, 8vw, 112px);
   --lift: clamp(80px, 9.2vw, 132px);
   --hbase: 76px;
-  --nh: 0px;
-  --header: calc(var(--hbase) + var(--nh));
+  --header: var(--hbase);
 }
-html.has-notice { --nh: 44px; }
 
 /* ---------- base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -158,26 +156,6 @@ svg.i { width: 22px; height: 22px; flex: none; }
 .on-dark .link { color: #fff; }
 @media (hover: hover) { .link:hover { text-decoration-color: currentColor; } }
 
-
-/* ---------- WhatsApp notice (rolling bar, part of the header so it stays while scrolling) ---------- */
-.notice { height: 44px; display: flex; align-items: center; gap: 12px; padding-left: var(--gutter); background: var(--navy-900); color: #fff; overflow: hidden; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-.notice[hidden] { display: none; }
-.notice__viewport { flex: 1; min-width: 0; overflow: hidden; }
-.notice__track { display: flex; width: max-content; }
-.notice__item { display: flex; align-items: center; gap: 10px; padding-right: 56px; white-space: nowrap; font-size: var(--t-small); font-weight: 600; }
-.notice__item strong { font-weight: 800; }
-.notice__item .i { width: 18px; height: 18px; flex: none; color: #4ade80; }
-.notice__btn { flex: none; display: inline-flex; align-items: center; min-height: 30px; padding: 0 16px; border-radius: var(--pill); background: #178f48; color: #fff; font-weight: 700; font-size: var(--t-small); text-decoration: none; white-space: nowrap; transition: background-color var(--t-hover) var(--ease-out); }
-@media (hover: hover) { .notice__btn:hover { background: #12763b; } }
-@media (prefers-reduced-motion: no-preference) {
-  .notice__track { animation: notice-move 38s linear infinite; }
-  .notice:hover .notice__track, .notice:focus-within .notice__track { animation-play-state: paused; }
-}
-@keyframes notice-move { to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) { .notice__track { width: auto; } .notice__item[aria-hidden="true"] { display: none; } .notice__item { white-space: normal; padding: 0; font-size: 0.8125rem; line-height: 1.25; } .notice { height: auto; min-height: 44px; } }
-.notice__close { flex: none; width: 44px; height: 44px; border: 0; background: transparent; color: #fff; cursor: pointer; display: grid; place-items: center; }
-.notice__close .i { width: 20px; height: 20px; }
-@media (hover: hover) { .notice__close:hover { background: rgba(255, 255, 255, 0.1); } }
 
 /* ---------- WhatsApp toast (bottom right, slides up) ---------- */
 .toast { position: fixed; right: 24px; bottom: 24px; z-index: 45; width: min(380px, calc(100% - 2 * var(--gutter))); padding: 22px 22px 20px; border-radius: var(--r-lg); background: #fff; color: var(--navy-900); display: grid; gap: 10px; border: 1px solid var(--blue-100); transform: translateY(calc(100% + 48px)); opacity: 0; visibility: hidden; }
@@ -951,14 +929,6 @@ textarea.field__control { resize: vertical; min-height: 140px; }
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="header">
-  <div class="notice" id="wa-notice" role="region" aria-label="Community notice" hidden>
-    <div class="notice__viewport"><div class="notice__track">
-      <span class="notice__item"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg><strong>Stay connected.</strong> Join our WhatsApp community to stay up to date with club activities, upcoming events, workshops and opportunities.</span>
-      <span class="notice__item" aria-hidden="true"><svg class="i"><use href="#i-whatsapp"/></svg><strong>Stay connected.</strong> Join our WhatsApp community to stay up to date with club activities, upcoming events, workshops and opportunities.</span>
-    </div></div>
-    <a class="notice__btn" data-notice-link href="#" target="_blank" rel="noopener noreferrer">Join now<span class="visually-hidden"> (opens in a new tab)</span></a>
-    <button class="notice__close" type="button" data-notice-close aria-label="Close notice"><svg class="i" aria-hidden="true"><use href="#i-close"/></svg></button>
-  </div>
   <div class="header__inner wrap">
     <a class="brand" href="#top" aria-label="Nova M&amp;A Club, back to top">
       <span class="brand__mark" aria-hidden="true"></span>
@@ -2248,24 +2218,12 @@ textarea.field__control { resize: vertical; min-height: 140px; }
 </aside>
 <script>
 (function () {
-  var bar = document.getElementById("wa-notice");
-  if (!bar) return;
-  var barClosed = false;
-  try { barClosed = !!sessionStorage.getItem("wa-notice-closed"); } catch (e) {}
-  var root = document.documentElement;
   var toast = document.getElementById("wa-toast");
   var toastDone = false;
   try { toastDone = !!sessionStorage.getItem("wa-toast-closed"); } catch (e) {}
   var hideToast = function () {
     toast.classList.remove("is-in"); toast.classList.add("is-out");
     try { sessionStorage.setItem("wa-toast-closed", "1"); } catch (e) {}
-  };
-  var showToast = function (u) {
-    if (toastDone || !toast) return;
-    toast.querySelector("[data-toast-link]").href = u;
-    toast.querySelector("[data-toast-link]").addEventListener("click", hideToast);
-    toast.querySelector("[data-toast-close]").addEventListener("click", hideToast);
-    setTimeout(function () { toast.classList.add("is-in"); }, 1800);
   };
   fetch("data/settings.json", { cache: "no-cache" })
     .then(function (r) { if (!r.ok) throw 0; return r.json(); })
@@ -2277,14 +2235,11 @@ textarea.field__control { resize: vertical; min-height: 140px; }
         el.querySelectorAll("[data-wa-href]").forEach(function (a) { a.href = u; });
         if (el.hasAttribute("data-wa-href")) el.href = u;
       });
-      showToast(u);
-      if (barClosed) return;
-      bar.querySelector("[data-notice-link]").href = u;
-      bar.hidden = false; root.classList.add("has-notice");
-      bar.querySelector("[data-notice-close]").addEventListener("click", function () {
-        bar.hidden = true; root.classList.remove("has-notice");
-        try { sessionStorage.setItem("wa-notice-closed", "1"); } catch (e) {}
-      });
+      if (toastDone || !toast) return;
+      toast.querySelector("[data-toast-link]").href = u;
+      toast.querySelector("[data-toast-link]").addEventListener("click", hideToast);
+      toast.querySelector("[data-toast-close]").addEventListener("click", hideToast);
+      setTimeout(function () { toast.classList.add("is-in"); }, 1800);
     })
     .catch(function () {});
 })();
