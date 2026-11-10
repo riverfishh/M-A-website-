@@ -11,6 +11,7 @@
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="assets/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<script>window.__wa = fetch("data/settings.json", { cache: "no-cache" }).then(function (r) { if (!r.ok) throw 0; return r.json(); });</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap">
@@ -2235,8 +2236,7 @@ textarea.field__control { resize: vertical; min-height: 140px; }
     toast.classList.remove("is-in"); toast.classList.add("is-out");
     try { sessionStorage.setItem("wa-toast-closed", "1"); } catch (e) {}
   };
-  fetch("data/settings.json", { cache: "no-cache" })
-    .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+  (window.__wa || Promise.reject())
     .then(function (s) {
       var u = s && s.whatsapp_url;
       if (!/^https:\/\/[^\s]+$/.test(u || "")) return;
@@ -2249,7 +2249,7 @@ textarea.field__control { resize: vertical; min-height: 140px; }
       toast.querySelector("[data-toast-link]").href = u;
       toast.querySelector("[data-toast-link]").addEventListener("click", hideToast);
       toast.querySelector("[data-toast-close]").addEventListener("click", hideToast);
-      setTimeout(function () { toast.classList.add("is-in"); }, 400);
+      requestAnimationFrame(function () { toast.classList.add("is-in"); });
     })
     .catch(function () {});
 })();
